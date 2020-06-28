@@ -1,0 +1,17 @@
+body {
+	margin: 0 10px;
+	display: flex;
+	justify-content: center;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	box-sizing: border-box;
+	-webkit-text-size-adjust: 100%;
+	/* background: white !important; */
+}
+
+.App {
+	max-width: 1030px;
+	width: 98vw;
+	padding: 0 15px;
+	box-sizing: border-box;
+}

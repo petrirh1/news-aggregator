@@ -1,0 +1,64 @@
+.root {
+	margin: 1.25rem 0;
+	animation: fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	background: rgba(150, 150, 150, 0.08) !important;
+}
+
+.media {
+	position: relative;
+	background: rgba(150, 150, 150, 0.08);
+}
+
+.media img {
+	object-fit: cover;
+	width: 100%;
+	filter: grayscale(50%);
+}
+
+.media,
+.media img {
+	border-radius: 0;
+	height: 170px;
+}
+
+.placeholder {
+	opacity: 0.25;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: -1;
+	transform: translate(-50%, -50%);
+}
+
+.details {
+	margin: auto;
+	position: relative;
+	font-size: 0.8125rem !important;
+}
+
+.wrapper {
+	padding-top: 6px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.source,
+.date {
+	display: flex;
+	align-items: center;
+}
+
+.avatar {
+	width: 18px !important;
+	height: 18px !important;
+	margin-right: 7px;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

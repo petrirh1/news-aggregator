@@ -1,0 +1,20 @@
+.root {
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon {
+	font-size: 48px !important;
+	padding: 16px;
+}
+
+.subtitle {
+	opacity: 0.75;
+}
+
+.button {
+	margin-top: 40px !important;
+}

@@ -1,0 +1,8 @@
+.root {
+	position: absolute;
+	right: 0;
+}
+
+.root *:hover {
+	background: transparent !important;
+}

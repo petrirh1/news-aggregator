@@ -1,0 +1,31 @@
+.masonryGrid {
+	display: flex;
+	width: auto;
+	padding: 20px 15px 15px 15px;
+}
+
+.masonryGridColumn {
+	padding-left: 30px;
+	background-clip: padding-box;
+}
+
+.masonryGridColumn:first-child {
+	padding-left: 0;
+}
+
+.loader {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 25vh;
+}
+
+@media (max-width: 950px) {
+	.masonryGridColumn {
+		padding-left: 20px;
+	}
+
+	.masonryGrid {
+		padding: 10px 2px 2px 2px;
+	}
+}
