@@ -7,15 +7,11 @@ export const fetchData = async (url, page = 1, limit) => {
 	}
 	cancelToken = axios.CancelToken.source();
 
-	console.log(url, page);
-
 	try {
 		const { data } = await axios.get(
 			`/api/uutiset${url}?page=${page}&limit=${limit}`,
 			{ cancelToken: cancelToken.token }
 		);
-
-		console.log(`/api/uutiset${url}?page=${page}&limit=${limit}`);
 
 		return data;
 	} catch (error) {

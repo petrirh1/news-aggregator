@@ -36,7 +36,6 @@ const Home = props => {
 
 			setNews({ data: data.results, nextPage: data.next.page });
 		} catch (err) {
-			console.error(err);
 			setHasMore(false);
 		} finally {
 			setLoading(false);
@@ -58,7 +57,6 @@ const Home = props => {
 				nextPage: data.next ? data.next.page : null
 			});
 		} catch (err) {
-			console.error(err);
 			setHasMore(false);
 		} finally {
 			setLoading(false);
