@@ -29,6 +29,10 @@ const sources = [
 		favicon: '/assets/talouselama-favicon-192x192.png'
 	},
 	{
+		long: 'Länsi-Savo',
+		favicon: '/assets/ls-favicon-192x192.png'
+	},
+	{
 		long: 'Mediuutiset',
 		favicon: '/assets/mediuutiset-favicon-192x192.png'
 	},
@@ -39,8 +43,7 @@ const sources = [
 	},
 	{
 		long: 'Suomenmaa',
-		favicon:
-			'https://www.suomenmaa.fi/wp-content/themes/pt-suomenmaa-theme/assets/images/favicons/suomenmaa__favicon_192x192.png'
+		favicon: '/assets/suomenmaa-favicon-192x192.png'
 	},
 	{
 		long: 'Kauppalehti',
@@ -62,7 +65,7 @@ const sources = [
 	},
 	{
 		long: 'Mikrobitti',
-		favicon: 'https://www.mikrobitti.fi/static/images/mikrobitti_favicon.png'
+		favicon: '/assets/mikrobitti-favicon-192x192.png'
 	},
 	{
 		long: 'Mobiili.fi',
@@ -102,10 +105,6 @@ const sources = [
 		favicon: 'https://www.ess.fi/icon-256.png'
 	},
 	{
-		long: 'Hardware.fi',
-		favicon: '/assets/harware-favicon-192x192.png'
-	},
-	{
 		long: 'Teknavi',
 		favicon:
 			'https://flockler.com/thumbs/sites/630/teknavi_favicon_s192x192_noupscale.png'
@@ -121,12 +120,20 @@ const sources = [
 	},
 	{
 		long: 'Tilt',
+		favicon: '/assets/tilt-favicon-192x192.png'
+	},
+	{
+		long: 'Errori',
 		favicon:
-			'https://1ertvb136xj1277r411b8hw78wp-wpengine.netdna-ssl.com/android-chrome-192x192.png'
+			'https://i0.wp.com/errori.net/wp-content/uploads/2019/03/android-chrome-256x256.png?fit=192%2C192&ssl=1'
 	},
 	{
 		long: 'Eurheilu.org',
 		favicon: '/assets/eurheilu-favicon-192x192.png'
+	},
+	{
+		long: 'Uutisvuoksi',
+		favicon: '/assets/uutisvuoksi-favicon-192x192.png'
 	},
 	{
 		long: 'Eurheilu.com',
@@ -135,6 +142,10 @@ const sources = [
 	{
 		long: 'Maaseudun Tulevaisuus',
 		favicon: '/assets/mt-favicon-192x192.png'
+	},
+	{
+		long: 'Alibi',
+		favicon: '/assets/alibi-favicon-192x192.png'
 	},
 	{
 		long: 'Autotoday',
@@ -187,8 +198,16 @@ const sources = [
 			'https://www.kansanuutiset.fi/images/cropped-ku_favicon-192x192.png'
 	},
 	{
+		long: 'Keskipohjanmaa',
+		favicon: 'https://data.kosila.fi/kp24/images/keskipohjanmaa/192x192.png'
+	},
+	{
 		long: 'Lapin Kansa',
 		favicon: '/assets/lapinkansa-favicon-192x192.png'
+	},
+	{
+		long: 'Kaaoszine',
+		favicon: '/assets/kaaoszine-favicon-192x192.png'
 	},
 	{
 		long: 'KD-Lehti',
@@ -199,10 +218,10 @@ const sources = [
 		favicon: '/assets/demokraatti-favicon-192x192.png'
 	},
 	{
-		long: 'NHL Suomi',
-		favicon:
-			'https://www-league.nhlstatic.com/nhl.com/builds/site-core/7b953e34e749f566edd975e9a991603ede89fd08_1588866764/images/iOS/apple-icon-144x144.png'
+		long: 'NHLSuomi',
+		favicon: '/assets/nhlsuomi-favicon-192x192.png'
 	},
+
 	{
 		long: 'Valioliiga',
 		favicon: '/assets/valioliiga-favicon-192x192.png'
@@ -213,19 +232,24 @@ const sources = [
 			'https://www.laliiga.com/wp-content/uploads/2016/06/cropped-laliiga_fav-192x192.png'
 	},
 	{
+		long: 'SuomiF1',
+		favicon: '/assets/suomif1-favicon-192x192.png'
+	},
+	{
 		long: 'SuomiKiekko',
-		favicon:
-			'https://www.suomikiekko.com/wp-content/themes/Newspaper-child/site-specific/suomikiekko/images/ios_thumbs/152.png'
+		favicon: '/assets/suomikiekko-favicon-192x192.png'
 	},
 	{
 		long: 'SuomiFutis',
-		favicon:
-			'https://www.suomifutis.com/wp-content/themes/Newspaper-child/site-specific/suomifutis/images/ios_thumbs/152.png'
+		favicon: '/assets/suomifutis-favicon-192x192.png'
 	},
 	{
 		long: 'SuomiKoris',
-		favicon:
-			'https://www.suomikoris.com/wp-content/themes/Newspaper-child/site-specific/suomikoris/images/ios_thumbs/152.png'
+		favicon: '/assets/suomikoris-favicon-192x192.png'
+	},
+	{
+		long: 'SuomiUrheilu',
+		favicon: '/assets/suomiurheilu-favicon-192x192.png'
 	},
 	{
 		long: 'Leijonat.com',

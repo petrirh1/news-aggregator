@@ -19,6 +19,7 @@ const sportNews = [];
 const entertainmentNews = [];
 const techNews = [];
 
+const sources = require('./sources/feeds/feedSources');
 const {
 	recent,
 	home,
@@ -99,12 +100,16 @@ app.get('/favicon', getFavicon, (req, res) => {
 	res.send({ favicons: res.favicons });
 });
 
+app.get('/api/lahteet', (req, res) => {
+	const newsSources = sources.map(source => source.long).sort();
+	res.send({ sources: newsSources, count: newsSources.length });
+});
+
 app.get(
 	'/api/uutiset/uusimmat',
 	parseData(recentNews),
 	paginateResults(),
 	(req, res) => {
-		console.log('newsLen: ', recentNews.length);
 		res.send(res.paginatedResults);
 	}
 );

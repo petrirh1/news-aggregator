@@ -1,12 +1,12 @@
 .root {
 	margin: 1.25rem 0;
 	animation: fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-	background: rgba(150, 150, 150, 0.08) !important;
+	background: rgba(150, 150, 150, 0.1) !important;
 }
 
 .media {
 	position: relative;
-	background: rgba(150, 150, 150, 0.08);
+	background: rgba(150, 150, 150, 0.1);
 }
 
 .media img {

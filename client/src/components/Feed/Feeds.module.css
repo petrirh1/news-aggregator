@@ -1,6 +1,11 @@
+.backdrop {
+	background: transparent !important;
+}
+
 .masonryGrid {
 	display: flex;
 	width: auto;
+	min-height: 100vh;
 	padding: 20px 15px 15px 15px;
 }
 
@@ -16,8 +21,9 @@
 .loader {
 	display: flex;
 	justify-content: center;
-	align-items: flex-end;
-	height: 25vh;
+	align-items: center;
+	height: 200px;
+	margin-bottom: 71px;
 }
 
 @media (max-width: 950px) {

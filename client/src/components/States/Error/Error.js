@@ -1,21 +1,30 @@
 import React from 'react';
-import { Typography, Button, Link } from '@material-ui/core';
-import WarningRoundedIcon from '@material-ui/icons/WarningRounded';
+import { Typography, Button } from '@material-ui/core';
 
 import styles from './Error.module.css';
 
 const Error = () => {
+	const handlePageRefresh = () => {
+		window.location.reload(false);
+	};
+
 	return (
 		<div className={styles.root}>
-			<WarningRoundedIcon color='disabled' className={styles.icon} />
-			<Typography variant='subtitle2' className={styles.subtitle}>
-				Hups, jotain meni pieleen..
-			</Typography>
-			<Link href='/' underline='none'>
-				<Button variant='contained' className={styles.button}>
+			<div className={styles.wrapper}>
+				<Typography variant='h4' className={styles.title}>
+					Voi pahus!
+				</Typography>
+				<Typography variant='subtitle2' color='secondary'>
+					jotain meni pieleen..
+				</Typography>
+				<Button
+					onClick={handlePageRefresh}
+					variant='contained'
+					color='secondary'
+					className={styles.button}>
 					Yritä uudelleen
 				</Button>
-			</Link>
+			</div>
 		</div>
 	);
 };

@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Header, Feed, Footer } from '../../components';
 import { fetchData } from '../../api';
 import { updateDocTitle, updatePath } from '../../helpers/string';
+import PropTypes from 'prop-types';
 
+import styles from './Home.module.css';
 const title = document.title;
 
 const Home = props => {
 	const { pathname } = props.history.location;
 	const { history } = props;
+
 	const [isLoading, setLoading] = useState(false);
+	const [hasError, setHasError] = useState(false);
 	const [url, setUrl] = useState(pathname);
 	const [news, setNews] = useState({ data: [] });
 	const [hasMore, setHasMore] = useState(true);
@@ -20,6 +24,7 @@ const Home = props => {
 		setHasMore(true);
 		setNews([]);
 		fetchDataByCategory();
+		setHasError(false);
 
 		document.title = updateDocTitle(title, pathname);
 	}, [pathname]);
@@ -37,6 +42,7 @@ const Home = props => {
 			setNews({ data: data.results, nextPage: data.next.page });
 		} catch (err) {
 			setHasMore(false);
+			setHasError(true);
 		} finally {
 			setLoading(false);
 		}
@@ -58,23 +64,30 @@ const Home = props => {
 			});
 		} catch (err) {
 			setHasMore(false);
+			setHasError(true);
 		} finally {
 			setLoading(false);
 		}
 	};
 
 	return (
-		<div style={{ position: 'relative', minHeight: '110vh' }}>
+		<div className={styles.root}>
 			<Header {...props} />
 			<Feed
 				data={news.data}
 				isLoading={isLoading}
 				fetchMore={fetchMore}
 				hasMore={hasMore}
+				hasError={hasError}
 			/>
 			<Footer />
 		</div>
 	);
+};
+
+Home.propTypes = {
+	pathname: PropTypes.string,
+	history: PropTypes.object
 };
 
 export default Home;

@@ -5,6 +5,8 @@ import fi from 'javascript-time-ago/locale/fi';
 import ImageRoundedIcon from '@material-ui/icons/ImageRounded';
 import { firstLetter } from '../../helpers/string';
 
+import PropTypes from 'prop-types';
+
 import {
 	Card,
 	CardActionArea,
@@ -54,7 +56,7 @@ const FeedItem = ({ data }) => {
 					<div className={styles.wrapper}>
 						<div className={styles.source}>
 							<Avatar
-								variant='square'
+								variant='rounded'
 								alt='Source logo'
 								src={favicon}
 								className={styles.avatar}>
@@ -85,6 +87,10 @@ const FeedItem = ({ data }) => {
 			</CardActionArea>
 		</Card>
 	);
+};
+
+FeedItem.propTypes = {
+	data: PropTypes.object
 };
 
 export default FeedItem;

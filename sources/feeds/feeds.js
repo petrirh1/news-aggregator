@@ -22,7 +22,6 @@ const technology = [
 	'https://api.mtvuutiset.fi/mtvuutiset/api/feed/rss/lifestyle_digi',
 	'https://api.mtvuutiset.fi/mtvuutiset/api/feed/rss/lifestyle_autot',
 	'https://moottori.fi/feed/',
-	'http://rss.hardware.fi/uutiset',
 	'https://autobild.fi/rss',
 	'https://eurheilu.com/feed/'
 ];
@@ -54,7 +53,10 @@ const recent = [
 	'https://www.mediuutiset.fi/api/feed/v2/rss/mu',
 	'https://www.hameensanomat.fi/rss',
 	'https://kuluttaja.fi/feed/',
-	'https://www.ess.fi/feed/rss'
+	'https://www.ess.fi/feed/rss',
+	'https://www.keskipohjanmaa.fi/feed?name=keskipohjanmaa',
+	'https://lansi-savo.fi/api/articles.rss',
+	'https://alibi.fi/feed/'
 ];
 
 const home = [
@@ -101,7 +103,9 @@ const entertainment = [
 	'https://www.tilt.fi/feed/',
 	'https://pelaaja.fi/rss.xml',
 	'https://muropaketti.com/kategoria/pelit/peliuutiset/feed/',
-	'https://muropaketti.com/kategoria/elokuvat/elokuvauutiset/feed/'
+	'https://muropaketti.com/kategoria/elokuvat/elokuvauutiset/feed/',
+	'https://errori.net/feed/',
+	'https://kaaoszine.fi/feed/'
 ];
 
 const sports = [
@@ -116,6 +120,7 @@ const sports = [
 	'https://www.jatkoaika.com/rss/index.rss',
 	'https://www.kaleva.fi/feedit/rss/managed-listing/urheilu/',
 	'https://www.suomikoris.com/feed/',
+	'https://www.suomif1.com/feed/',
 	'https://www.finnsnooker.com/feed/',
 	'https://api.mtvuutiset.fi/mtvuutiset/api/feed/rss/urheilu',
 	'https://www.lapinkansa.fi/feedit/rss/managed-listing/urheilu/',

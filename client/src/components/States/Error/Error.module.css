@@ -1,18 +1,20 @@
 .root {
-	height: 400px;
+	margin-top: 60px;
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 60px 80px;
+	height: 100%;
 }
 
-.icon {
-	font-size: 48px !important;
-	padding: 16px;
-}
-
-.subtitle {
-	opacity: 0.75;
+.title {
+	padding-bottom: 5px;
 }
 
 .button {

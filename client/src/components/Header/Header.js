@@ -1,12 +1,8 @@
 import React from 'react';
 import { CategoryTabs, Logo, Menu } from '../../components';
-import {
-	AppBar,
-	Toolbar,
-	useScrollTrigger,
-	Slide,
-	Divider
-} from '@material-ui/core';
+import { AppBar, Toolbar, useScrollTrigger, Slide } from '@material-ui/core';
+
+import PropTypes from 'prop-types';
 
 import styles from './Header.module.css';
 
@@ -35,6 +31,10 @@ const Header = props => {
 			</AppBar>
 		</HideOnScroll>
 	);
+};
+
+HideOnScroll.propTypes = {
+	children: PropTypes.object
 };
 
 export default Header;

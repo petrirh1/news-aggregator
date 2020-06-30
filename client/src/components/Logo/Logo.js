@@ -1,6 +1,8 @@
 import React from 'react';
 import { Typography, Link } from '@material-ui/core';
 
+import PropTypes from 'prop-types';
+
 import styles from './Logo.module.css';
 
 const Logo = ({ width, variant, mr }) => {
@@ -23,11 +25,17 @@ const Logo = ({ width, variant, mr }) => {
 					variant={variant}
 					color='primary'
 					className={styles.appTitle}>
-					Uutisankka
+					Uutis<span className={styles.thin}>ankka</span>
 				</Typography>
 			</Link>
 		</div>
 	);
+};
+
+Logo.propTypes = {
+	width: PropTypes.number,
+	varinat: PropTypes.string,
+	mr: PropTypes.string
 };
 
 export default Logo;

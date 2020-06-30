@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+import PropTypes from 'prop-types';
 import style from './Menu.module.css';
 
 const SimpleMenu = ({ isDark, handleThemeChange }) => {
@@ -67,6 +68,11 @@ const SimpleMenu = ({ isDark, handleThemeChange }) => {
 			</Menu>
 		</div>
 	);
+};
+
+Menu.propTypes = {
+	isDark: PropTypes.bool,
+	handleThemeChange: PropTypes.func
 };
 
 export default SimpleMenu;

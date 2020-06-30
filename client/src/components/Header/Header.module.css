@@ -1,8 +1,11 @@
 @font-face {
-	font-family: 'Museo';
+	font-family: 'Museo700';
 	src: url('../../assets/fonts/Museo700-Regular.woff2') format('woff2');
-	font-weight: normal;
-	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Museo300';
+	src: url('../../assets/fonts/Museo300-Regular.woff2') format('woff2');
 }
 
 .toolbar {
