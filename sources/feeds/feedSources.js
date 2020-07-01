@@ -33,10 +33,6 @@ const sources = [
 		favicon: '/assets/ls-favicon-192x192.png'
 	},
 	{
-		long: 'Mediuutiset',
-		favicon: '/assets/mediuutiset-favicon-192x192.png'
-	},
-	{
 		long: 'Päivän Lehti',
 		favicon:
 			'https://www.paivanlehti.fi/content/themes/propaganda/icons/apple-touch-icon-144x144.png'
@@ -76,6 +72,11 @@ const sources = [
 		long: 'SuomiMobiili',
 		favicon:
 			'https://uploads.suomimobiili.fi/2017/04/cropped-SuomiMobiili-sivuston-kuvake-192x192.png'
+	},
+	{
+		long: 'AVPlus',
+		favicon:
+			'https://s3-eu-west-1.amazonaws.com/magnet-wp-avplus/app/uploads/2018/11/15212449/cropped-imageedit_5_4942586604-192x192.gif'
 	},
 	{
 		long: 'Uusiteknologia',
@@ -142,10 +143,6 @@ const sources = [
 	{
 		long: 'Maaseudun Tulevaisuus',
 		favicon: '/assets/mt-favicon-192x192.png'
-	},
-	{
-		long: 'Alibi',
-		favicon: '/assets/alibi-favicon-192x192.png'
 	},
 	{
 		long: 'Autotoday',

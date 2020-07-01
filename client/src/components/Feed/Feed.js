@@ -27,7 +27,7 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 					<CircularProgress color='primary' size={26} thickness={4} />
 				</div>
 			}
-			style={{ overflow: 'none' }}>
+			style={{ overflow: 'none', position: 'relative' }}>
 			<Backdrop className={styles.backdrop} open={isLoading}>
 				<CircularProgress color='primary' size={26} thickness={4} />
 			</Backdrop>

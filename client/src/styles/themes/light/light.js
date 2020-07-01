@@ -8,15 +8,15 @@ const lightTheme = createMuiTheme({
 			main: blueGrey[800]
 		},
 		secondary: {
-			main: '#818C91' //menu icon
+			main: '#5A6064' //menu icon
 		},
 		background: {
 			default: '#fff',
-			paper: '#fff'
+			paper: '#fff' // menu bg
 		},
 		text: {
 			primary: blueGrey[900],
-			secondary: 'rgba(55, 71, 79, 0.7)'
+			secondary: 'rgba(55, 71, 79, 0.7)' // details, tabs
 		},
 		divider: '#e0e0e0'
 	},
@@ -24,7 +24,12 @@ const lightTheme = createMuiTheme({
 		...overrides,
 		MuiButtonBase: {
 			root: {
-				color: blueGrey[900]
+				color: blueGrey[900] //card hover
+			}
+		},
+		MuiTouchRipple: {
+			child: {
+				backgroundColor: '#899095'
 			}
 		},
 		MuiTab: {

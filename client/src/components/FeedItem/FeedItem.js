@@ -37,7 +37,7 @@ const FeedItem = ({ data }) => {
 			elevation={0}
 			className={styles.root}
 			onClick={() => window.open(data.link, '_blank', 'noopener')}>
-			<CardActionArea className={styles.area} disableRipple>
+			<CardActionArea disableRipple>
 				{image && (
 					<CardMedia component='div' className={styles.media}>
 						<img onError={handleImageError} alt='news img' src={image}></img>

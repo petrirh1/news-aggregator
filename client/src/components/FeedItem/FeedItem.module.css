@@ -1,24 +1,29 @@
+:root {
+	--main-card-bg: rgba(150, 150, 150, 0.087);
+}
+
 .root {
 	margin: 1.25rem 0;
 	animation: fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-	background: rgba(150, 150, 150, 0.1) !important;
+	background: var(--main-card-bg) !important;
 }
 
 .media {
 	position: relative;
-	background: rgba(150, 150, 150, 0.1);
+	background: var(--main-card-bg);
 }
 
 .media img {
 	object-fit: cover;
+	object-position: 100% 10%;
 	width: 100%;
-	filter: grayscale(50%);
+	filter: grayscale(40%);
 }
 
 .media,
 .media img {
 	border-radius: 0;
-	height: 170px;
+	height: 180px;
 }
 
 .placeholder {

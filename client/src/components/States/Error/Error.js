@@ -19,7 +19,7 @@ const Error = () => {
 				</Typography>
 				<Button
 					onClick={handlePageRefresh}
-					variant='contained'
+					variant='outlined'
 					color='secondary'
 					className={styles.button}>
 					Yritä uudelleen
