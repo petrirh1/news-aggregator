@@ -98,6 +98,58 @@ const sources = [
 		favicon: '/assets/tivi-favicon-192x192.png'
 	},
 	{
+		long: 'The Verge',
+		favicon:
+			'https://cdn.vox-cdn.com/uploads/chorus_asset/file/7395351/android-chrome-192x192.0.png'
+	},
+	{
+		long: 'Android Authority',
+		favicon:
+			'https://www.androidauthority.com/wp-content/themes/aa/images/aa-mascot-192x192.png?v=1.0.1'
+	},
+	{
+		long: 'SamMobile',
+		favicon: 'https://www.sammobile.com/logo-highres.png'
+	},
+	{
+		long: '9To5Mac',
+		favicon:
+			'https://9to5mac.com/wp-content/themes/9to5-2015/images/favicons/9to5mac/icon-192x192.png'
+	},
+	{
+		long: '9To5Google',
+		favicon:
+			'https://9to5google.com/wp-content/themes/9to5-2015/images/favicons/9to5google/icon-192x192.png'
+	},
+	{
+		long: '9To5Toys',
+		favicon:
+			'https://9to5toys.com/wp-content/themes/9to5-2015/images/favicons/9to5toys/icon-192x192.png'
+	},
+	{
+		long: 'Electrek',
+		favicon:
+			'https://electrek.co/wp-content/themes/9to5-2015/images/favicons/electrek/icon-192x192.png'
+	},
+	{
+		long: 'Appleinsider',
+		favicon:
+			'https://photos5.appleinsider.com/v9/images/apple-touch-icon-144.png'
+	},
+	{
+		long: 'iMore',
+		favicon:
+			'https://www.imore.com/sites/imore.com/files/images/icons/apple-touch-114x114.png'
+	},
+	{
+		long: 'phoneArena',
+		favicon: '/assets/phonearena-favicon-192x192.png'
+	},
+	{
+		long: 'Motortrend',
+		favicon: '/assets/motortrend-favicon-192x192.png'
+	},
+	{
 		long: 'Yle',
 		favicon: 'https://yle.fi/public/img/yle_logo_180px.png'
 	},

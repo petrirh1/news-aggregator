@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Tabs, Tab, useMediaQuery } from '@material-ui/core';
 
-import styles from './CategoryTabs.model.css';
-
 export const categories = [
 	'uusimmat',
 	'kotimaa',
@@ -10,7 +8,8 @@ export const categories = [
 	'politiikka',
 	'urheilu',
 	'viihde',
-	'tekniikka'
+	'tekniikka',
+	'tekniikka(en)'
 ];
 
 const CategoryTabs = props => {
@@ -37,11 +36,7 @@ const CategoryTabs = props => {
 	};
 
 	return (
-		<AppBar
-			className={styles.root}
-			position='static'
-			elevation={0}
-			color='default'>
+		<AppBar position='static' elevation={0} color='default'>
 			<Tabs
 				centered={!matches}
 				value={selectedTab}

@@ -34,7 +34,7 @@ const FeedItem = ({ data }) => {
 
 	return (
 		<Card
-			elevation={0}
+			elevation={1}
 			className={styles.root}
 			onClick={() => window.open(data.link, '_blank', 'noopener')}>
 			<CardActionArea disableRipple>
@@ -74,7 +74,7 @@ const FeedItem = ({ data }) => {
 								variant='subtitle2'
 								color='textSecondary'
 								className={styles.details}>
-								<span style={{ margin: '5px' }}> &#8226;</span>
+								<span style={{ margin: '5px' }}>-</span>
 								<ReactTimeAgo
 									date={new Date(date)}
 									locale='fi'

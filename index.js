@@ -18,6 +18,7 @@ const politicalNews = [];
 const sportNews = [];
 const entertainmentNews = [];
 const techNews = [];
+const techNewsEN = [];
 
 const sources = require('./sources/feeds/feedSources');
 const {
@@ -27,7 +28,8 @@ const {
 	political,
 	sports,
 	entertainment,
-	technology
+	technology,
+	technologyEN
 } = require('./sources/feeds/feeds');
 
 app.use(compression());
@@ -60,6 +62,10 @@ feeder.add(
 	{
 		url: technology,
 		eventName: 'technology'
+	},
+	{
+		url: technologyEN,
+		eventName: 'technologyEN'
 	}
 );
 
@@ -89,6 +95,10 @@ feeder.on('entertainment', item => {
 
 feeder.on('technology', item => {
 	techNews.push(item);
+});
+
+feeder.on('technologyEN', item => {
+	techNewsEN.push(item);
 });
 
 feeder.on('error', err => {
@@ -162,6 +172,15 @@ app.get(
 app.get(
 	'/api/uutiset/tekniikka',
 	parseData(techNews),
+	paginateResults(),
+	(req, res) => {
+		res.send(res.paginatedResults);
+	}
+);
+
+app.get(
+	'/api/uutiset/tekniikkaen',
+	parseData(techNewsEN),
 	paginateResults(),
 	(req, res) => {
 		res.send(res.paginatedResults);

@@ -16,12 +16,23 @@ const lightTheme = createMuiTheme({
 		},
 		text: {
 			primary: blueGrey[900],
-			secondary: 'rgba(55, 71, 79, 0.7)' // details, tabs
+			secondary: 'rgba(55, 71, 79, 0.75)' // details, tabs
 		},
 		divider: '#e0e0e0'
 	},
 	overrides: {
 		...overrides,
+		// MuiCard: {
+		// 	root: {
+		// 		boxShadow:
+		// 			'0px 20px 60px 1px rgba(0, 0, 0, 0.05) ,0px 7px 20px -18px rgba(0, 0, 0, 0.85), 0px 1px 5px -3px rgba(0, 0, 0, 0.3)'
+		// 	}
+		// },
+		MuiCardContent: {
+			root: {
+				background: '#fff'
+			}
+		},
 		MuiButtonBase: {
 			root: {
 				color: blueGrey[900] //card hover

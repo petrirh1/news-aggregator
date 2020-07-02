@@ -1,7 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { blueGrey } from '@material-ui/core/colors';
 import { overrides } from '../../overrides';
-import transitions from '@material-ui/core/styles/transitions';
 
 const darkTheme = createMuiTheme({
 	palette: {
@@ -23,6 +22,11 @@ const darkTheme = createMuiTheme({
 	},
 	overrides: {
 		...overrides,
+		MuiCardContent: {
+			root: {
+				background: 'rgba(150, 150, 160, 0.087)'
+			}
+		},
 		MuiButtonBase: {
 			root: {
 				color: blueGrey[50] //card hover

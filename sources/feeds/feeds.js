@@ -25,6 +25,21 @@ const technology = [
 	'https://avplus.fi/feed/'
 ];
 
+const technologyEN = [
+	'https://www.theverge.com/tech/rss/index.xml',
+	'https://www.theverge.com/reviews/rss/index.xml',
+	'https://www.androidauthority.com/feed/',
+	'https://www.phonearena.com/feed/news',
+	'https://www.sammobile.com/feed/',
+	'https://9to5mac.com/feed/',
+	'https://9to5google.com/feed/',
+	'https://9to5toys.com/feed',
+	'https://electrek.co/feed',
+	'https://appleinsider.com/rss/news',
+	'https://www.imore.com/rss.xml',
+	'https://www.motortrend.com/feed/'
+];
+
 const recent = [
 	'https://aamuset.fi/rss.xml',
 	'https://api.mtvuutiset.fi/mtvuutiset/api/feed/rss/viihde_uusimmat',
@@ -130,6 +145,7 @@ const sports = [
 
 module.exports = {
 	technology,
+	technologyEN,
 	recent,
 	home,
 	abroad,

@@ -26,6 +26,7 @@ const Home = props => {
 		fetchDataByCategory();
 		setHasError(false);
 
+		console.log(pathname);
 		document.title = updateDocTitle(title, pathname);
 	}, [pathname]);
 

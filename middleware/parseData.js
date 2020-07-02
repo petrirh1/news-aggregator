@@ -5,6 +5,8 @@ const notOlderThan = require('../helpers/notOlderThan');
 const removeDuplicates = require('../helpers/removeDuplicates');
 const sources = require('../sources/feeds/feedSources');
 
+const parseCategory = require('../helpers/parseCategory');
+
 const parseData = arr => {
 	return (req, res, next) => {
 		const results = arr
@@ -14,14 +16,21 @@ const parseData = arr => {
 					date: i.date,
 					link: i.link,
 					image: i.enclosures[0] ? parseImageUrl(i.enclosures[0]) : i.image.url,
-					categories: i.categories,
-					source: getSource([i.meta.title, i.meta['rss:link']['#']], sources)
+					categories: parseCategory(i.categories),
+					source: getSource(
+						[
+							i.meta.title,
+							i.meta['rss:link'] ? i.meta['rss:link']['#'] : i.meta.title
+						],
+						sources
+					)
 				};
 			})
 			.filter(obj => notOlderThan(obj.date))
 			.sort((a, b) => b.date - a.date);
 
 		const uniqueResults = removeDuplicates(results, 'title');
+
 		res.parsedData = uniqueResults;
 
 		next();
