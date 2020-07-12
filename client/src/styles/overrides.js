@@ -1,4 +1,11 @@
 export const overrides = {
+	MuiTypohraphy: {
+		h6: {
+			display: 'flex',
+			alignItems: 'center',
+			height: '100%'
+		}
+	},
 	MuiBackdrop: {
 		root: {
 			backgroundColor: 'rgba(0, 0, 0, 0)'
@@ -17,6 +24,19 @@ export const overrides = {
 			marginBottom: 15
 		}
 	},
+	MuiDialogContent: {
+		root: {
+			height: '500px',
+			maxHeight: '40vh',
+			width: '400px',
+			maxWidth: '75vw'
+		}
+	},
+	MuiDialog: {
+		container: {
+			background: 'rgba(0, 0, 0, 0.6)'
+		}
+	},
 	MuiPaper: {
 		elevation1: {
 			boxShadow:
@@ -25,6 +45,9 @@ export const overrides = {
 		elevation8: {
 			boxShadow:
 				'0 1px 2px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.05),0 16px 32px rgba(0,0,0,0.05), 0 32px 64px rgba(0,0,0,0.05)'
+		},
+		elevation24: {
+			boxShadow: 'none'
 		}
 	},
 	MuiAvatar: {
@@ -40,6 +63,12 @@ export const overrides = {
 	PrivateTabIndicator: {
 		root: {
 			transition: 'none'
+		}
+	},
+	MuiTooltip: {
+		tooltip: {
+			fontSize: '0.75rem',
+			backgroundColor: '#53595E'
 		}
 	}
 };

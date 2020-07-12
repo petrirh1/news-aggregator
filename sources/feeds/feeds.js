@@ -22,7 +22,8 @@ const technology = [
 	'https://www.mikrobitti.fi/api/feed/v2/rss/mb',
 	'https://www.motouutiset.fi/fi/static/rss/',
 	'https://www.uusiteknologia.fi/feed/',
-	'https://avplus.fi/feed/'
+	'https://avplus.fi/feed/',
+	'https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-12'
 ];
 
 const technologyEN = [
@@ -33,11 +34,11 @@ const technologyEN = [
 	'https://www.sammobile.com/feed/',
 	'https://9to5mac.com/feed/',
 	'https://9to5google.com/feed/',
-	'https://9to5toys.com/feed',
 	'https://electrek.co/feed',
 	'https://appleinsider.com/rss/news',
 	'https://www.imore.com/rss.xml',
-	'https://www.motortrend.com/feed/'
+	'https://www.motortrend.com/feed/',
+	'https://www.autocar.co.uk/rss'
 ];
 
 const recent = [
@@ -68,18 +69,21 @@ const recent = [
 	'https://www.talouselama.fi/api/feed/v2/rss/te',
 	'https://www.tivi.fi/api/feed/v2/rss/tv',
 	'https://www.ts.fi/rss.xml',
-	'https://www.uusisuomi.fi/api/feed/v2/rss/us'
+	'https://www.uusisuomi.fi/api/feed/v2/rss/us',
+	'http://rss.hardware.fi/uutiset',
+	'https://www.tekniikkatalous.fi/api/feed/v2/rss/tt'
 ];
 
 const home = [
 	'https://ilkkapohjalainen.fi/cmlink/ilkka-pohjalainen-paikalliset-1.5242274',
+	'https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-34837',
 	'https://www.hs.fi/rss/kotimaa.xml',
 	'https://www.is.fi/rss/kotimaa.xml',
 	'https://www.kaleva.fi/feedit/rss/managed-listing/kotimaa',
-	'https://www.lapinkansa.fi/feedit/rss/newest-free/',
 	'https://www.maaseuduntulevaisuus.fi/feed/kotimaa-rss-feed-7.140403',
 	'https://www.mtvuutiset.fi/api/feed/rss/uutiset_kotimaa',
-	'https://www.keskipohjanmaa.fi/uutiset/aihetunnisteet/Kotimaa/feed'
+	'https://www.keskipohjanmaa.fi/uutiset/aihetunnisteet/Kotimaa/feed',
+	'https://www.epari.fi/cmlink/epari-paikalliset-1.5242274'
 ];
 
 const abroad = [
@@ -91,11 +95,13 @@ const abroad = [
 	'https://www.kaleva.fi/feedit/rss/managed-listing/ulkomaat',
 	'https://www.maaseuduntulevaisuus.fi/feed/ulkomaat-rss-feed-7.140404',
 	'https://www.mtvuutiset.fi/api/feed/rss/uutiset_ulkomaat',
-	'https://www.keskipohjanmaa.fi/uutiset/aihetunnisteet/Ulkomaat/feed'
+	'https://www.keskipohjanmaa.fi/uutiset/aihetunnisteet/Ulkomaat/feed',
+	'https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-34953'
 ];
 
 const political = [
 	'https://www.is.fi/rss/politiikka.xml',
+	'https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-38033',
 	'https://feeds.kauppalehti.fi/rss/topic/politiikka',
 	'https://www.hs.fi/rss/politiikka.xml',
 	'https://www.kansanuutiset.fi/feed',
@@ -119,7 +125,8 @@ const entertainment = [
 	'https://www.is.fi/rss/elokuvat.xml',
 	'https://www.is.fi/rss/musiikki.xml',
 	'https://www.is.fi/rss/viihde.xml',
-	'https://www.tilt.fi/feed/'
+	'https://www.tilt.fi/feed/',
+	'https://feat.fi/feed/'
 ];
 
 const sports = [

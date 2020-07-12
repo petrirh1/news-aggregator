@@ -4,12 +4,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require('path');
 
-const parseData = require('./middleware/parseData');
-const paginateResults = require('./middleware/paginateResults');
-const getFavicon = require('./middleware/getFavicon');
-
 const RssFeedEmitter = require('rss-feed-emitter');
 const feeder = new RssFeedEmitter();
+
+const parseData = require('./middleware/parseData');
+const paginateResults = require('./middleware/paginateResults');
+const filterByCategory = require('./middleware/filterByCategory');
+const getFavicon = require('./middleware/getFavicon');
 
 const recentNews = [];
 const homeNews = [];
@@ -102,7 +103,7 @@ feeder.on('technologyEN', item => {
 });
 
 feeder.on('error', err => {
-	console.log(err);
+	// console.log(err);
 	return;
 });
 
@@ -111,7 +112,12 @@ app.get('/favicon', getFavicon, (req, res) => {
 });
 
 app.get('/api/lahteet', (req, res) => {
-	const newsSources = sources.map(source => source.long).sort();
+	const newsSources = sources
+		.map(source => {
+			return { long: source.long, url: source.url };
+		})
+		.sort((a, b) => (a.long > b.long ? 1 : -1));
+
 	res.send({ sources: newsSources, count: newsSources.length });
 });
 
@@ -154,6 +160,7 @@ app.get(
 app.get(
 	'/api/uutiset/urheilu',
 	parseData(sportNews),
+	filterByCategory('urheilu'),
 	paginateResults(),
 	(req, res) => {
 		res.send(res.paginatedResults);
@@ -163,6 +170,7 @@ app.get(
 app.get(
 	'/api/uutiset/viihde',
 	parseData(entertainmentNews),
+	filterByCategory('viihde'),
 	paginateResults(),
 	(req, res) => {
 		res.send(res.paginatedResults);
@@ -172,6 +180,7 @@ app.get(
 app.get(
 	'/api/uutiset/tekniikka',
 	parseData(techNews),
+	filterByCategory('tekniikka'),
 	paginateResults(),
 	(req, res) => {
 		res.send(res.paginatedResults);

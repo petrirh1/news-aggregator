@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header, Feed, Footer } from '../../components';
 import { fetchData } from '../../api';
 import { updateDocTitle, updatePath } from '../../helpers/string';
+import { limit, defaultPage } from '../../settings/fetchData/fetch';
 import PropTypes from 'prop-types';
 
 import styles from './Home.module.css';
@@ -16,8 +17,6 @@ const Home = props => {
 	const [url, setUrl] = useState(pathname);
 	const [news, setNews] = useState({ data: [] });
 	const [hasMore, setHasMore] = useState(true);
-	const defaultPage = 1;
-	const limit = 25;
 
 	useEffect(() => {
 		setUrl(updatePath(pathname, history));
@@ -25,9 +24,9 @@ const Home = props => {
 		setNews([]);
 		fetchDataByCategory();
 		setHasError(false);
-
-		console.log(pathname);
 		document.title = updateDocTitle(title, pathname);
+
+		// eslint-disable-next-line
 	}, [pathname]);
 
 	const fetchDataByCategory = async () => {
@@ -36,12 +35,18 @@ const Home = props => {
 		try {
 			const data = await fetchData(pathname, defaultPage, limit);
 
-			if (!data.next) {
-				setHasMore(false);
-			}
+			if (!data.next) setHasMore(false);
+			if (data.results.length < 1) throw new Error('Data fetch has failed.');
 
-			setNews({ data: data.results, nextPage: data.next.page });
+			// incase the request is cancelled
+			if (data.message) return;
+
+			setNews({
+				data: data.results,
+				nextPage: data.next ? data.next.page : null
+			});
 		} catch (err) {
+			console.log(err);
 			setHasMore(false);
 			setHasError(true);
 		} finally {

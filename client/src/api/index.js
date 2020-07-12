@@ -15,8 +15,21 @@ export const fetchData = async (url, page = 1, limit) => {
 			{ cancelToken: cancelToken.token }
 		);
 
+		console.log(data);
+
 		return data;
 	} catch (error) {
 		return error;
 	}
 };
+
+export const fetchSources = async () => {
+	try {
+		const { data } = await axios.get('/api/lahteet');
+		return data.sources;
+	} catch (error) {
+		return error;
+	}
+};
+
+fetchSources();

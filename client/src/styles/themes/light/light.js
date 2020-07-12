@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { blueGrey } from '@material-ui/core/colors';
+import { blueGrey, grey } from '@material-ui/core/colors';
 import { overrides } from '../../overrides';
 
 const lightTheme = createMuiTheme({
@@ -22,12 +22,6 @@ const lightTheme = createMuiTheme({
 	},
 	overrides: {
 		...overrides,
-		// MuiCard: {
-		// 	root: {
-		// 		boxShadow:
-		// 			'0px 20px 60px 1px rgba(0, 0, 0, 0.05) ,0px 7px 20px -18px rgba(0, 0, 0, 0.85), 0px 1px 5px -3px rgba(0, 0, 0, 0.3)'
-		// 	}
-		// },
 		MuiCardContent: {
 			root: {
 				background: '#fff'
@@ -35,7 +29,7 @@ const lightTheme = createMuiTheme({
 		},
 		MuiButtonBase: {
 			root: {
-				color: blueGrey[900] //card hover
+				color: grey[600] //card hover
 			}
 		},
 		MuiTouchRipple: {
@@ -59,6 +53,14 @@ const lightTheme = createMuiTheme({
 		MuiSwitch: {
 			track: {
 				backgroundColor: blueGrey[800]
+			}
+		},
+		MuiLink: {
+			root: {
+				'&:hover': {
+					color: '#263238',
+					textShadow: '0 0 .5px #263238, 0 0 .5px #263238'
+				}
 			}
 		}
 	}

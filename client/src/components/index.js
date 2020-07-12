@@ -3,6 +3,7 @@ export { default as Header } from './Header/Header';
 export { default as Logo } from './Logo/Logo';
 export { default as CategoryTabs } from './CategoryTabs/CategoryTabs';
 export { default as Menu } from './Menu/Menu';
+export { default as AnimatedModal } from './AnimatedModal/AnimatedModal';
 export { default as Feed } from './Feed/Feed';
 export { default as FeedItem } from './FeedItem/FeedItem';
 export { default as Error } from './States/Error/Error';

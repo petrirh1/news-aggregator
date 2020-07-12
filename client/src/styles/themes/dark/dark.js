@@ -1,6 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { blueGrey } from '@material-ui/core/colors';
 import { overrides } from '../../overrides';
+const darkBackgroundColor = '#131314';
 
 const darkTheme = createMuiTheme({
 	palette: {
@@ -11,8 +12,8 @@ const darkTheme = createMuiTheme({
 			main: blueGrey[300] //menu icon
 		},
 		background: {
-			default: '#151617',
-			paper: '#292A2B' // menu bg
+			default: darkBackgroundColor,
+			paper: '#222426' // menu bg
 		},
 		text: {
 			primary: '#F2F5F6',
@@ -22,11 +23,6 @@ const darkTheme = createMuiTheme({
 	},
 	overrides: {
 		...overrides,
-		MuiCardContent: {
-			root: {
-				background: 'rgba(150, 150, 160, 0.087)'
-			}
-		},
 		MuiButtonBase: {
 			root: {
 				color: blueGrey[50] //card hover
@@ -47,7 +43,14 @@ const darkTheme = createMuiTheme({
 		},
 		MuiAppBar: {
 			colorDefault: {
-				backgroundColor: '#151617'
+				backgroundColor: darkBackgroundColor
+			}
+		},
+		MuiLink: {
+			root: {
+				'&:hover': {
+					color: blueGrey[50]
+				}
 			}
 		}
 	}

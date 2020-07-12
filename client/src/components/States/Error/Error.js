@@ -19,10 +19,10 @@ const Error = () => {
 				</Typography>
 				<Button
 					onClick={handlePageRefresh}
-					variant='outlined'
+					variant='contained'
 					color='secondary'
 					className={styles.button}>
-					Yritä uudelleen
+					Päivitä sivu
 				</Button>
 			</div>
 		</div>

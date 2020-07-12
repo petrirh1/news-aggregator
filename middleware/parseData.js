@@ -5,7 +5,7 @@ const notOlderThan = require('../helpers/notOlderThan');
 const removeDuplicates = require('../helpers/removeDuplicates');
 const sources = require('../sources/feeds/feedSources');
 
-const parseCategory = require('../helpers/parseCategory');
+const getCategory = require('../helpers/getCategory');
 
 const parseData = arr => {
 	return (req, res, next) => {
@@ -13,10 +13,23 @@ const parseData = arr => {
 			.map(i => {
 				return {
 					title: parseTitle(i.title),
-					date: i.date,
+					date: i.pubDate ? i.pubDate : i.meta.pubDate,
 					link: i.link,
-					image: i.enclosures[0] ? parseImageUrl(i.enclosures[0]) : i.image.url,
-					categories: parseCategory(i.categories),
+					guid: i.guid,
+					image: parseImageUrl(
+						i.image.length
+							? i.image
+							: i.enclosures[0]
+							? i.enclosures[0]
+							: i['rss:image']
+							? i['rss:image']['#']
+							: i['media:content']
+							? i['media:content']
+							: i['media:thumbnail']
+							? i['media:thumbnail']['@'].url
+							: i.description
+					),
+					categories: getCategory(i.categories),
 					source: getSource(
 						[
 							i.meta.title,
@@ -30,6 +43,7 @@ const parseData = arr => {
 			.sort((a, b) => b.date - a.date);
 
 		const uniqueResults = removeDuplicates(results, 'title');
+		console.log(results.length, ' => ', uniqueResults.length);
 
 		res.parsedData = uniqueResults;
 

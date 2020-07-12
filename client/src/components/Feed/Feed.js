@@ -1,20 +1,14 @@
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { CircularProgress, Backdrop } from '@material-ui/core';
-import Masonry from 'react-masonry-css';
+import ErrorState from '../States/Error/Error';
+import FeedItem from '../FeedItem/FeedItem';
 
 import PropTypes from 'prop-types';
 
-import ErrorState from '../States/Error/Error';
-import FeedItem from '../FeedItem/FeedItem';
+import { breakpoints } from '../../settings/masonryGrid/breakpoints';
+import Masonry from 'react-masonry-css';
 import styles from './Feeds.module.css';
-
-const breakpoints = {
-	default: 3,
-	1090: 3,
-	760: 2,
-	560: 1
-};
 
 const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 	return (

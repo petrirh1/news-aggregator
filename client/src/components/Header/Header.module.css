@@ -8,6 +8,10 @@
 	src: url('../../assets/fonts/Museo300-Regular.woff2') format('woff2');
 }
 
+.appbar {
+	padding: 0 10px 0 10px;
+}
+
 .toolbar {
 	display: flex;
 	position: relative;

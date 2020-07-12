@@ -19,6 +19,7 @@
 		"express": "^4.17.1",
 		"get-website-favicon": "0.0.7",
 		"nodemon": "^2.0.4",
+		"probe-image-size": "^5.0.0",
 		"rss-feed-emitter": "^3.1.2"
 	}
 }

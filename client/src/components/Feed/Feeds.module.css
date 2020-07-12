@@ -2,11 +2,11 @@
 	display: flex;
 	width: auto;
 	min-height: 100vh;
-	padding: 20px 15px 15px 15px;
+	padding: 15px 20px 15px 20px;
 }
 
 .masonryGridColumn {
-	padding-left: 30px;
+	padding-left: 25px;
 	background-clip: padding-box;
 }
 
@@ -28,6 +28,6 @@
 	}
 
 	.masonryGrid {
-		padding: 10px;
+		padding: 10px 25px 10px 25px;
 	}
 }

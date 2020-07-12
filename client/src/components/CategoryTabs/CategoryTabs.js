@@ -13,8 +13,9 @@ export const categories = [
 ];
 
 const CategoryTabs = props => {
-	const matches = useMediaQuery('(max-width: 700px)');
-	const variant = matches ? 'scrollable' : 'standard';
+	const notHoverable = useMediaQuery('(hover: none)');
+	const matches = useMediaQuery('(min-width: 975px)');
+
 	const { history, match } = props;
 	const { params } = match;
 	const { page } = params;
@@ -24,7 +25,8 @@ const CategoryTabs = props => {
 	}, [page]);
 
 	const findIndexOf = page => {
-		return categories.indexOf(page);
+		const index = categories.indexOf(page);
+		return index < 0 ? 0 : index;
 	};
 
 	const [selectedTab, setSelectedTab] = useState(findIndexOf(page));
@@ -38,13 +40,13 @@ const CategoryTabs = props => {
 	return (
 		<AppBar position='static' elevation={0} color='default'>
 			<Tabs
-				centered={!matches}
+				centered={matches}
 				value={selectedTab}
 				onChange={handleChange}
 				indicatorColor='primary'
 				textColor='primary'
-				variant={variant}
-				scrollButtons='auto'
+				variant={matches ? 'standard' : 'scrollable'}
+				scrollButtons={!matches && notHoverable ? 'off' : 'on'}
 				aria-label='categories'>
 				{categories.map((label, i) => (
 					<Tab key={i} label={label} style={{ minWidth: 100 }} />

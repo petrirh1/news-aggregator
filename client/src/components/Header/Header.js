@@ -20,7 +20,11 @@ const HideOnScroll = props => {
 const Header = props => {
 	return (
 		<HideOnScroll {...props}>
-			<AppBar position='sticky' elevation={0} color='default'>
+			<AppBar
+				position='sticky'
+				elevation={0}
+				color='default'
+				className={styles.appbar}>
 				<Toolbar className={styles.toolbar}>
 					<div className={styles.wrapper}>
 						<Logo width={21} variant={'h5'} mr={'12px'} />
