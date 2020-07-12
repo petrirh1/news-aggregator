@@ -112,13 +112,7 @@ app.get('/favicon', getFavicon, (req, res) => {
 });
 
 app.get('/api/lahteet', (req, res) => {
-	const newsSources = sources
-		.map(source => {
-			return { long: source.long, url: source.url };
-		})
-		.sort((a, b) => (a.long > b.long ? 1 : -1));
-
-	res.send({ sources: newsSources, count: newsSources.length });
+	res.send(sources.sort((a, b) => (a.long > b.long ? 1 : -1)));
 });
 
 app.get(

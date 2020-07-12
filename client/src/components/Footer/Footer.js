@@ -1,5 +1,5 @@
 import React from 'react';
-import AnimatedModal from '../AnimatedModal/AnimatedModal';
+// import AnimatedModal from '../AnimatedModal/AnimatedModal';
 import { Typography, Divider } from '@material-ui/core';
 
 import styles from './Footer.module.css';
@@ -14,7 +14,7 @@ const Footer = () => {
 				<Typography
 					color='primary'
 					variant='subtitle2'>{`©${year} Uutisankka`}</Typography>
-				<AnimatedModal />
+				{/* <AnimatedModal /> */}
 			</div>
 		</div>
 	);

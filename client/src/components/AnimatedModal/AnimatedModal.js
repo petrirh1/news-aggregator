@@ -42,11 +42,7 @@ const AnimatedModal = () => {
 				Lähteet
 			</Button>
 			<Dialog maxWidth='md' open={open} onClose={handleClose}>
-				<DialogTitle className={styles.dialogTitle}>
-					{'Lähteet'}
-					<span
-						className={styles.sourcesCount}>{`(${sources.length} kpl)`}</span>
-				</DialogTitle>
+				<DialogTitle className={styles.dialogTitle}>{'Lähteet'}</DialogTitle>
 				<DialogContent>
 					<DialogContentText className={styles.dialogContentText}>
 						{sources &&
