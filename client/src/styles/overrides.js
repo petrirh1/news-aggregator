@@ -64,11 +64,5 @@ export const overrides = {
 		root: {
 			transition: 'none'
 		}
-	},
-	MuiTooltip: {
-		tooltip: {
-			fontSize: '0.75rem',
-			backgroundColor: '#53595E'
-		}
 	}
 };

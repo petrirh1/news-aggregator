@@ -29,6 +29,7 @@ const parseData = arr => {
 							? i['media:thumbnail']['@'].url
 							: i.description
 					),
+					// categories: i.categories,
 					categories: getCategory(i.categories),
 					source: getSource(
 						[

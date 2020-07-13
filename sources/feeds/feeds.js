@@ -38,7 +38,9 @@ const technologyEN = [
 	'https://appleinsider.com/rss/news',
 	'https://www.imore.com/rss.xml',
 	'https://www.motortrend.com/feed/',
-	'https://www.autocar.co.uk/rss'
+	'https://www.autocar.co.uk/rss',
+	'https://www.engadget.com/rss.xml',
+	'https://www.digitaltrends.com/feed/'
 ];
 
 const recent = [

@@ -36,10 +36,10 @@ const Home = props => {
 			const data = await fetchData(pathname, defaultPage, limit);
 
 			if (!data.next) setHasMore(false);
-			if (data.results.length < 1) throw new Error('Data fetch has failed.');
 
-			// incase the request is cancelled
+			// request has been cancelled
 			if (data.message) return;
+			if (data.results.length < 1) throw new Error('Data fetch failed.');
 
 			setNews({
 				data: data.results,

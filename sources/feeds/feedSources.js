@@ -152,6 +152,18 @@ const sources = [
 		favicon: 'https://www.sammobile.com/logo-highres.png'
 	},
 	{
+		long: 'Digital Trends',
+		url: 'https://www.digitaltrends.com/',
+		favicon:
+			'https://www.digitaltrends.com/wp-content/themes/digitaltrends-2018/assets/images/favicons/apple-touch-icon.png'
+	},
+	{
+		long: 'Engadget',
+		url: 'https://www.wired.com/',
+		favicon:
+			'https://s.blogsmithmedia.com/www.engadget.com/assets-hc2382a6dcaa087f1ba75e975c839c33c/images/favicon-160x160.png?h=1638b0a8bbe7effa8f85c3ecabb63620'
+	},
+	{
 		long: '9To5Mac',
 		url: 'https://9to5mac.com/',
 		favicon:

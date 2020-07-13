@@ -184,6 +184,7 @@ app.get(
 app.get(
 	'/api/uutiset/tekniikkaen',
 	parseData(techNewsEN),
+	filterByCategory('tekniikka'),
 	paginateResults(),
 	(req, res) => {
 		res.send(res.paginatedResults);
