@@ -1,7 +1,7 @@
 {
 	"name": "news-aggregator",
 	"version": "1.0.0",
-	"description": "News aggregator for minimalists",
+	"description": "News aggregator",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
@@ -11,7 +11,7 @@
 		"heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
 	},
 	"keywords": [],
-	"author": "prh",
+	"author": "petrirh1",
 	"license": "ISC",
 	"dependencies": {
 		"compression": "^1.7.4",
