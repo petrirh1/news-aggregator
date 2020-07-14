@@ -209,7 +209,11 @@ const sources = [
 		favicon:
 			'https://www.autocar.co.uk/sites/autocar.co.uk/themes/custom/autocar/favicon.ico'
 	},
-
+	{
+		long: 'Carscoops',
+		url: 'https://www.carscoops.com/',
+		favicon: '/assets/carscoops-favicon-192x192.png'
+	},
 	{
 		long: 'Yle',
 		url: 'https://yle.fi/',

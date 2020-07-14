@@ -32,4 +32,4 @@ export const fetchSources = async () => {
 	}
 };
 
-fetchSources();
+// fetchSources();

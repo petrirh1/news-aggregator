@@ -40,7 +40,10 @@ const technologyEN = [
 	'https://www.motortrend.com/feed/',
 	'https://www.autocar.co.uk/rss',
 	'https://www.engadget.com/rss.xml',
-	'https://www.digitaltrends.com/feed/'
+	'https://www.digitaltrends.com/feed/',
+	'https://www.carscoops.com/tag/new-cars/feed/',
+	'https://www.carscoops.com/tag/scoops/',
+	'https://www.carscoops.com/tag/future-cars/'
 ];
 
 const recent = [

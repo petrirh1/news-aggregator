@@ -12,17 +12,17 @@ const Error = () => {
 		<div className={styles.root}>
 			<div className={styles.wrapper}>
 				<Typography variant='h4' className={styles.title}>
-					Voi pahus!
+					Jotain meni vikaan!
 				</Typography>
 				<Typography variant='subtitle2' color='secondary'>
-					jotain meni pieleen..
+					Kyseessä on tilapäinen virhe, yritä kohta uudelleen.
 				</Typography>
 				<Button
 					onClick={handlePageRefresh}
 					variant='outlined'
 					color='secondary'
 					className={styles.button}>
-					Päivitä sivu
+					Päivitä Sivu
 				</Button>
 			</div>
 		</div>
