@@ -1,5 +1,10 @@
 const parseTitle = title => {
-	return title.split('|').pop();
+	if (typeof title !== 'string') return '';
+
+	return title
+		.split('|')
+		.pop()
+		.trim();
 };
 
 module.exports = parseTitle;

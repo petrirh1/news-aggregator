@@ -1,5 +1,6 @@
 const getFavicons = require('get-website-favicon');
 
+// used in development only!
 const getFavicon = async (req, res, next) => {
 	const url = req.query.url;
 	const result = await getFavicons(url).then(data => {

@@ -1,8 +1,8 @@
 const parseImageUrl = src => {
-	if (src == null) return;
+	if (src == null) return '';
 
 	if (src.url) {
-		if (src.type && !src.type.includes('image')) return;
+		if (src.type && !src.type.includes('image')) return '';
 
 		// mostly for YLE's stamp sized images which are resizable by altering the url
 		return src.url
@@ -12,14 +12,16 @@ const parseImageUrl = src => {
 			.replace('http:', 'https:');
 	}
 
-	if (src['media:content']) return src['media:content']['@'].url;
+	// if (src['media:content']) return src['media:content']['@'].url;
 	if (src.includes('http:') || src.includes('https:')) {
 		const matches = src
 			.replace('http:', 'https:')
 			.match(/\b(https?:\/\/\S+(?:png|jpe?g|gif)\s*)\b/i);
 
-		return matches ? matches[0] : null;
+		return matches ? matches[0] : '';
 	}
+
+	return '';
 };
 
 module.exports = parseImageUrl;

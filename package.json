@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
+		"test": "jest --coverage",
 		"server": "nodemon index.js",
 		"client": "npm start --prefix client",
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -19,7 +20,9 @@
 		"express": "^4.17.1",
 		"get-website-favicon": "0.0.7",
 		"nodemon": "^2.0.4",
-		"probe-image-size": "^5.0.0",
 		"rss-feed-emitter": "^3.1.2"
+	},
+	"devDependencies": {
+		"jest": "^24.9.0"
 	}
 }

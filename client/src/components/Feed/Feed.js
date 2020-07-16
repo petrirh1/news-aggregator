@@ -14,6 +14,7 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 	return (
 		<InfiniteScroll
 			dataLength={data.length}
+			scrollThreshold={0.65}
 			next={fetchMore}
 			hasMore={hasMore}
 			loader={

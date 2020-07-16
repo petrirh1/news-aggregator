@@ -43,7 +43,8 @@ const technologyEN = [
 	'https://www.digitaltrends.com/feed/',
 	'https://www.carscoops.com/tag/new-cars/feed/',
 	'https://www.carscoops.com/tag/scoops/',
-	'https://www.carscoops.com/tag/future-cars/'
+	'https://www.carscoops.com/tag/future-cars/',
+	'https://www.vice.com/en_us/rss'
 ];
 
 const recent = [
@@ -75,8 +76,9 @@ const recent = [
 	'https://www.tivi.fi/api/feed/v2/rss/tv',
 	'https://www.ts.fi/rss.xml',
 	'https://www.uusisuomi.fi/api/feed/v2/rss/us',
-	'http://rss.hardware.fi/uutiset',
-	'https://www.tekniikkatalous.fi/api/feed/v2/rss/tt'
+	'https://www.tekniikkatalous.fi/api/feed/v2/rss/tt',
+	'https://www.epari.fi/cmlink/epari-paikalliset-1.5242274',
+	'https://www.maaseuduntulevaisuus.fi/feed/maaseudun-tulevaisuus-newest-rss-feed-7.136983'
 ];
 
 const home = [

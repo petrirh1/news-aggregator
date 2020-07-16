@@ -1,5 +1,3 @@
-const removeDuplicates = require('../helpers/removeDuplicates');
-
 const filterByCategory = category => {
 	return (req, res, next) => {
 		const { parsedData } = res;

@@ -141,6 +141,12 @@ const sources = [
 			'https://cdn.vox-cdn.com/uploads/chorus_asset/file/7395351/android-chrome-192x192.0.png'
 	},
 	{
+		long: 'Vice',
+		url: 'https://www.vice.com/',
+		favicon:
+			'https://vice-web-statics-cdn.vice.com/favicons/vice/android-chrome-192x192.png'
+	},
+	{
 		long: 'Android Authority',
 		url: 'https://www.androidauthority.com/',
 		favicon:

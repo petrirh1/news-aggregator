@@ -17,7 +17,7 @@ const parseData = arr => {
 					link: i.link,
 					guid: i.guid,
 					image: parseImageUrl(
-						i.image.length
+						i.image && i.image.length
 							? i.image
 							: i.enclosures[0]
 							? i.enclosures[0]
@@ -43,8 +43,8 @@ const parseData = arr => {
 			.filter(obj => notOlderThan(obj.date))
 			.sort((a, b) => b.date - a.date);
 
-		const uniqueResults = removeDuplicates(results, 'title');
-		console.log(results.length, ' => ', uniqueResults.length);
+		const uniqueResults = removeDuplicates(results, 'link');
+		// console.log(results.length, ' => ', uniqueResults.length);
 
 		res.parsedData = uniqueResults;
 
