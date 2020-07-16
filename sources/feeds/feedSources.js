@@ -141,6 +141,17 @@ const sources = [
 			'https://cdn.vox-cdn.com/uploads/chorus_asset/file/7395351/android-chrome-192x192.0.png'
 	},
 	{
+		long: 'Android Police',
+		url: 'https://www.androidpolice.com/',
+		favicon: '/assets/androidpolice-favicon-192x192.png'
+	},
+	{
+		long: 'The Next Web',
+		url: 'https://thenextweb.com/',
+		favicon:
+			'https://cdn0.tnwcdn.com/wp-content/themes/cyberdelia/assets/icons/android-chrome-192x192.png?v=1594649130'
+	},
+	{
 		long: 'Vice',
 		url: 'https://www.vice.com/',
 		favicon:
@@ -370,7 +381,6 @@ const sources = [
 		url: 'https://www.nhlsuomi.com/',
 		favicon: '/assets/nhlsuomi-favicon-192x192.png'
 	},
-
 	{
 		long: 'Valioliiga',
 		url: 'https://www.valioliiga.com/',

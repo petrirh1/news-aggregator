@@ -26,10 +26,10 @@ export const fetchData = async (url, page = 1, limit) => {
 export const fetchSources = async () => {
 	try {
 		const { data } = await axios.get('/api/lahteet');
-		return data.sources;
+		return data;
 	} catch (error) {
 		return error;
 	}
 };
 
-// fetchSources();
+fetchSources();

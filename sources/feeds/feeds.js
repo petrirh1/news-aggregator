@@ -44,7 +44,9 @@ const technologyEN = [
 	'https://www.carscoops.com/tag/new-cars/feed/',
 	'https://www.carscoops.com/tag/scoops/',
 	'https://www.carscoops.com/tag/future-cars/',
-	'https://www.vice.com/en_us/rss'
+	'https://www.vice.com/en_us/rss',
+	'https://feeds2.feedburner.com/thenextweb',
+	'https://www.androidpolice.com/feed/'
 ];
 
 const recent = [

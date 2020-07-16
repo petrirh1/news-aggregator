@@ -58,8 +58,7 @@ const lightTheme = createMuiTheme({
 		MuiLink: {
 			root: {
 				'&:hover': {
-					color: '#263238',
-					textShadow: '0 0 .5px #263238, 0 0 .5px #263238'
+					color: '#000'
 				}
 			}
 		}

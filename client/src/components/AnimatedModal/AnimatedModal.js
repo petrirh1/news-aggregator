@@ -37,19 +37,21 @@ const AnimatedModal = () => {
 			<Button
 				onClick={handleOpen}
 				className={styles.sourcesBtn}
-				// hide button incase of error
 				style={{ display: sources ? 'inline' : 'none' }}>
 				Lähteet
 			</Button>
 			<Dialog maxWidth='md' open={open} onClose={handleClose}>
-				<DialogTitle className={styles.dialogTitle}>{'Lähteet'}</DialogTitle>
+				<DialogTitle
+					className={
+						styles.dialogTitle
+					}>{`Lähteet (${sources.length} kpl)`}</DialogTitle>
 				<DialogContent>
 					<DialogContentText className={styles.dialogContentText}>
 						{sources &&
 							sources.map((item, i) => (
 								<li key={i} className={styles.listItem}>
 									<Link
-										underline='none'
+										underline='hover'
 										target='_blank'
 										rel='noopener'
 										color='secondary'
