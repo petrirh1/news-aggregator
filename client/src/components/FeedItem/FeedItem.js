@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactTimeAgo from 'react-time-ago';
 import JavascriptTimeAgo from 'javascript-time-ago';
 import fi from 'javascript-time-ago/locale/fi';
 import { timeStyle } from '../../settings/time/timeStyle';
 import { firstLetter } from '../../helpers/string';
 import PropTypes from 'prop-types';
-// import ImageIcon from '@material-ui/icons/Image';
 
 import {
 	Card,
@@ -21,6 +20,7 @@ import styles from './FeedItem.module.css';
 JavascriptTimeAgo.addLocale(fi);
 
 const FeedItem = ({ data }) => {
+	const [hasLoaded, setHasLoaded] = useState(false);
 	const { image, source, title, date } = data;
 	const { long, favicon } = source;
 	const MIN_IMG_WIDTH = 350;
@@ -38,6 +38,7 @@ const FeedItem = ({ data }) => {
 			target.style.height = 'auto';
 			target.style.borderRadius = '3px';
 		}
+		setHasLoaded(true);
 	};
 
 	return (
@@ -49,13 +50,18 @@ const FeedItem = ({ data }) => {
 				<CardActionArea disableRipple>
 					{image && (
 						<Fade timeout={800} in={true}>
-							<CardMedia component='div' className={styles.media} title={long}>
-								<img
-									onLoad={handleImageLoad}
-									onError={handleImageError}
-									alt='Uutiskuva'
-									src={image}></img>
-								{/* <ImageIcon color='secondary' className={styles.placeholder} /> */}
+							<CardMedia
+								style={{ display: 'none' }}
+								component='div'
+								className={styles.media}
+								title={long}>
+								<Fade timeout={500} in={hasLoaded}>
+									<img
+										onLoad={handleImageLoad}
+										onError={handleImageError}
+										alt='Uutiskuva'
+										src={image}></img>
+								</Fade>
 							</CardMedia>
 						</Fade>
 					)}
