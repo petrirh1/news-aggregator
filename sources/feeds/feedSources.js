@@ -152,6 +152,17 @@ const sources = [
 			'https://cdn0.tnwcdn.com/wp-content/themes/cyberdelia/assets/icons/android-chrome-192x192.png?v=1594649130'
 	},
 	{
+		long: 'TechCrunch',
+		url: 'https://techcrunch.com/',
+		favicon: '/assets/techcrunch-favicon-192x192.png'
+	},
+	{
+		long: 'Ars Technica',
+		url: 'https://arstechnica.com/',
+		favicon:
+			'https://cdn.arstechnica.net/wp-content/themes/ars/assets/img/material-ars-db41652381.png'
+	},
+	{
 		long: 'Vice',
 		url: 'https://www.vice.com/',
 		favicon:
