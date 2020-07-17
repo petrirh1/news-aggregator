@@ -55,6 +55,11 @@ export const overrides = {
 			borderRadius: '2px'
 		}
 	},
+	MuiTabs: {
+		root: {
+			marginBottom: 3
+		}
+	},
 	MuiTypography: {
 		h4: {
 			fontSize: '28px'

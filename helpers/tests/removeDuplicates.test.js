@@ -9,7 +9,7 @@ describe('remove duplicates by prop', () => {
 			},
 			{
 				title: 'Lorem ipsum dolor sit amet',
-				guid: '0987654321'
+				guid: '12345678901'
 			}
 		];
 

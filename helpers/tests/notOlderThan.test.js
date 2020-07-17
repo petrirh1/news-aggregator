@@ -13,5 +13,8 @@ describe('filter dates older than', () => {
 		const date3 = new Date('2020-07-05T18:05:00.000Z');
 
 		expect(notOlderThan(date3)).toBe(false);
+		expect(notOlderThan(null)).toBe(false);
+		expect(notOlderThan({})).toBe(false);
+		expect(notOlderThan([])).toBe(false);
 	});
 });

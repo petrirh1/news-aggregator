@@ -48,7 +48,8 @@ const technologyEN = [
 	'https://feeds2.feedburner.com/thenextweb',
 	'https://www.androidpolice.com/feed/',
 	'https://techcrunch.com/feed/',
-	'https://arstechnica.com/feed/'
+	'https://arstechnica.com/feed/',
+	'https://www.newsledge.com/feed/'
 ];
 
 const recent = [
@@ -81,8 +82,8 @@ const recent = [
 	'https://www.ts.fi/rss.xml',
 	'https://www.uusisuomi.fi/api/feed/v2/rss/us',
 	'https://www.tekniikkatalous.fi/api/feed/v2/rss/tt',
-	'https://www.epari.fi/cmlink/epari-paikalliset-1.5242274',
-	'https://www.maaseuduntulevaisuus.fi/feed/maaseudun-tulevaisuus-newest-rss-feed-7.136983'
+	'https://www.maaseuduntulevaisuus.fi/feed/maaseudun-tulevaisuus-newest-rss-feed-7.136983',
+	'https://esaimaa.fi/api/articles.rss'
 ];
 
 const home = [
@@ -93,8 +94,7 @@ const home = [
 	'https://www.kaleva.fi/feedit/rss/managed-listing/kotimaa',
 	'https://www.maaseuduntulevaisuus.fi/feed/kotimaa-rss-feed-7.140403',
 	'https://www.mtvuutiset.fi/api/feed/rss/uutiset_kotimaa',
-	'https://www.keskipohjanmaa.fi/uutiset/aihetunnisteet/Kotimaa/feed',
-	'https://www.epari.fi/cmlink/epari-paikalliset-1.5242274'
+	'https://www.keskipohjanmaa.fi/uutiset/aihetunnisteet/Kotimaa/feed'
 ];
 
 const abroad = [

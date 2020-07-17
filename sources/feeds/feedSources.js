@@ -63,6 +63,16 @@ const sources = [
 		favicon: '/assets/kaleva-favicon-192x192.png'
 	},
 	{
+		long: 'Etelä-Saimaa',
+		url: 'https://esaimaa.fi/',
+		favicon: '/assets/esaimaa-favicon-192x192.png'
+	},
+	{
+		long: 'Itä-Häme',
+		url: 'https://www.itahame.fi/',
+		favicon: '/assets/itahame-favicon-192x192.png'
+	},
+	{
 		long: 'Tekniikan Maailma',
 		url: 'https://tekniikanmaailma.fi/',
 		favicon: 'https://tekniikanmaailma.fi/assets/logos/favicon.ico'
@@ -167,6 +177,12 @@ const sources = [
 		url: 'https://www.vice.com/',
 		favicon:
 			'https://vice-web-statics-cdn.vice.com/favicons/vice/android-chrome-192x192.png'
+	},
+	{
+		long: 'News Ledge',
+		url: 'https://www.newsledge.com/',
+		favicon:
+			'https://cdn.newsledge.com/wp-content/uploads/2019/10/cropped-news-ledge-fav.jpg'
 	},
 	{
 		long: 'Android Authority',

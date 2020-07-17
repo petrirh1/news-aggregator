@@ -44,7 +44,7 @@ const parseData = arr => {
 			.sort((a, b) => b.date - a.date);
 
 		const uniqueResults = removeDuplicates(results, 'link');
-		// console.log(results.length, ' => ', uniqueResults.length);
+		console.log(results.length, ' => ', uniqueResults.length);
 
 		res.parsedData = uniqueResults;
 
