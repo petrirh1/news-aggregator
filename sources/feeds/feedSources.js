@@ -203,7 +203,7 @@ const sources = [
 	},
 	{
 		long: 'Engadget',
-		url: 'https://www.wired.com/',
+		url: 'https://www.engadget.com/',
 		favicon:
 			'https://s.blogsmithmedia.com/www.engadget.com/assets-hc2382a6dcaa087f1ba75e975c839c33c/images/favicon-160x160.png?h=1638b0a8bbe7effa8f85c3ecabb63620'
 	},
@@ -226,7 +226,7 @@ const sources = [
 			'https://electrek.co/wp-content/themes/9to5-2015/images/favicons/electrek/icon-192x192.png'
 	},
 	{
-		long: 'Appleinsider',
+		long: 'AppleInsider',
 		url: 'https://appleinsider.com/',
 		favicon:
 			'https://photos5.appleinsider.com/v9/images/apple-touch-icon-144.png'

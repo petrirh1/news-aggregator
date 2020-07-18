@@ -1,8 +1,7 @@
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { CircularProgress, Backdrop } from '@material-ui/core';
-import ErrorState from '../States/Error/Error';
-import FeedItem from '../FeedItem/FeedItem';
+import { FeedItem, Error } from '../../components';
 
 import PropTypes from 'prop-types';
 
@@ -27,7 +26,7 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 				<CircularProgress color='primary' size={26} thickness={4} />
 			</Backdrop>
 			{hasError ? (
-				<ErrorState />
+				<Error />
 			) : (
 				<Masonry
 					breakpointCols={breakpoints}

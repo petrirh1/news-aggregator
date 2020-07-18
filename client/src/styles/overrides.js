@@ -26,10 +26,11 @@ export const overrides = {
 	},
 	MuiDialogContent: {
 		root: {
-			height: '500px',
-			maxHeight: '40vh',
+			height: '42vh',
+			maxHeight: '42vh',
 			width: '400px',
-			maxWidth: '75vw'
+			maxWidth: '75vw',
+			overflow: 'hidden'
 		}
 	},
 	MuiDialog: {
