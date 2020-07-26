@@ -238,11 +238,6 @@ const sources = [
 			'https://www.imore.com/sites/imore.com/files/images/icons/apple-touch-114x114.png'
 	},
 	{
-		long: 'phoneArena',
-		url: 'https://www.phonearena.com/',
-		favicon: '/assets/phonearena-favicon-192x192.png'
-	},
-	{
 		long: 'Motortrend',
 		url: 'https://www.motortrendondemand.com/',
 		favicon: '/assets/motortrend-favicon-192x192.png'

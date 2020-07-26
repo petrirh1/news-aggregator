@@ -1,9 +1,7 @@
 const technology = [
 	'https://api.mtvuutiset.fi/mtvuutiset/api/feed/rss/lifestyle_autot',
-	'https://api.mtvuutiset.fi/mtvuutiset/api/feed/rss/lifestyle_digi',
-	'https://api.mtvuutiset.fi/mtvuutiset/api/feed/rss/lifestyle_tekniikka',
 	'https://autobild.fi/rss',
-	'https://autotoday.fi/feed/',
+	'https://autotoday.fi/osasto/automerkit/feed/',
 	'https://feeds.kauppalehti.fi/rss/topic/auto',
 	'https://feeds.kauppalehti.fi/rss/topic/elektroniikka',
 	'https://mobiili.fi/feed/',
@@ -13,7 +11,6 @@ const technology = [
 	'https://suomimobiili.fi/feed/',
 	'https://teknavi.fi/rss',
 	'https://vanha.tekniikanmaailma.fi/feed/',
-	'https://www.hs.fi/rss/autotiede.xml',
 	'https://www.iltalehti.fi/rss/autot.xml',
 	'https://www.iltalehti.fi/rss/digi.xml',
 	'https://www.io-tech.fi/feed/',
@@ -22,15 +19,13 @@ const technology = [
 	'https://www.mikrobitti.fi/api/feed/v2/rss/mb',
 	'https://www.motouutiset.fi/fi/static/rss/',
 	'https://www.uusiteknologia.fi/feed/',
-	'https://avplus.fi/feed/',
-	'https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-12'
+	'https://avplus.fi/feed/'
 ];
 
 const technologyEN = [
 	'https://www.theverge.com/tech/rss/index.xml',
 	'https://www.theverge.com/reviews/rss/index.xml',
 	'https://www.androidauthority.com/feed/',
-	'https://www.phonearena.com/feed/news',
 	'https://www.sammobile.com/feed/',
 	'https://9to5mac.com/feed/',
 	'https://9to5google.com/feed/',
@@ -47,7 +42,7 @@ const technologyEN = [
 	'https://www.vice.com/en_us/rss',
 	'https://feeds2.feedburner.com/thenextweb',
 	'https://www.androidpolice.com/feed/',
-	'https://techcrunch.com/feed/',
+	'http://feeds.feedburner.com/TechCrunch/',
 	'https://arstechnica.com/feed/',
 	'https://www.newsledge.com/feed/'
 ];

@@ -12,7 +12,7 @@ const parseImageUrl = src => {
 			.replace('http:', 'https:');
 	}
 
-	// if (src['media:content']) return src['media:content']['@'].url;
+	if (src['media:content']) return src['media:content']['@'].url;
 	if (src.includes('http:') || src.includes('https:')) {
 		const matches = src
 			.replace('http:', 'https:')

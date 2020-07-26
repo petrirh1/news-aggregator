@@ -41,9 +41,10 @@ const parseData = arr => {
 				};
 			})
 			.filter(obj => notOlderThan(obj.date))
+			.filter(obj => obj.title !== '')
 			.sort((a, b) => b.date - a.date);
 
-		const uniqueResults = removeDuplicates(results, 'guid');
+		const uniqueResults = removeDuplicates(results, 'title');
 		console.log(results.length, ' => ', uniqueResults.length);
 
 		res.parsedData = uniqueResults;

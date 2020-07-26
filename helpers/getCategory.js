@@ -3,7 +3,7 @@ const categories = [tech, entertainment, sport];
 const keywords = ['tekniikka', 'viihde', 'urheilu'];
 
 const getCategory = arr => {
-	if (!Array.isArray(arr)) return [];
+	if (!Array.isArray(arr)) return;
 
 	const result = categories.map((category, i) => {
 		if (findCommonElements(arr, category)) {

@@ -58,7 +58,7 @@ const SimpleMenu = ({ isDark, handleThemeChange }) => {
 									color='secondary'
 									checked={checked}
 									onChange={handleChange}
-									name='dark'
+									name='theme-switch'
 								/>
 							}
 							label='Tumma'

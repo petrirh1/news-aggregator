@@ -55,6 +55,11 @@ const lightTheme = createMuiTheme({
 				backgroundColor: blueGrey[800]
 			}
 		},
+		MuiCard: {
+			root: {
+				border: '1px solid #fff'
+			}
+		},
 		MuiLink: {
 			root: {
 				'&:hover': {

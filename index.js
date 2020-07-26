@@ -3,9 +3,9 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require('path');
-
 const RssFeedEmitter = require('rss-feed-emitter');
 const feeder = new RssFeedEmitter();
+require('dotenv').config();
 
 const parseData = require('./middleware/parseData');
 const paginateResults = require('./middleware/paginateResults');
@@ -107,9 +107,9 @@ feeder.on('error', err => {
 	return;
 });
 
-app.get('/favicon', getFavicon, (req, res) => {
-	res.send({ favicons: res.favicons });
-});
+// app.get('/favicon', getFavicon, (req, res) => {
+// 	res.send({ favicons: res.favicons });
+// });
 
 app.get('/api/lahteet', (req, res) => {
 	res.send(sources.sort((a, b) => (a.long > b.long ? 1 : -1)));

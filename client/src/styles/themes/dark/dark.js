@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { blueGrey } from '@material-ui/core/colors';
 import { overrides } from '../../overrides';
-const darkBackgroundColor = '#131314';
+const darkBGcolor = '#131314';
 
 const darkTheme = createMuiTheme({
 	palette: {
@@ -12,7 +12,7 @@ const darkTheme = createMuiTheme({
 			main: blueGrey[300] //menu icon
 		},
 		background: {
-			default: darkBackgroundColor,
+			default: darkBGcolor,
 			paper: '#222426' // menu bg
 		},
 		text: {
@@ -43,9 +43,21 @@ const darkTheme = createMuiTheme({
 		},
 		MuiAppBar: {
 			colorDefault: {
-				backgroundColor: darkBackgroundColor
+				backgroundColor: darkBGcolor
 			}
 		},
+		// MuiCardMedia: {
+		// 	root: {
+		// 		borderBottom: '1px solid #2F393E'
+		// 	}
+		// },
+		// MuiCard: {
+		// 	root: {
+		// 		background: darkBGcolor,
+		// 		borderRadius: '5px',
+		// 		border: '1px solid #2F393E'
+		// 	}
+		// },
 		MuiLink: {
 			root: {
 				'&:hover': {

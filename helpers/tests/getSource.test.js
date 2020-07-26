@@ -26,5 +26,10 @@ describe('return news source', () => {
 
 	test('should return an empty string', () => {
 		expect(getSource([' ', 'https://abc.fi'], sources)).toEqual('');
+		expect(getSource({}, sources)).toEqual('');
+		expect(getSource({}, {})).toEqual('');
+		expect(getSource([], [])).toEqual('');
+		expect(getSource(undefined, undefined)).toEqual('');
+		expect(getSource(null, null)).toEqual('');
 	});
 });

@@ -37,8 +37,7 @@ const Home = props => {
 
 			if (!data.next) setHasMore(false);
 
-			// request has been cancelled
-			if (data.message) return;
+			if (data.message) return; // request has been cancelled
 			if (data.results.length < 1) throw new Error('Data fetch failed.');
 
 			setNews({
@@ -79,14 +78,16 @@ const Home = props => {
 	return (
 		<div className={styles.root}>
 			<Header {...props} />
-			<Feed
-				data={news.data}
-				isLoading={isLoading}
-				fetchMore={fetchMore}
-				hasMore={hasMore}
-				hasError={hasError}
-			/>
-			<Footer />
+			<div className={styles.contentWrapper}>
+				<Feed
+					data={news.data}
+					isLoading={isLoading}
+					fetchMore={fetchMore}
+					hasMore={hasMore}
+					hasError={hasError}
+				/>
+				<Footer />
+			</div>
 		</div>
 	);
 };

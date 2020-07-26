@@ -15,7 +15,7 @@ export const fetchData = async (url, page = 1, limit) => {
 			{ cancelToken: cancelToken.token }
 		);
 
-		// console.log(data);
+		console.log(data);
 
 		return data;
 	} catch (error) {

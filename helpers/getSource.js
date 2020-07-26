@@ -1,14 +1,17 @@
-const getSource = (value, arr) => {
+const getSource = (values, arr) => {
 	let res = '';
+	if (!Array.isArray(values) || !Array.isArray(arr)) return res;
 
 	arr.forEach(item => {
+		if (!item) return;
+
 		const { long } = item;
 		const temp = long.replace(' ', '').replace('&', '');
 
-		if (value[0].match(new RegExp(long, 'i'))) {
+		if (values[0].match(new RegExp(long, 'i'))) {
 			return (res = item);
 		}
-		if (value[1].match(new RegExp(temp, 'i'))) {
+		if (values[1].match(new RegExp(temp, 'i'))) {
 			return (res = item);
 		}
 	});
