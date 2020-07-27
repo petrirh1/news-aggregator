@@ -6,12 +6,12 @@ const getSource = (values, arr) => {
 		if (!item) return;
 
 		const { long } = item;
-		const temp = long.replace(' ', '').replace('&', '');
+		const temp = long && long.replace(' ', '').replace('&', '');
 
-		if (values[0].match(new RegExp(long, 'i'))) {
+		if (values[0] && values[0].match(new RegExp(long, 'i'))) {
 			return (res = item);
 		}
-		if (values[1].match(new RegExp(temp, 'i'))) {
+		if (values[1] && values[1].match(new RegExp(temp, 'i'))) {
 			return (res = item);
 		}
 	});
