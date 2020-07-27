@@ -21,10 +21,10 @@
 		"express": "^4.17.1",
 		"get-website-favicon": "0.0.7",
 		"mongoose": "^5.9.25",
-		"nodemon": "^2.0.4",
 		"rss-feed-emitter": "^3.1.2"
 	},
 	"devDependencies": {
-		"jest": "^24.9.0"
+		"jest": "^24.9.0",
+		"nodemon": "^2.0.4"
 	}
 }
