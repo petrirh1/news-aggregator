@@ -1,6 +1,5 @@
 const technology = [
 	'https://api.mtvuutiset.fi/mtvuutiset/api/feed/rss/lifestyle_autot',
-	'https://autobild.fi/rss',
 	'https://autotoday.fi/osasto/automerkit/feed/',
 	'https://feeds.kauppalehti.fi/rss/topic/auto',
 	'https://feeds.kauppalehti.fi/rss/topic/elektroniikka',
