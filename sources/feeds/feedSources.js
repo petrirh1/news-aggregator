@@ -17,8 +17,7 @@ const sources = [
 	{
 		long: 'Aamuset',
 		url: 'https://www.aamuset.fi/',
-		favicon:
-			'https://aamuset.fi/Content/app/img/icons/android-chrome-192x192.png'
+		favicon: 'https://aamuset.fi/Content/app/img/icons/android-chrome-192x192.png'
 	},
 	{
 		long: 'Uutisvuoksi',
@@ -54,8 +53,7 @@ const sources = [
 	{
 		long: 'Kauppalehti',
 		url: 'https://www.kauppalehti.fi/',
-		favicon:
-			'https://assets.kauppalehti.fi/1.1.0/icons/favicon/favicon-196x196.png'
+		favicon: 'https://assets.kauppalehti.fi/1.1.0/icons/favicon/favicon-196x196.png'
 	},
 	{
 		long: 'Kaleva',
@@ -106,8 +104,7 @@ const sources = [
 	{
 		long: 'Mobiili.fi',
 		url: 'https://mobiili.fi/',
-		favicon:
-			'https://mobiili.fi/wp-content/uploads/2013/09/m+mobiili_2_q_square-apple.png'
+		favicon: 'https://mobiili.fi/wp-content/uploads/2013/09/m+mobiili_2_q_square-apple.png'
 	},
 	{
 		long: 'SuomiMobiili',
@@ -136,8 +133,7 @@ const sources = [
 	{
 		long: 'io-tech',
 		url: 'https://www.io-tech.fi/',
-		favicon:
-			'https://www.io-tech.fi/wp-content/uploads/2016/11/cropped-favicon-192x192.png'
+		favicon: 'https://www.io-tech.fi/wp-content/uploads/2016/11/cropped-favicon-192x192.png'
 	},
 	{
 		long: 'Tivi',
@@ -175,14 +171,12 @@ const sources = [
 	{
 		long: 'Vice',
 		url: 'https://www.vice.com/',
-		favicon:
-			'https://vice-web-statics-cdn.vice.com/favicons/vice/android-chrome-192x192.png'
+		favicon: 'https://vice-web-statics-cdn.vice.com/favicons/vice/android-chrome-192x192.png'
 	},
 	{
 		long: 'News Ledge',
 		url: 'https://www.newsledge.com/',
-		favicon:
-			'https://cdn.newsledge.com/wp-content/uploads/2019/10/cropped-news-ledge-fav.jpg'
+		favicon: 'https://cdn.newsledge.com/wp-content/uploads/2019/10/cropped-news-ledge-fav.jpg'
 	},
 	{
 		long: 'Android Authority',
@@ -228,14 +222,12 @@ const sources = [
 	{
 		long: 'AppleInsider',
 		url: 'https://appleinsider.com/',
-		favicon:
-			'https://photos5.appleinsider.com/v9/images/apple-touch-icon-144.png'
+		favicon: 'https://photos5.appleinsider.com/v9/images/apple-touch-icon-144.png'
 	},
 	{
 		long: 'iMore',
 		url: 'https://www.imore.com/',
-		favicon:
-			'https://www.imore.com/sites/imore.com/files/images/icons/apple-touch-114x114.png'
+		favicon: 'https://www.imore.com/sites/imore.com/files/images/icons/apple-touch-114x114.png'
 	},
 	{
 		long: 'Motortrend',
@@ -245,8 +237,7 @@ const sources = [
 	{
 		long: 'Autocar',
 		url: 'https://www.autocar.co.uk/',
-		favicon:
-			'https://www.autocar.co.uk/sites/autocar.co.uk/themes/custom/autocar/favicon.ico'
+		favicon: 'https://www.autocar.co.uk/sites/autocar.co.uk/themes/custom/autocar/favicon.ico'
 	},
 	{
 		long: 'Carscoops',
@@ -266,8 +257,7 @@ const sources = [
 	{
 		long: 'Teknavi',
 		url: 'https://teknavi.fi/',
-		favicon:
-			'https://flockler.com/thumbs/sites/630/teknavi_favicon_s192x192_noupscale.png'
+		favicon: 'https://flockler.com/thumbs/sites/630/teknavi_favicon_s192x192_noupscale.png'
 	},
 	{
 		long: 'Pelaaja',
@@ -312,15 +302,9 @@ const sources = [
 		favicon: '/assets/autotoday-favicon-192x192.png'
 	},
 	{
-		long: 'Autobild',
-		url: 'https://autobild.fi/',
-		favicon: 'https://autobild.fi/neo/16/icon180x180.png'
-	},
-	{
 		long: 'Motouutiset',
 		url: 'https://www.motouutiset.fi/',
-		favicon:
-			'https://www.motouutiset.fi/themes/publication_3/theme_3/img/touch/favicon-128.png'
+		favicon: 'https://www.motouutiset.fi/themes/publication_3/theme_3/img/touch/favicon-128.png'
 	},
 	{
 		long: 'Moottori',
@@ -331,8 +315,7 @@ const sources = [
 	{
 		long: 'Kuluttaja',
 		url: 'https://kuluttaja.fi/',
-		favicon:
-			'https://kuluttaja.fi/wp-content/uploads/2020/05/cropped-favicon-512x512-192x192.png'
+		favicon: 'https://kuluttaja.fi/wp-content/uploads/2020/05/cropped-favicon-512x512-192x192.png'
 	},
 	{
 		long: 'Uusi Suomi',
@@ -364,8 +347,7 @@ const sources = [
 	{
 		long: 'Kansan Uutiset',
 		url: 'https://www.kansanuutiset.fi/',
-		favicon:
-			'https://www.kansanuutiset.fi/images/cropped-ku_favicon-192x192.png'
+		favicon: 'https://www.kansanuutiset.fi/images/cropped-ku_favicon-192x192.png'
 	},
 	{
 		long: 'Keskipohjanmaa',
@@ -395,8 +377,7 @@ const sources = [
 	{
 		long: 'Feat',
 		url: 'https://feat.fi/',
-		favicon:
-			'https://feat.fi/wp-content/uploads/2018/07/cropped-favicon-1-1-192x192.png'
+		favicon: 'https://feat.fi/wp-content/uploads/2018/07/cropped-favicon-1-1-192x192.png'
 	},
 	{
 		long: 'NHLSuomi',
@@ -411,8 +392,7 @@ const sources = [
 	{
 		long: 'LaLiiga',
 		url: 'https://www.laliiga.com/',
-		favicon:
-			'https://www.laliiga.com/wp-content/uploads/2016/06/cropped-laliiga_fav-192x192.png'
+		favicon: 'https://www.laliiga.com/wp-content/uploads/2016/06/cropped-laliiga_fav-192x192.png'
 	},
 	{
 		long: 'SuomiF1',
@@ -442,8 +422,7 @@ const sources = [
 	{
 		long: 'Leijonat.com',
 		url: 'https://www.leijonat.com/',
-		favicon:
-			'https://www.leijonat.com/wp-content/uploads/2016/04/cropped-Leijona-192x192.png'
+		favicon: 'https://www.leijonat.com/wp-content/uploads/2016/04/cropped-Leijona-192x192.png'
 	},
 	{
 		long: 'Jatkoaika',
@@ -454,8 +433,7 @@ const sources = [
 	{
 		long: 'FinnSnooker',
 		url: 'https://www.finnsnooker.com/',
-		favicon:
-			'https://www.finnsnooker.com/wp-content/uploads/2020/01/finnsnooker_pwa_192px.jpg'
+		favicon: 'https://www.finnsnooker.com/wp-content/uploads/2020/01/finnsnooker_pwa_192px.jpg'
 	}
 ];
 
