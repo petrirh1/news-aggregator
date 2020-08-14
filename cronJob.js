@@ -14,7 +14,7 @@ const parser = new Parser({
 	}
 });
 
-const saveFeeds = () => {
+const saveFeeds = async () => {
 	feedSources.forEach(async source => {
 		try {
 			const feed = await parser.parseURL(source.url);
