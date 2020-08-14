@@ -34,15 +34,18 @@ const Home = props => {
 
 		try {
 			const data = await fetchData(pathname, defaultPage, limit);
+			const { page, pages } = data;
 
-			if (!data.next) setHasMore(false);
+			if (page >= pages) {
+				setHasMore(false);
+			}
 
 			if (data.message) return; // request has been cancelled
-			if (data.results.length < 1) throw new Error('Data fetch failed.');
+			if (data.docs.length < 1) throw new Error('Data fetch failed.');
 
 			setNews({
-				data: data.results,
-				nextPage: data.next ? data.next.page : null
+				data: data.docs,
+				nextPage: page < pages ? page + 1 : page
 			});
 		} catch (err) {
 			console.log(err);
@@ -58,14 +61,15 @@ const Home = props => {
 
 		try {
 			const data = await fetchData(url, news.nextPage, limit);
+			const { page, pages } = data;
 
-			if (!data.next) {
+			if (page >= pages) {
 				setHasMore(false);
 			}
 
 			setNews({
-				data: [...news.data, ...data.results],
-				nextPage: data.next ? data.next.page : null
+				data: [...news.data, ...data.docs],
+				nextPage: page < pages ? page + 1 : page
 			});
 		} catch (err) {
 			setHasMore(false);
@@ -80,6 +84,7 @@ const Home = props => {
 			<Header {...props} />
 			<div className={styles.contentWrapper}>
 				<Feed
+					hidePics={props.hidePics}
 					data={news.data}
 					isLoading={isLoading}
 					fetchMore={fetchMore}

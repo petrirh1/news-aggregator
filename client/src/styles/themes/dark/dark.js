@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { blueGrey } from '@material-ui/core/colors';
 import { overrides } from '../../overrides';
-const darkBGcolor = '#131314';
+const darkBGcolor = '#0A0A0A';
 
 const darkTheme = createMuiTheme({
 	palette: {
@@ -44,6 +44,12 @@ const darkTheme = createMuiTheme({
 		MuiAppBar: {
 			colorDefault: {
 				backgroundColor: darkBGcolor
+			}
+		},
+		MuiPaper: {
+			elevation8: {
+				boxShadow:
+					'0 1px 2px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.05), -20px 16px 62px rgba(0,0,0,0.15), 0 32px 130px rgba(0,0,0,0.8)'
 			}
 		},
 		// MuiCardMedia: {

@@ -6,3 +6,7 @@
 .root *:hover {
 	background: transparent !important;
 }
+
+.formGroup {
+	margin-bottom: 16px;
+}

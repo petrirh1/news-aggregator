@@ -13,13 +13,16 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PropTypes from 'prop-types';
 import style from './Menu.module.css';
 
-const SimpleMenu = ({ isDark, handleThemeChange }) => {
+const SimpleMenu = ({ isDark, hidePics, handleThemeChange, handlePicVisibility, setIsOpen }) => {
 	const [anchorEl, setAnchorEl] = useState(null);
-	const [checked, setChecked] = useState(isDark);
+	const [options, setOptions] = useState({
+		isDark: isDark,
+		hidePics: hidePics
+	});
 
 	useEffect(() => {
-		setChecked(isDark);
-	}, [isDark]);
+		setOptions({ isDark, hidePics });
+	}, [isDark, hidePics]);
 
 	const handleClick = event => {
 		setAnchorEl(event.currentTarget);
@@ -29,9 +32,14 @@ const SimpleMenu = ({ isDark, handleThemeChange }) => {
 		setAnchorEl(null);
 	};
 
-	const handleChange = () => {
-		setChecked(!checked);
-		handleThemeChange();
+	const handleChange = ({ target }) => {
+		if (target.id === 'theme-switcher') {
+			setOptions({ ...options, isDark: !options.isDark });
+			handleThemeChange();
+		} else {
+			setOptions({ ...options, hidePics: !options.hidePics });
+			handlePicVisibility();
+		}
 	};
 
 	return (
@@ -45,18 +53,38 @@ const SimpleMenu = ({ isDark, handleThemeChange }) => {
 				anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
 				transformOrigin={{ vertical: 'top', horizontal: 'center' }}
 				keepMounted
+				onEnter={() => setIsOpen(true)}
+				onExit={() => setIsOpen(false)}
 				open={Boolean(anchorEl)}
 				onClose={handleClose}>
 				<FormControl component='fieldset'>
-					<FormLabel color='primary' focused={false} component='label'>
-						Vaihda teema
+					<FormLabel color='primary' focused={true} component='label'>
+						Asetukset
+					</FormLabel>
+					<FormGroup className={style.formGroup}>
+						<FormControlLabel
+							control={
+								<Switch
+									color='secondary'
+									id='pic-switcher'
+									checked={options.hidePics}
+									onChange={handleChange}
+									name='theme-switch'
+								/>
+							}
+							label='Piilota kuvat'
+						/>
+					</FormGroup>
+					<FormLabel color='primary' focused={true} component='label'>
+						Ulkoasu
 					</FormLabel>
 					<FormGroup>
 						<FormControlLabel
 							control={
 								<Switch
 									color='secondary'
-									checked={checked}
+									id='theme-switcher'
+									checked={options.isDark}
 									onChange={handleChange}
 									name='theme-switch'
 								/>

@@ -21,7 +21,14 @@ export const overrides = {
 	},
 	MuiFormLabel: {
 		root: {
-			marginBottom: 15
+			marginBottom: 5,
+			marginTop: 5
+		}
+	},
+	MuiFormControlLabel: {
+		label: {
+			opacity: 0.8,
+			fontSize: '0.875rem'
 		}
 	},
 	MuiDialogContent: {
@@ -38,19 +45,6 @@ export const overrides = {
 			background: 'rgba(0, 0, 0, 0.6)'
 		}
 	},
-	MuiPaper: {
-		elevation1: {
-			boxShadow:
-				'0px 20px 40px -22px rgba(0, 0, 0, 0.1), 0px -2px 9px -13px rgba(0, 0, 0, 0.5), 0px -2px 21px -21px rgba(0, 0, 0, 0.5), 0px 1px 1px -1px rgba(0, 0, 0, 0.075), 0px 1px 1px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08)'
-		},
-		elevation8: {
-			boxShadow:
-				'0 1px 2px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.05),0 16px 32px rgba(0,0,0,0.05), 0 32px 64px rgba(0,0,0,0.05)'
-		},
-		elevation24: {
-			boxShadow: 'none'
-		}
-	},
 	MuiAvatar: {
 		rounded: {
 			borderRadius: '2px'
@@ -64,6 +58,11 @@ export const overrides = {
 	MuiTypography: {
 		h4: {
 			fontSize: '28px'
+		}
+	},
+	MuiOutlinedInput: {
+		notchedOutline: {
+			borderColor: 'rgba(255, 255, 255, 0.7)'
 		}
 	},
 	PrivateTabIndicator: {

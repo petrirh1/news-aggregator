@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CategoryTabs, Logo, Menu } from '../../components';
 import { AppBar, Toolbar, useScrollTrigger, Slide } from '@material-ui/core';
 
@@ -7,28 +7,29 @@ import PropTypes from 'prop-types';
 import styles from './Header.module.css';
 
 const HideOnScroll = props => {
-	const { children } = props;
+	const { children, menuIsOpen } = props;
 	const trigger = useScrollTrigger();
 
+	// check whether menu is open or not. This prevents hiding header while menu is still open in some scenarios
+	const newTrigger = menuIsOpen ? false : trigger;
+
 	return (
-		<Slide appear={false} direction='down' in={!trigger}>
+		<Slide appear={false} direction='down' in={!newTrigger}>
 			{children}
 		</Slide>
 	);
 };
 
 const Header = props => {
+	const [menuIsOpen, setMenuIsOpen] = useState(false);
+
 	return (
-		<HideOnScroll {...props}>
-			<AppBar
-				position='sticky'
-				elevation={0}
-				color='default'
-				className={styles.appbar}>
+		<HideOnScroll menuIsOpen={menuIsOpen} {...props}>
+			<AppBar position='sticky' elevation={0} color='default' className={styles.appbar}>
 				<Toolbar className={styles.toolbar}>
 					<div className={styles.wrapper}>
 						<Logo width={21} variant={'h5'} mr={'12px'} />
-						<Menu {...props} />
+						<Menu {...props} setIsOpen={setMenuIsOpen} />
 					</div>
 				</Toolbar>
 				<CategoryTabs {...props} />

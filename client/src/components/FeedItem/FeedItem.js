@@ -19,10 +19,9 @@ import {
 import styles from './FeedItem.module.css';
 JavascriptTimeAgo.addLocale(fi);
 
-const FeedItem = ({ data }) => {
+const FeedItem = ({ data, hidePics }) => {
 	const [hasLoaded, setHasLoaded] = useState(false);
-	const { image, source, title, date } = data;
-	const { long, favicon } = source;
+	const { image, source, title, isoDate, favicon } = data;
 	const MIN_IMG_WIDTH = 350;
 
 	const handleImageError = e => {
@@ -48,13 +47,13 @@ const FeedItem = ({ data }) => {
 				className={styles.root}
 				onClick={() => window.open(data.link, '_blank', 'noopener')}>
 				<CardActionArea disableRipple>
-					{image && (
+					{image && !hidePics && (
 						<Fade timeout={800} in={true}>
 							<CardMedia
 								style={{ display: 'none' }}
 								component='div'
 								className={styles.media}
-								title={long}>
+								title={source}>
 								<Fade timeout={500} in={hasLoaded}>
 									<img
 										onLoad={handleImageLoad}
@@ -81,26 +80,16 @@ const FeedItem = ({ data }) => {
 									alt='Lähteen logo'
 									src={favicon}
 									className={styles.avatar}>
-									{firstLetter(long) || '?'}
+									{firstLetter(source) || '?'}
 								</Avatar>
-								<Typography
-									variant='subtitle2'
-									color='textSecondary'
-									className={styles.details}>
-									{long}
+								<Typography variant='subtitle2' color='textSecondary' className={styles.details}>
+									{source}
 								</Typography>
 							</div>
 							<div className={styles.date}>
-								<Typography
-									variant='subtitle2'
-									color='textSecondary'
-									className={styles.details}>
+								<Typography variant='subtitle2' color='textSecondary' className={styles.details}>
 									<span style={{ margin: '5px' }}>-</span>
-									<ReactTimeAgo
-										date={new Date(date)}
-										locale='fi'
-										timeStyle={timeStyle}
-									/>
+									<ReactTimeAgo date={new Date(isoDate)} locale='fi' timeStyle={timeStyle} />
 								</Typography>
 							</div>
 						</div>

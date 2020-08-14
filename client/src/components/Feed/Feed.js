@@ -9,7 +9,7 @@ import { breakpoints } from '../../settings/masonryGrid/breakpoints';
 import Masonry from 'react-masonry-css';
 import styles from './Feeds.module.css';
 
-const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
+const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading, hidePics }) => {
 	return (
 		<InfiniteScroll
 			dataLength={data.length}
@@ -34,7 +34,7 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 					columnClassName={styles.masonryGridColumn}>
 					{data &&
 						!hasError &&
-						data.map((data, i) => <FeedItem data={data} key={i} />)}
+						data.map((data, i) => <FeedItem data={data} hidePics={hidePics} key={i} />)}
 				</Masonry>
 			)}
 		</InfiniteScroll>
