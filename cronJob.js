@@ -17,16 +17,16 @@ const parser = new Parser({
 	}
 });
 
-// mongoose
-// 	.connect(process.env.CONNECTION_STRING, {
-// 		useNewUrlParser: true,
-// 		useUnifiedTopology: true,
-// 		useCreateIndex: true
-// 	})
-// 	.then(() => console.log('Connected to mongoDB...'))
-// 	.catch(err => {
-// 		console.log(err);
-// 	});
+mongoose
+	.connect(process.env.CONNECTION_STRING, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true
+	})
+	.then(() => console.log('Connected to mongoDB...'))
+	.catch(err => {
+		console.log(err);
+	});
 
 (async () => {
 	feedSources.forEach(async source => {
