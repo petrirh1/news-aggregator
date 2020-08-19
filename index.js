@@ -20,6 +20,10 @@ mongoose
 		console.log(err);
 	});
 
+mongoose.connection.once('connected', () => {
+	require('./cronJob');
+});
+
 app.use('/api/uutiset', feedRoute);
 app.use(express.static(path.join(__dirname, '/client/build')));
 app.use('/assets', express.static(path.join(__dirname, 'public/assets/favicons/')));

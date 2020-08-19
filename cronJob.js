@@ -1,6 +1,7 @@
 const feedSources = require('./sources/feedSources');
 const Feed = require('./models/Feed');
 const Parser = require('rss-parser');
+const mongoose = require('mongoose');
 const parser = new Parser({
 	customFields: {
 		item: [
@@ -14,11 +15,24 @@ const parser = new Parser({
 	}
 });
 
-const saveFeeds = async () => {
+mongoose
+	.connect(process.env.CONNECTION_STRING, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true
+	})
+	.then(() => console.log('Connected to mongoDB...'))
+	.catch(err => {
+		console.log(err);
+	});
+
+(async () => {
 	feedSources.forEach(async source => {
 		try {
 			const feed = await parser.parseURL(source.url);
 			const parsedFeed = feed.items.map(item => feedParser(item, source));
+
+			console.log('parsing...');
 
 			parsedFeed
 				.filter(item => daysAgo(new Date(item.isoDate)))
@@ -29,23 +43,26 @@ const saveFeeds = async () => {
 						favicon: source.favicon
 					});
 
-					Feed.findOne({ title: newFeed.title }, (err, feed) => {
-						if (err) console.log(err);
+					Feed.findOne({ link: newFeed.link }, (err, feed) => {
+						if (err) {
+							console.log(err.ValidatorError || err.MongoError);
+						}
 						if (!feed) {
 							newFeed.save((err, data) => {
 								if (err) console.log(err);
 								if (data) console.log(data._id, 'saved to database.');
 							});
 						}
-						return;
 					});
 				});
+
+			mongoose.connection.close();
 		} catch (err) {
 			if (err === 'Status code 404') return;
 			console.log(err);
 		}
 	});
-};
+})();
 
 const feedParser = (feed, src) => {
 	return { ...feed, image: parseImageUrl(feed), categories: parseCategories(feed, src) };
@@ -104,5 +121,3 @@ const daysAgo = date => {
 	const daysAgo = Date.now() - DAYS;
 	return date >= daysAgo;
 };
-
-saveFeeds();
