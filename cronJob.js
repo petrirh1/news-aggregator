@@ -2,6 +2,8 @@ const feedSources = require('./sources/feedSources');
 const Feed = require('./models/Feed');
 const Parser = require('rss-parser');
 const mongoose = require('mongoose');
+require('dotenv').config();
+
 const parser = new Parser({
 	customFields: {
 		item: [
@@ -15,16 +17,16 @@ const parser = new Parser({
 	}
 });
 
-mongoose
-	.connect(process.env.CONNECTION_STRING, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-		useCreateIndex: true
-	})
-	.then(() => console.log('Connected to mongoDB...'))
-	.catch(err => {
-		console.log(err);
-	});
+// mongoose
+// 	.connect(process.env.CONNECTION_STRING, {
+// 		useNewUrlParser: true,
+// 		useUnifiedTopology: true,
+// 		useCreateIndex: true
+// 	})
+// 	.then(() => console.log('Connected to mongoDB...'))
+// 	.catch(err => {
+// 		console.log(err);
+// 	});
 
 (async () => {
 	feedSources.forEach(async source => {
