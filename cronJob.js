@@ -29,7 +29,8 @@ const parser = new Parser({
 	}
 });
 
-const task = cron.schedule('*/5 * * * *', async () => {
+// */5 * * * *, run every 5 minutes
+const task = cron.schedule('* * * * *', async () => {
 	console.log('Running on schedule...');
 
 	feedSources.forEach(async source => {
