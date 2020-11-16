@@ -1,7 +1,7 @@
 const feedSources = require('./sources/feedSources');
+const cron = require('node-cron');
 const Feed = require('./models/Feed');
 const Parser = require('rss-parser');
-const mongoose = require('mongoose');
 require('dotenv').config();
 
 const parser = new Parser({
@@ -17,18 +17,9 @@ const parser = new Parser({
 	}
 });
 
-mongoose
-	.connect(process.env.CONNECTION_STRING, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-		useCreateIndex: true
-	})
-	.then(() => console.log('Connected to mongoDB...'))
-	.catch(err => {
-		console.log(err);
-	});
+const task = cron.schedule('*/5 * * * *', async () => {
+	console.log('Running on schedule...');
 
-(async () => {
 	feedSources.forEach(async source => {
 		try {
 			const feed = await parser.parseURL(source.url);
@@ -57,14 +48,14 @@ mongoose
 						}
 					});
 				});
-
-			mongoose.connection.close();
 		} catch (err) {
 			if (err === 'Status code 404') return;
 			console.log(err);
 		}
 	});
-})();
+});
+
+task.start();
 
 const feedParser = (feed, src) => {
 	return { ...feed, image: parseImageUrl(feed), categories: parseCategories(feed, src) };
