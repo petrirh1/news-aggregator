@@ -2,7 +2,19 @@ const feedSources = require('./sources/feedSources');
 const cron = require('node-cron');
 const Feed = require('./models/Feed');
 const Parser = require('rss-parser');
+const mongoose = require('mongoose');
 require('dotenv').config();
+
+mongoose
+	.connect(process.env.CONNECTION_STRING, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true
+	})
+	.then(() => console.log('Connected to mongoDB...'))
+	.catch(err => {
+		console.log(err);
+});
 
 const parser = new Parser({
 	customFields: {
