@@ -75,7 +75,6 @@ const feedParser = async (feed, src) => {
 	return {
 		...feed,
 		image: parseImageUrl(feed),
-		imageDimensions: getImageDimensions(parseImageUrl(feed)),
 		categories: parseCategories(feed, src)
 	};
 };
