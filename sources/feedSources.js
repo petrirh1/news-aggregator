@@ -407,7 +407,7 @@ const feedSources = [
 		source: 'Digital Trends',
 		category: 'tekniikkaen',
 		favicon:
-			'https://www.digitaltrends.com/wp-content/themes/digitaltrends-2018/assets/images/favicons/apple-touch-icon.png'
+			'https://icdn2.digitaltrends.com/image/digitaltrends/dt-site-icon-144x144.png'
 	},
 	{
 		url: 'https://feeds2.feedburner.com/thenextweb',

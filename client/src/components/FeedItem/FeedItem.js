@@ -29,9 +29,9 @@ const FeedItem = ({ data, hidePics }) => {
 	};
 
 	const handleImageLoad = e => {
-		const target = e.target;
+		const { target } = e;
 
-		if (e.target.naturalWidth < MIN_IMG_WIDTH) {
+		if (target.naturalWidth < MIN_IMG_WIDTH) {
 			target.style.objectFit = 'contain';
 			target.style.width = 'auto';
 			target.style.height = 'auto';

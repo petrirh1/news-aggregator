@@ -3,6 +3,7 @@ const cron = require('node-cron');
 const Feed = require('./models/Feed');
 const Parser = require('rss-parser');
 const mongoose = require('mongoose');
+const probe = require('probe-image-size');
 require('dotenv').config();
 
 mongoose
@@ -14,7 +15,7 @@ mongoose
 	.then(() => console.log('Connected to mongoDB...'))
 	.catch(err => {
 		console.log(err);
-});
+	});
 
 const parser = new Parser({
 	customFields: {
@@ -30,7 +31,7 @@ const parser = new Parser({
 });
 
 // */5 * * * *, run every 5 minutes
-const task = cron.schedule('* * * * *', async () => {
+const task = cron.schedule('* * * * * *', async () => {
 	console.log('Running on schedule...');
 
 	feedSources.forEach(async source => {
@@ -38,18 +39,20 @@ const task = cron.schedule('* * * * *', async () => {
 			const feed = await parser.parseURL(source.url);
 			const parsedFeed = feed.items.map(item => feedParser(item, source));
 
-			console.log('parsing...');
+			// console.log(parsedFeed);
 
 			parsedFeed
 				.filter(item => daysAgo(new Date(item.isoDate)))
-				.forEach(async feed => {
+				.forEach(feed => {
 					const newFeed = new Feed({
 						...feed,
 						source: source.source,
 						favicon: source.favicon
 					});
 
-					Feed.findOne({ link: newFeed.link }, (err, feed) => {
+					console.log(newFeed);
+
+					Feed.findOne({ guid: newFeed.guid }, (err, feed) => {
 						if (err) {
 							console.log(err.ValidatorError || err.MongoError);
 						}
@@ -70,8 +73,16 @@ const task = cron.schedule('* * * * *', async () => {
 
 task.start();
 
-const feedParser = (feed, src) => {
-	return { ...feed, image: parseImageUrl(feed), categories: parseCategories(feed, src) };
+const feedParser = async (feed, src) => {
+	return {
+		...feed,
+		image: parseImageUrl(feed),
+		categories: parseCategories(feed, src)
+	};
+};
+
+const getImageDimensions = async url => {
+	return await probe(url);
 };
 
 const parseImageUrl = feed => {

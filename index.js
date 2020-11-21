@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 5000;
 const path = require('path');
 const mongoose = require('mongoose');
 const feedRoute = require('./routes/feedRoute');
+const devRoute = require('./routes/devRoute');
 require('dotenv').config();
 
 app.use(express.urlencoded({ extended: true }));
@@ -25,6 +26,8 @@ mongoose
 // });
 
 app.use('/api/uutiset', feedRoute);
+app.use('/api/', devRoute);
+
 app.use(express.static(path.join(__dirname, '/client/build')));
 app.use('/assets', express.static(path.join(__dirname, 'public/assets/favicons/')));
 app.get('*', (req, res) => {
