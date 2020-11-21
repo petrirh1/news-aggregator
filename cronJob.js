@@ -17,6 +17,10 @@ mongoose
 		console.log(err);
 	});
 
+mongoose.connection.once('connected', () => {
+	scheduler();
+});
+
 const parser = new Parser({
 	customFields: {
 		item: [
@@ -31,7 +35,8 @@ const parser = new Parser({
 });
 
 // */5 * * * *, run every 5 minutes
-const task = cron.schedule('* * * * * *', async () => {
+// const task = cron.schedule('* * * * * *', async () => {
+const scheduler = async () => {
 	console.log('Running on schedule...');
 
 	feedSources.forEach(async source => {
@@ -67,9 +72,10 @@ const task = cron.schedule('* * * * * *', async () => {
 			console.log(err);
 		}
 	});
-});
+};
+// });
 
-task.start();
+// task.start();
 
 const feedParser = async (feed, src) => {
 	return {
