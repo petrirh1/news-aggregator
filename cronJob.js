@@ -39,8 +39,6 @@ const task = cron.schedule('* * * * * *', async () => {
 			const feed = await parser.parseURL(source.url);
 			const parsedFeed = feed.items.map(item => feedParser(item, source));
 
-			// console.log(parsedFeed);
-
 			parsedFeed
 				.filter(item => daysAgo(new Date(item.isoDate)))
 				.forEach(feed => {
@@ -77,6 +75,7 @@ const feedParser = async (feed, src) => {
 	return {
 		...feed,
 		image: parseImageUrl(feed),
+		imageDimensions: getImageDimensions(parseImageUrl(feed)),
 		categories: parseCategories(feed, src)
 	};
 };
@@ -93,13 +92,16 @@ const parseImageUrl = feed => {
 
 	// mostly for YLE's stamp sized images which are resizable by altering the url
 	if (feed.enclosure) {
-		return feed.enclosure.url
-			.replace('w_205', 'w_600')
-			.replace('h_115', 'h_337')
-			.replace('http:', 'https:');
+		return (
+			feed.enclosure.url
+				// width and height are selected so that the aspect ratio remains correct
+				.replace('w_205', 'w_600')
+				.replace('h_115', 'h_337')
+				.replace('http:', 'https:')
+		);
 	}
 
-	//extract image url from content
+	// extract image url from content
 	if (feed.content) {
 		const matches = feed.content
 			.replace('http:', 'https:')
