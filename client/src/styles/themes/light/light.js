@@ -39,6 +39,7 @@ const lightTheme = createMuiTheme({
 		},
 		MuiTab: {
 			root: {
+				transition: 'all .3s ease',
 				'&:hover': {
 					color: blueGrey[800],
 					borderRadius: '3px 3px 0 0'

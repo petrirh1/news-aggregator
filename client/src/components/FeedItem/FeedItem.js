@@ -47,7 +47,7 @@ const FeedItem = ({ data, hidePics }) => {
 				className={styles.root}
 				onClick={() => window.open(data.link, '_blank', 'noopener')}>
 				<CardActionArea disableRipple>
-					{image && !hidePics && (
+					{image.url && !hidePics && (
 						<Fade timeout={800} in={true}>
 							<CardMedia
 								style={{ display: 'none' }}
@@ -59,7 +59,7 @@ const FeedItem = ({ data, hidePics }) => {
 										onLoad={handleImageLoad}
 										onError={handleImageError}
 										alt='Uutiskuva'
-										src={image}></img>
+										src={image.url}></img>
 								</Fade>
 							</CardMedia>
 						</Fade>

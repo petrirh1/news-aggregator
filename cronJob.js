@@ -1,5 +1,4 @@
 const feedSources = require('./sources/feedSources');
-const cron = require('node-cron');
 const Feed = require('./models/Feed');
 const Parser = require('rss-parser');
 const mongoose = require('mongoose');
@@ -12,19 +11,16 @@ mongoose
 		useUnifiedTopology: true,
 		useCreateIndex: true
 	})
-	.then(() => console.log('Connected to mongoDB...'))
+	.then(() => scheduler())
 	.catch(err => {
 		console.log(err);
 	});
-
-mongoose.connection.once('connected', () => {
-	scheduler();
-});
 
 const parser = new Parser({
 	customFields: {
 		item: [
 			['image', 'image'],
+			['guid', 'guid'],
 			['enclosures', 'image'],
 			['rss:image', 'image'],
 			['media:content', 'image'],
@@ -34,15 +30,15 @@ const parser = new Parser({
 	}
 });
 
-// */5 * * * *, run every 5 minutes
-// const task = cron.schedule('* * * * * *', async () => {
-const scheduler = async () => {
+const job = async () => {
 	console.log('Running on schedule...');
 
 	feedSources.forEach(async source => {
 		try {
 			const feed = await parser.parseURL(source.url);
 			const parsedFeed = feed.items.map(item => feedParser(item, source));
+
+			console.log('parsing feeds..');
 
 			parsedFeed
 				.filter(item => daysAgo(new Date(item.isoDate)))
@@ -53,8 +49,6 @@ const scheduler = async () => {
 						favicon: source.favicon
 					});
 
-					console.log(newFeed);
-
 					Feed.findOne({ guid: newFeed.guid }, (err, feed) => {
 						if (err) {
 							console.log(err.ValidatorError || err.MongoError);
@@ -63,6 +57,8 @@ const scheduler = async () => {
 							newFeed.save((err, data) => {
 								if (err) console.log(err);
 								if (data) console.log(data._id, 'saved to database.');
+
+								console.log(data);
 							});
 						}
 					});
@@ -73,21 +69,28 @@ const scheduler = async () => {
 		}
 	});
 };
-// });
 
-// task.start();
+job();
 
-const feedParser = async (feed, src) => {
+const feedParser = (feed, src) => {
+	// const url = parseImageUrl(feed);
+	// const img = await getImageDimensions(url);
+
 	return {
 		...feed,
-		image: parseImageUrl(feed),
+		image: { url: parseImageUrl(feed) },
 		categories: parseCategories(feed, src)
 	};
 };
 
 const getImageDimensions = async url => {
+	if (!url) return;
 	return await probe(url);
 };
+
+getImageDimensions(
+	'https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg'
+);
 
 const parseImageUrl = feed => {
 	if (feed.image) {

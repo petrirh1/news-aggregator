@@ -5,14 +5,14 @@ const validator = require('mongoose-unique-validator');
 
 const FeedSchema = mongoose.Schema({
 	title: { type: String, required: true },
-	link: { type: String, required: true, unique: true },
+	link: { type: String, required: true },
 	author: String,
-	guid: String,
+	guid: { type: String, unique: true },
 	contentSnippet: String,
 	categories: [{ type: String, lowercase: true }],
 	isoDate: { type: Date, required: true },
 	source: { type: String, required: true },
-	image: String,
+	image: { url: String, width: String, height: String },
 	favicon: { type: String, required: true }
 });
 

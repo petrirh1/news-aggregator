@@ -406,8 +406,7 @@ const feedSources = [
 		url: 'https://www.digitaltrends.com/feed/',
 		source: 'Digital Trends',
 		category: 'tekniikkaen',
-		favicon:
-			'https://icdn2.digitaltrends.com/image/digitaltrends/dt-site-icon-144x144.png'
+		favicon: 'https://icdn2.digitaltrends.com/image/digitaltrends/dt-site-icon-144x144.png'
 	},
 	{
 		url: 'https://feeds2.feedburner.com/thenextweb',

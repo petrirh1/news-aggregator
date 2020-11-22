@@ -9,7 +9,7 @@ exports.getLatest = async (req, res) => {
 		const options = {
 			page: parseInt(page) || defaultPage,
 			limit: parseInt(limit) || defaultLimit,
-			select: '-__v -_id -__ttl',
+			select: '-__v -_id -__ttl -guid',
 			sort: {
 				isoDate: -1
 			}

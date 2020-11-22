@@ -23,7 +23,6 @@
 		"mongoose-paginate": "^5.0.3",
 		"mongoose-ttl": "0.0.3",
 		"mongoose-unique-validator": "^2.0.3",
-		"node-cron": "^2.0.3",
 		"probe-image-size": "^6.0.0",
 		"rss-parser": "^3.9.0"
 	},
