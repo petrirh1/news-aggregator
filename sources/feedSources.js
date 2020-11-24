@@ -409,23 +409,10 @@ const feedSources = [
 		favicon: 'https://icdn2.digitaltrends.com/image/digitaltrends/dt-site-icon-144x144.png'
 	},
 	{
-		url: 'https://feeds2.feedburner.com/thenextweb',
-		source: 'The Next Web',
-		category: 'tekniikkaen',
-		favicon:
-			'https://cdn0.tnwcdn.com/wp-content/themes/cyberdelia/assets/icons/android-chrome-192x192.png?v=1594649130'
-	},
-	{
 		url: 'https://www.androidpolice.com/feed/',
 		source: 'Android Police',
 		category: 'tekniikkaen',
 		favicon: '/assets/androidpolice-favicon-192x192.png'
-	},
-	{
-		url: 'http://feeds.feedburner.com/TechCrunch/',
-		source: 'TechCrunch',
-		category: 'tekniikkaen',
-		favicon: '/assets/techcrunch-favicon-192x192.png'
 	},
 	{
 		url: 'https://arstechnica.com/feed/',

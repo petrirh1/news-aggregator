@@ -5,6 +5,7 @@ import fi from 'javascript-time-ago/locale/fi';
 import { timeStyle } from '../../settings/time/timeStyle';
 import { firstLetter } from '../../helpers/string';
 import PropTypes from 'prop-types';
+import ImageIcon from '@material-ui/icons/Image';
 
 import {
 	Card,
@@ -61,6 +62,9 @@ const FeedItem = ({ data, hidePics }) => {
 										alt='Uutiskuva'
 										src={image.url}></img>
 								</Fade>
+								<div className={styles.placeholder}>
+									<ImageIcon color='secondary' />
+								</div>
 							</CardMedia>
 						</Fade>
 					)}

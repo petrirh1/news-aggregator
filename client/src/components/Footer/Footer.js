@@ -10,7 +10,7 @@ const Footer = () => {
 		<div className={styles.root}>
 			<Divider />
 			<div className={styles.wrapper}>
-				<Typography color='primary' variant='subtitle2'>{`©${year} Uutisankka`}</Typography>
+				<Typography color='primary' variant='body2'>{`©${year} Uutisankka`}</Typography>
 			</div>
 		</div>
 	);
