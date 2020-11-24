@@ -6,16 +6,16 @@ const feedParser = require('./helpers/feedParsing');
 const time = require('./helpers/feedParsing');
 require('dotenv').config();
 
-// mongoose
-// 	.connect(process.env.CONNECTION_STRING, {
-// 		useNewUrlParser: true,
-// 		useUnifiedTopology: true,
-// 		useCreateIndex: true
-// 	})
-// 		.then(() => job())
-// 	.catch(err => {
-// 		console.log(err);
-// 	});
+mongoose
+	.connect(process.env.CONNECTION_STRING, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true
+	})
+	.then(() => job())
+	.catch(err => {
+		console.log(err);
+	});
 
 const parser = new RSSparser({
 	customFields: {
@@ -32,7 +32,7 @@ const parser = new RSSparser({
 });
 
 const job = async () => {
-	console.log('Running on schedule...');
+	console.log('Running on schedule..');
 
 	feedSources.forEach(async source => {
 		try {
