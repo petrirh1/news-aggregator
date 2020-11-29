@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import ReactTimeAgo from 'react-time-ago';
 import JavascriptTimeAgo from 'javascript-time-ago';
 import fi from 'javascript-time-ago/locale/fi';
-import { timeStyle } from '../../settings/time/timeStyle';
 import { firstLetter } from '../../helpers/string';
-import PropTypes from 'prop-types';
 import ImageIcon from '@material-ui/icons/Image';
+import PropTypes from 'prop-types';
 
 import {
 	Card,
@@ -23,50 +22,40 @@ JavascriptTimeAgo.addLocale(fi);
 const FeedItem = ({ data, hidePics }) => {
 	const [hasLoaded, setHasLoaded] = useState(false);
 	const { image, source, title, isoDate, favicon } = data;
-	const MIN_IMG_WIDTH = 350;
 
 	const handleImageError = e => {
+		console.log(e.target);
 		e.target.style.display = 'none';
 	};
 
-	const handleImageLoad = e => {
-		const { target } = e;
-
-		if (target.naturalWidth < MIN_IMG_WIDTH) {
-			target.style.objectFit = 'contain';
-			target.style.width = 'auto';
-			target.style.height = 'auto';
-			target.style.borderRadius = '3px';
-		}
+	const handleImageLoad = () => {
 		setHasLoaded(true);
 	};
 
 	return (
-		<Fade timeout={650} in={true}>
+		<Fade timeout={1000} in={true}>
 			<Card
 				elevation={1}
 				className={styles.root}
-				onClick={() => window.open(data.link, '_blank', 'noopener')}>
+				onClick={() => window.open(data.link, '_blank', 'noopener noreferrer')}>
 				<CardActionArea disableRipple>
 					{image.url && !hidePics && (
-						<Fade timeout={800} in={true}>
-							<CardMedia
-								style={{ display: 'none' }}
-								component='div'
-								className={styles.media}
-								title={source}>
-								<Fade timeout={500} in={hasLoaded}>
-									<img
-										onLoad={handleImageLoad}
-										onError={handleImageError}
-										alt='Uutiskuva'
-										src={image.url}></img>
-								</Fade>
-								<div className={styles.placeholder}>
-									<ImageIcon color='secondary' />
-								</div>
-							</CardMedia>
-						</Fade>
+						<div className={styles.container}>
+							<Fade timeout={500} in={hasLoaded}>
+								<CardMedia
+									component='img'
+									className={styles.media}
+									image={image.url}
+									title={source}
+									alt='Uutiskuva'
+									onError={handleImageError}
+									onLoad={handleImageLoad}
+								/>
+							</Fade>
+							<div className={styles.placeholder}>
+								<ImageIcon color='primary' />
+							</div>
+						</div>
 					)}
 					<CardContent>
 						<Typography
@@ -93,7 +82,7 @@ const FeedItem = ({ data, hidePics }) => {
 							<div className={styles.date}>
 								<Typography variant='subtitle2' color='textSecondary' className={styles.details}>
 									<span style={{ margin: '5px' }}>-</span>
-									<ReactTimeAgo date={new Date(isoDate)} locale='fi' timeStyle={timeStyle} />
+									<ReactTimeAgo date={new Date(isoDate)} locale='fi' timeStyle='twitter' />
 								</Typography>
 							</div>
 						</div>

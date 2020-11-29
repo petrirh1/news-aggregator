@@ -4,7 +4,7 @@ const ttl = require('mongoose-ttl');
 const validator = require('mongoose-unique-validator');
 
 const FeedSchema = mongoose.Schema({
-	title: { type: String, required: true },
+	title: { type: String, required: true, unique: true },
 	link: { type: String, required: true },
 	author: String,
 	guid: { type: String, unique: true },
@@ -17,7 +17,7 @@ const FeedSchema = mongoose.Schema({
 });
 
 FeedSchema.plugin(mongoosePaginate);
-FeedSchema.plugin(ttl, { ttl: '5d' }); // Time To Live value
+FeedSchema.plugin(ttl, { ttl: '3d' }); // Time To Live value
 FeedSchema.plugin(validator);
 
 module.exports = mongoose.model('Feed', FeedSchema);

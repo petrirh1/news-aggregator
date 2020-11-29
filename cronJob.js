@@ -15,7 +15,7 @@ mongoose
 	.then(() => job())
 	.catch(err => {
 		console.log(err);
-	});
+	}, 240000);
 
 const parser = new RSSparser({
 	customFields: {
@@ -56,7 +56,7 @@ const job = async () => {
 						// }
 						if (!feed) {
 							newFeed.save((err, data) => {
-								if (err) console.log(err);
+								if (err) console.log(err._message || err.MongoError || err);
 								if (data) console.log(data._id, 'saved to database.');
 							});
 						}
@@ -69,4 +69,4 @@ const job = async () => {
 	});
 };
 
-// job();
+job();

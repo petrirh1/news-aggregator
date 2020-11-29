@@ -89,7 +89,7 @@ const getHostname = url => {
 };
 
 const daysAgo = date => {
-	const DAYS = 60 * 60 * 24 * 5 * 1000; // 5 days
+	const DAYS = 60 * 60 * 24 * 3 * 1000; // 3 days
 	const daysAgo = Date.now() - DAYS;
 	return date >= daysAgo;
 };

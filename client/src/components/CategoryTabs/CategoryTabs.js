@@ -15,7 +15,6 @@ export const categories = [
 const CategoryTabs = props => {
 	const notHoverable = useMediaQuery('(hover: none)');
 	const matches = useMediaQuery('(min-width: 975px)');
-
 	const { history, match } = props;
 	const { params } = match;
 	const { page } = params;
@@ -32,7 +31,7 @@ const CategoryTabs = props => {
 	const [selectedTab, setSelectedTab] = useState(findIndexOf(page));
 
 	const handleChange = (event, newValue) => {
-		setSelectedTab(newValue);
+		// setSelectedTab(newValue);
 		history.push(`${categories[newValue]}`);
 		window.scrollTo(0, 0);
 	};
@@ -47,7 +46,7 @@ const CategoryTabs = props => {
 				textColor='primary'
 				variant={matches ? 'standard' : 'scrollable'}
 				scrollButtons={!matches && notHoverable ? 'off' : 'on'}
-				aria-label='categories'>
+				aria-label='uutiskategoriat'>
 				{categories.map((label, i) => (
 					<Tab key={i} label={label} style={{ minWidth: 100 }} />
 				))}

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Typography, Link } from '@material-ui/core';
-
 import PropTypes from 'prop-types';
-
 import styles from './Logo.module.css';
 
 const Logo = ({ width, variant, mr }) => {
@@ -21,10 +19,7 @@ const Logo = ({ width, variant, mr }) => {
 					src={require('../../assets/app-logo.svg')}
 					alt='logo'
 					style={{ marginRight: `${mr}` }}></img>
-				<Typography
-					variant={variant}
-					color='primary'
-					className={styles.appTitle}>
+				<Typography variant={variant} color='primary' className={styles.appTitle}>
 					Uutis<span className={styles.thin}>ankka</span>
 				</Typography>
 			</Link>

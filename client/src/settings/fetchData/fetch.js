@@ -1,2 +1,2 @@
 export const defaultPage = 1;
-export const limit = 23;
+export const limit = 25;

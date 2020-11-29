@@ -5,16 +5,14 @@ export const fetchData = async (url, page, limit) => {
 	if (cancelToken) {
 		cancelToken.cancel('Operation canceled due to new request.');
 	}
-	cancelToken = axios.CancelToken.source();
 
+	cancelToken = axios.CancelToken.source();
 	url = url.replace('(', '').replace(')', '');
 
 	try {
 		const { data } = await axios.get(`/api/uutiset${url}?page=${page}&limit=${limit}`, {
 			cancelToken: cancelToken.token
 		});
-
-		console.log('data: ', data);
 
 		return data;
 	} catch (error) {

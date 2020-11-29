@@ -69,7 +69,7 @@ const SimpleMenu = ({ isDark, hidePics, handleThemeChange, handlePicVisibility, 
 									id='pic-switcher'
 									checked={options.hidePics}
 									onChange={handleChange}
-									name='theme-switch'
+									name='hide-switch'
 								/>
 							}
 							label='Piilota kuvat'
