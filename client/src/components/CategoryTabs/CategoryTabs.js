@@ -55,4 +55,4 @@ const CategoryTabs = props => {
 	);
 };
 
-export default CategoryTabs;
+export default React.memo(CategoryTabs);

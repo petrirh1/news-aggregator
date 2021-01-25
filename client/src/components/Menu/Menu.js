@@ -13,16 +13,15 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PropTypes from 'prop-types';
 import style from './Menu.module.css';
 
-const SimpleMenu = ({ isDark, hidePics, handleThemeChange, handlePicVisibility, setIsOpen }) => {
+const SimpleMenu = ({ isDark, hidePics, handleThemeChange, setIsOpen }) => {
 	const [anchorEl, setAnchorEl] = useState(null);
 	const [options, setOptions] = useState({
-		isDark: isDark,
-		hidePics: hidePics
+		isDark: isDark
 	});
 
 	useEffect(() => {
 		setOptions({ isDark, hidePics });
-	}, [isDark, hidePics]);
+	}, [isDark]);
 
 	const handleClick = event => {
 		setAnchorEl(event.currentTarget);
@@ -36,9 +35,6 @@ const SimpleMenu = ({ isDark, hidePics, handleThemeChange, handlePicVisibility, 
 		if (target.id === 'theme-switcher') {
 			setOptions({ ...options, isDark: !options.isDark });
 			handleThemeChange();
-		} else {
-			setOptions({ ...options, hidePics: !options.hidePics });
-			handlePicVisibility();
 		}
 	};
 
@@ -58,23 +54,6 @@ const SimpleMenu = ({ isDark, hidePics, handleThemeChange, handlePicVisibility, 
 				open={Boolean(anchorEl)}
 				onClose={handleClose}>
 				<FormControl component='fieldset'>
-					<FormLabel color='primary' focused={true} component='label'>
-						Asetukset
-					</FormLabel>
-					<FormGroup className={style.formGroup}>
-						<FormControlLabel
-							control={
-								<Switch
-									color='secondary'
-									id='pic-switcher'
-									checked={options.hidePics}
-									onChange={handleChange}
-									name='hide-switch'
-								/>
-							}
-							label='Piilota kuvat'
-						/>
-					</FormGroup>
 					<FormLabel color='primary' focused={true} component='label'>
 						Ulkoasu
 					</FormLabel>
@@ -103,4 +82,4 @@ Menu.propTypes = {
 	handleThemeChange: PropTypes.func
 };
 
-export default SimpleMenu;
+export default React.memo(SimpleMenu);

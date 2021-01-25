@@ -82,17 +82,14 @@ const Home = props => {
 	return (
 		<div className={styles.root}>
 			<Header {...props} />
-			<div className={styles.contentWrapper}>
-				<Feed
-					hidePics={props.hidePics}
-					data={news.data}
-					isLoading={isLoading}
-					fetchMore={fetchMore}
-					hasMore={hasMore}
-					hasError={hasError}
-				/>
-				<Footer />
-			</div>
+			<Feed
+				data={news.data}
+				isLoading={isLoading}
+				fetchMore={fetchMore}
+				hasMore={hasMore}
+				hasError={hasError}
+			/>
+			<Footer />
 		</div>
 	);
 };
@@ -102,4 +99,4 @@ Home.propTypes = {
 	history: PropTypes.object
 };
 
-export default Home;
+export default React.memo(Home);

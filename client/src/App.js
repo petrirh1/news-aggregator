@@ -9,22 +9,16 @@ import { lightTheme, darkTheme } from './styles';
 import styles from './App.module.css';
 
 const App = () => {
-	const [options, setOptions] = useState({ isDark: false, hidePics: false });
+	const [options, setOptions] = useState({ isDark: false });
 
 	useEffect(() => {
 		const darkTheme = localStorage.getItem('isDark') === 'true' ? true : false;
-		const hidePics = localStorage.getItem('hidePics') === 'true' ? true : false;
-		setOptions({ isDark: darkTheme, hidePics: hidePics });
+		setOptions({ isDark: darkTheme });
 	}, []);
 
 	const handleThemeChange = () => {
 		setOptions({ ...options, isDark: !options.isDark });
 		localStorage.setItem('isDark', !options.isDark);
-	};
-
-	const handlePicVisibility = () => {
-		setOptions({ ...options, hidePics: !options.hidePics });
-		localStorage.setItem('hidePics', !options.hidePics);
 	};
 
 	return (
@@ -38,13 +32,7 @@ const App = () => {
 							exact
 							path='/:page?'
 							render={props => (
-								<Home
-									isDark={options.isDark}
-									hidePics={options.hidePics}
-									handleThemeChange={handleThemeChange}
-									handlePicVisibility={handlePicVisibility}
-									{...props}
-								/>
+								<Home isDark={options.isDark} handleThemeChange={handleThemeChange} {...props} />
 							)}
 						/>
 						<Route render={() => <Redirect to={{ pathname: '/' }} />} />

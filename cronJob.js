@@ -6,16 +6,16 @@ const feedParser = require('./helpers/feedParsing');
 const time = require('./helpers/feedParsing');
 require('dotenv').config();
 
-mongoose
-	.connect(process.env.CONNECTION_STRING, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-		useCreateIndex: true
-	})
-	.then(() => job())
-	.catch(err => {
-		console.log(err);
-	}, 240000);
+// mongoose
+// 	.connect(process.env.CONNECTION_STRING, {
+// 		useNewUrlParser: true,
+// 		useUnifiedTopology: true,
+// 		useCreateIndex: true
+// 	})
+// 	.then(() => job())
+// 	.catch(err => {
+// 		console.log(err);
+// 	}, 240000);
 
 const parser = new RSSparser({
 	customFields: {
