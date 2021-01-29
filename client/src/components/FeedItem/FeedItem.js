@@ -15,7 +15,6 @@ import {
 	Avatar,
 	Fade
 } from '@material-ui/core';
-
 import styles from './FeedItem.module.css';
 JavascriptTimeAgo.addLocale(fi);
 

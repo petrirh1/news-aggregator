@@ -53,18 +53,6 @@ const darkTheme = createMuiTheme({
 					'0 1px 2px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.05), -20px 16px 62px rgba(0,0,0,0.15), 0 32px 130px rgba(0,0,0,0.8)'
 			}
 		},
-		// MuiCardMedia: {
-		// 	root: {
-		// 		borderBottom: '1px solid #2F393E'
-		// 	}
-		// },
-		// MuiCard: {
-		// 	root: {
-		// 		background: darkBGcolor,
-		// 		borderRadius: '5px',
-		// 		border: '1px solid #2F393E'
-		// 	}
-		// },
 		MuiLink: {
 			root: {
 				'&:hover': {

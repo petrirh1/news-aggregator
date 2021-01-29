@@ -13,10 +13,10 @@ export const overrides = {
 	},
 	MuiList: {
 		padding: {
-			paddingTop: 20,
-			paddingRight: 15,
+			paddingTop: 15,
+			paddingRight: 20,
 			paddingBottom: 15,
-			paddingLeft: 15
+			paddingLeft: 20
 		}
 	},
 	MuiFormLabel: {

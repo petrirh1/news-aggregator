@@ -9,18 +9,17 @@ import {
 	Switch
 } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-
 import PropTypes from 'prop-types';
 import style from './Menu.module.css';
 
-const SimpleMenu = ({ isDark, hidePics, handleThemeChange, setIsOpen }) => {
+const SimpleMenu = ({ isDark, handleThemeChange, setIsOpen }) => {
 	const [anchorEl, setAnchorEl] = useState(null);
 	const [options, setOptions] = useState({
 		isDark: isDark
 	});
 
 	useEffect(() => {
-		setOptions({ isDark, hidePics });
+		setOptions({ isDark });
 	}, [isDark]);
 
 	const handleClick = event => {

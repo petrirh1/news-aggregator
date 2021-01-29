@@ -2,6 +2,10 @@ import axios from 'axios';
 let cancelToken;
 
 export const fetchData = async (url, page, limit) => {
+	/*
+	 * Cancel token is used to cancel ongoing fetch request,
+	 * this is useful when category is changed before data has finished fetching
+	 */
 	if (cancelToken) {
 		cancelToken.cancel('Operation canceled due to new request.');
 	}

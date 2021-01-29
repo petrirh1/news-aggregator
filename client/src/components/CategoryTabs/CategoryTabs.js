@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Tabs, Tab, useMediaQuery } from '@material-ui/core';
-
 export const categories = [
 	'uusimmat',
 	'kotimaa',

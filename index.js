@@ -5,6 +5,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 const feedRoute = require('./routes/feedRoute');
 const devRoute = require('./routes/devRoute');
+const dev = process.env.NODE_ENV === 'production' ? false : true;
+
 require('dotenv').config();
 
 app.use(express.urlencoded({ extended: true }));
@@ -26,10 +28,14 @@ mongoose
 // });
 
 app.use('/api/uutiset', feedRoute);
-app.use('/api/', devRoute);
+
+if (dev) {
+	app.use('/api/getFavicon', devRoute);
+}
 
 app.use(express.static(path.join(__dirname, '/client/build')));
 app.use('/assets', express.static(path.join(__dirname, 'public/assets/favicons/')));
+
 app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });

@@ -4,7 +4,6 @@ import { fetchData } from '../../api';
 import { updateDocTitle, updatePath } from '../../helpers/string';
 import { limit, defaultPage } from '../../settings/fetchData/fetch';
 import PropTypes from 'prop-types';
-
 import styles from './Home.module.css';
 const title = document.title;
 
@@ -12,7 +11,7 @@ const Home = props => {
 	const { pathname } = props.history.location;
 	const { history } = props;
 
-	const [isLoading, setLoading] = useState(false);
+	const [isLoading, setLoading] = useState(true);
 	const [hasError, setHasError] = useState(false);
 	const [url, setUrl] = useState(pathname);
 	const [news, setNews] = useState({ data: [] });
@@ -99,4 +98,4 @@ Home.propTypes = {
 	history: PropTypes.object
 };
 
-export default React.memo(Home);
+export default Home;

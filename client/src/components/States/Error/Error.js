@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, Button } from '@material-ui/core';
-
 import styles from './Error.module.css';
 
 const Error = () => {

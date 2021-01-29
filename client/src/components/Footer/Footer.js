@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, Divider } from '@material-ui/core';
-
 import styles from './Footer.module.css';
 
 const Footer = () => {

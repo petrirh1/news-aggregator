@@ -1,12 +1,9 @@
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { Masonry as Masonic } from 'masonic';
 import { CircularProgress, Backdrop } from '@material-ui/core';
 import { FeedItem, Error } from '../../components';
-
 import PropTypes from 'prop-types';
-
-import { breakpoints } from '../../settings/masonryGrid/breakpoints';
-import Masonry from 'react-masonry-css';
 import styles from './Feeds.module.css';
 
 const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
@@ -16,24 +13,30 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 			scrollThreshold={0.5}
 			next={fetchMore}
 			hasMore={hasMore}
+			style={{ padding: '40px 10px 150px 10px' }}
 			loader={
 				<div className={styles.loader}>
-					<CircularProgress color='primary' size={26} thickness={4} />
+					<CircularProgress
+						color='primary'
+						size={26}
+						thickness={4}
+						style={{ display: isLoading ? 'none' : 'block' }}
+					/>
 				</div>
-			}
-			style={{ overflow: 'none', position: 'relative' }}>
+			}>
 			<Backdrop className={styles.backdrop} open={isLoading}>
 				<CircularProgress color='primary' size={26} thickness={4} />
 			</Backdrop>
-			{hasError ? (
-				<Error />
-			) : (
-				<Masonry
-					breakpointCols={breakpoints}
-					className={styles.masonryGrid}
-					columnClassName={styles.masonryGridColumn}>
-					{data && !hasError && data.map((data, i) => <FeedItem data={data} key={i} />)}
-				</Masonry>
+			{hasError && <Error />}
+			{data?.length > 1 && (
+				<Masonic
+					className={styles.masonry}
+					items={data}
+					columnGutter={18}
+					columnWidth={235}
+					overscanBy={2}
+					render={FeedItem}
+				/>
 			)}
 		</InfiniteScroll>
 	);

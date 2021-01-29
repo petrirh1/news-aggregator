@@ -1,5 +1,6 @@
 const probe = require('probe-image-size');
 const feedSources = require('../sources/feedSources');
+const TIME_TO_LIVE = require('../constants/ttl');
 
 const parseFeed = (feed, src) => {
 	const url = parseImageUrl(feed);
@@ -46,7 +47,6 @@ const parseImageUrl = feed => {
 };
 
 const parseCategories = (feed, src) => {
-	// if feed is missing categories tag altogether
 	if (!feed.categories) {
 		const host = getHostname(feed.link);
 		const res = feedSources.find(
@@ -89,8 +89,7 @@ const getHostname = url => {
 };
 
 const daysAgo = date => {
-	const DAYS = 60 * 60 * 24 * 3 * 1000; // 3 days
-	const daysAgo = Date.now() - DAYS;
+	const daysAgo = Date.now() - TIME_TO_LIVE;
 	return date >= daysAgo;
 };
 

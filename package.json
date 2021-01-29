@@ -19,16 +19,15 @@
 		"concurrently": "^5.3.0",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
-		"get-website-favicon": "0.0.7",
 		"mongoose": "^5.10.16",
 		"mongoose-paginate": "^5.0.3",
 		"mongoose-ttl": "0.0.3",
 		"mongoose-unique-validator": "^2.0.3",
 		"probe-image-size": "^6.0.0",
-		"react-masonry-css": "^1.0.14",
 		"rss-parser": "^3.9.0"
 	},
 	"devDependencies": {
+		"get-website-favicon": "0.0.7",
 		"nodemon": "^2.0.6"
 	}
 }

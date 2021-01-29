@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { CategoryTabs, Logo, Menu } from '../../components';
 import { AppBar, Toolbar, useScrollTrigger, Slide } from '@material-ui/core';
-
 import PropTypes from 'prop-types';
-
 import styles from './Header.module.css';
 
 const HideOnScroll = props => {

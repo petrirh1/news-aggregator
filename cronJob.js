@@ -51,9 +51,9 @@ const job = async () => {
 					});
 
 					Feed.findOne({ guid: newFeed.guid }, (err, feed) => {
-						// if (err) {
-						// 	console.log(err.ValidatorError || err.MongoError);
-						// }
+						if (err) {
+							console.log(err.ValidatorError || err.MongoError);
+						}
 						if (!feed) {
 							newFeed.save((err, data) => {
 								if (err) console.log(err._message || err.MongoError || err);

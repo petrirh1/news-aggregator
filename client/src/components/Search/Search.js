@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
 import { IconButton, Backdrop, TextField } from '@material-ui/core';
-
 import style from './Search.module.css';
 
 const Search = () => {
@@ -27,7 +26,7 @@ const Search = () => {
 					<TextField
 						fullWidth
 						label='Hae Uutisia'
-						// helperText='Voit hakea myös hakusanoilla kuten "autot"'
+						helperText='Voit hakea uutisia hakusanoilla kuten "autot"'
 						variant='outlined'
 						color='primary'
 						inputRef={textInput}

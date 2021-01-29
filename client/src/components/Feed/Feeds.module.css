@@ -1,29 +1,21 @@
-.masonryGrid {
-	display: flex;
-	width: auto;
-	min-height: 100vh;
-	padding: 1.25rem;
-}
-
-.masonryGridColumn {
-	padding-left: 1.25rem;
-	background-clip: padding-box;
-}
-
-.masonryGridColumn:first-child {
-	padding-left: 0;
-}
-
 .loader {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 200px;
 	margin-bottom: 71px;
+} 
+
+.masonry {
+	animation: fade-in 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) both;
 }
 
-@media (max-width: 950px) {
-	.masonryGrid {
-		padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+ @keyframes fade-in {
+	0% {
+	  opacity: 0;
 	}
-}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
