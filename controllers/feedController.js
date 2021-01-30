@@ -30,7 +30,7 @@ exports.getLatest = async (req, res) => {
 
 exports.getSources = (req, res) => {
 	try {
-		const result = filterOutNonUnique(sources);
+		const result = filterOutNonUnique(sources).sort((a, b) => (a.home < b.home ? -1 : 1));
 		res.status(200).json({ sources: result, count: result.length });
 	} catch (err) {
 		console.log(err);

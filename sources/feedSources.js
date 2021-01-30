@@ -448,7 +448,7 @@ const feedSources = [
 	{
 		url: 'https://www.motortrend.com/feed/',
 		source: 'Motortrend',
-		hone: 'https://www.motortrend.com',
+		home: 'https://www.motortrend.com',
 		category: 'tekniikkaen',
 		favicon: '/assets/motortrend-favicon-192x192.png'
 	},
