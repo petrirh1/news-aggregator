@@ -8,7 +8,10 @@ const HideOnScroll = props => {
 	const { children, menuIsOpen } = props;
 	const trigger = useScrollTrigger();
 
-	// check whether menu is open or not. This prevents hiding header while menu is still open in some scenarios
+	/*
+	 * Check whether the menu is open or not.
+	 * This prevents hiding the header while menu is still open in some scenarios
+	 */
 	const newTrigger = menuIsOpen ? false : trigger;
 
 	return (

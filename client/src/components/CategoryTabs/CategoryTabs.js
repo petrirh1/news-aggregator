@@ -30,7 +30,6 @@ const CategoryTabs = props => {
 	const [selectedTab, setSelectedTab] = useState(findIndexOf(page));
 
 	const handleChange = (event, newValue) => {
-		// setSelectedTab(newValue);
 		history.push(`${categories[newValue]}`);
 		window.scrollTo(0, 0);
 	};
