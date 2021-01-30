@@ -1,5 +1,5 @@
 export const overrides = {
-	MuiTypohraphy: {
+	MuiTypography: {
 		h6: {
 			display: 'flex',
 			alignItems: 'center',
