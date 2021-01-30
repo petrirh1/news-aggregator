@@ -9,7 +9,6 @@ import {
 	DialogActions,
 	Link
 } from '@material-ui/core';
-
 import styles from './AnimatedModal.module.css';
 
 const AnimatedModal = () => {
