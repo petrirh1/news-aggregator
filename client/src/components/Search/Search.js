@@ -8,7 +8,7 @@ const Search = () => {
 	const [open, setOpen] = useState(false);
 	const textInput = useRef(null);
 
-	const handleClick = e => {
+	const handleClick = () => {
 		setOpen(!open);
 
 		setTimeout(() => {
