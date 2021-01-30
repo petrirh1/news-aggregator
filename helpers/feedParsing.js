@@ -17,6 +17,12 @@ const getImageDimensions = async url => {
 	return await probe(url);
 };
 
+const filterOutNonUnique = arr => {
+	return arr.filter(
+		(v, i, a) => a.findIndex(t => t.source === v.source && t.home === v.home) === i
+	);
+};
+
 const parseImageUrl = feed => {
 	if (feed.image) {
 		if (typeof feed.image === 'string') return feed.image;
@@ -95,5 +101,6 @@ const daysAgo = date => {
 
 module.exports = {
 	parseFeed,
-	daysAgo
+	daysAgo,
+	filterOutNonUnique
 };

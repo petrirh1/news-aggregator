@@ -23,3 +23,14 @@ export const fetchData = async (url, page, limit) => {
 		return error;
 	}
 };
+
+export const fetchSources = async () => {
+	try {
+		const { data } = await axios.get('/api/uutiset/lahteet');
+		return data;
+	} catch (error) {
+		return error;
+	}
+};
+
+fetchSources();

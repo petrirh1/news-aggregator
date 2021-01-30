@@ -13,7 +13,7 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 			scrollThreshold={0.5}
 			next={fetchMore}
 			hasMore={hasMore}
-			style={{ padding: '40px 10px 150px 10px' }}
+			style={{ padding: '15px 10px 150px 10px' }}
 			loader={
 				<div className={styles.loader}>
 					<CircularProgress
