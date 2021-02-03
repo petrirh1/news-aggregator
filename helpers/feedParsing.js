@@ -18,9 +18,10 @@ const getImageDimensions = async url => {
 };
 
 const filterOutNonUnique = arr => {
-	return arr.filter(
-		(v, i, a) => a.findIndex(t => t.source === v.source && t.home === v.home) === i
-	);
+	const unique = [
+		...new Set(arr.map(item => JSON.stringify({ home: item.home, source: item.source })))
+	];
+	return unique.map(item => JSON.parse(item));
 };
 
 const parseImageUrl = feed => {
@@ -101,6 +102,10 @@ const daysAgo = date => {
 
 module.exports = {
 	parseFeed,
+	getImageDimensions,
 	daysAgo,
-	filterOutNonUnique
+	filterOutNonUnique,
+	parseImageUrl,
+	parseCategories,
+	getHostname
 };

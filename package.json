@@ -6,6 +6,7 @@
 	"scripts": {
 		"start": "node index",
 		"start:dev": "nodemon index",
+		"test": "jest",
 		"stop": "taskkill -f -im node.exe",
 		"server": "nodemon index.js",
 		"client": "npm start --prefix client",
@@ -20,6 +21,7 @@
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
 		"get-website-favicon": "0.0.7",
+		"jest": "^26.6.0",
 		"mongoose": "^5.11.14",
 		"mongoose-paginate": "^5.0.3",
 		"mongoose-ttl": "0.0.3",

@@ -1,4 +1,4 @@
 .root {
-	min-height: calc(100vh + 70px); /* viewport height + footer height */
+	min-height: calc(100vh + 90px); /* viewport height + footer height */
 	position: relative;
 }
