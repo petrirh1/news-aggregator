@@ -4,6 +4,9 @@ export const overrides = {
 			display: 'flex',
 			alignItems: 'center',
 			height: '100%'
+		},
+		h4: {
+			fontSize: '28px'
 		}
 	},
 	MuiBackdrop: {
@@ -53,11 +56,6 @@ export const overrides = {
 	MuiTabs: {
 		root: {
 			marginBottom: 3
-		}
-	},
-	MuiTypography: {
-		h4: {
-			fontSize: '28px'
 		}
 	},
 	MuiOutlinedInput: {
