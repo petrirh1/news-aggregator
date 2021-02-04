@@ -1,7 +1,7 @@
 const { imageURL, date, sources } = require('./testData.js');
 const {
 	parseFeed,
-	getImageDimensions,
+	getImageDetails,
 	daysAgo,
 	filterOutNonUnique,
 	parseImageUrl,
@@ -10,7 +10,7 @@ const {
 } = require('./feedParsing.js');
 
 test('Expect to return an object with image dimensions', async () => {
-	expect(await getImageDimensions(imageURL)).toEqual({
+	expect(await getImageDetails(imageURL)).toEqual({
 		hUnits: 'px',
 		height: 1401,
 		length: 84447,

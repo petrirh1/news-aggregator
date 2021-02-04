@@ -37,7 +37,10 @@ const job = async () => {
 	feedSources.forEach(async source => {
 		try {
 			const feed = await parser.parseURL(source.url);
-			const parsedFeed = feed.items.map(item => feedParser.parseFeed(item, source));
+			// const parsedFeed = feed.items.map(item => feedParser.parseFeed(item, source));
+			const parsedFeed = await Promise.all(
+				feed.items.map(async item => await feedParser.parseFeed(item, source))
+			);
 
 			console.log('parsing feeds..');
 

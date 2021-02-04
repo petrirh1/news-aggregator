@@ -32,5 +32,3 @@ export const fetchSources = async () => {
 		return error;
 	}
 };
-
-fetchSources();

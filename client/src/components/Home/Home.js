@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header, Feed, Footer } from '../../components';
 import { fetchData } from '../../api';
 import { updateDocTitle, updatePath } from '../../helpers/string';
-import { limit, defaultPage } from '../../settings/fetchData/fetch';
+import { LIMIT, DEFAULT_PAGE } from '../../constants/constants';
 import PropTypes from 'prop-types';
 import styles from './Home.module.css';
 const title = document.title;
@@ -32,7 +32,7 @@ const Home = props => {
 		setLoading(true);
 
 		try {
-			const data = await fetchData(pathname, defaultPage, limit);
+			const data = await fetchData(pathname, DEFAULT_PAGE, LIMIT);
 			const { page, pages } = data;
 
 			if (page >= pages) {
@@ -59,7 +59,7 @@ const Home = props => {
 		if (isLoading) return;
 
 		try {
-			const data = await fetchData(url, news.nextPage, limit);
+			const data = await fetchData(url, news.nextPage, LIMIT);
 			const { page, pages } = data;
 
 			if (page >= pages) {

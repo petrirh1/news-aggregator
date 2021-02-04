@@ -45,7 +45,10 @@ export const overrides = {
 	},
 	MuiDialog: {
 		container: {
-			background: 'rgba(0, 0, 0, 0.6)'
+			background: 'rgba(0, 0, 0, 0.8)'
+		},
+		paperScrollPaper: {
+			maxHeight: '600px'
 		}
 	},
 	MuiAvatar: {

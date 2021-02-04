@@ -2,17 +2,19 @@ const probe = require('probe-image-size');
 const feedSources = require('../sources/feedSources');
 const TIME_TO_LIVE = require('../constants/ttl');
 
-const parseFeed = (feed, src) => {
+const parseFeed = async (feed, src) => {
 	const url = parseImageUrl(feed);
+	const details = await getImageDetails(url);
+	const { width, height, wUnits } = details;
 
 	return {
 		...feed,
-		image: { url: url },
+		image: { url, width, height, unit: wUnits },
 		categories: parseCategories(feed, src)
 	};
 };
 
-const getImageDimensions = async url => {
+const getImageDetails = async url => {
 	if (!url) return;
 	return await probe(url);
 };
@@ -102,7 +104,7 @@ const daysAgo = date => {
 
 module.exports = {
 	parseFeed,
-	getImageDimensions,
+	getImageDetails,
 	daysAgo,
 	filterOutNonUnique,
 	parseImageUrl,

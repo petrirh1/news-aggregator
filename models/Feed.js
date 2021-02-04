@@ -13,7 +13,7 @@ const FeedSchema = mongoose.Schema({
 	categories: [{ type: String, lowercase: true }],
 	isoDate: { type: Date, required: true },
 	source: { type: String, required: true },
-	image: { url: String, width: String, height: String },
+	image: { url: String, width: Number, height: Number, unit: String },
 	favicon: { type: String, required: true }
 });
 

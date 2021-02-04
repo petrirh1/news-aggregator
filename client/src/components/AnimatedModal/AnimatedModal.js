@@ -26,7 +26,7 @@ const AnimatedModal = () => {
 	useEffect(() => {
 		async function getSources() {
 			const data = await fetchSources();
-			setSources(data.sources);
+			setSources(data?.sources);
 		}
 		getSources();
 	}, []);
@@ -69,4 +69,4 @@ const AnimatedModal = () => {
 	);
 };
 
-export default AnimatedModal;
+export default React.memo(AnimatedModal);

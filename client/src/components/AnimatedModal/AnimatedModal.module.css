@@ -1,3 +1,7 @@
+.modal {
+	max-height: 600px !important;
+}
+
 .listItem {
 	list-style-type: none;
 }

@@ -5,6 +5,7 @@ import fi from 'javascript-time-ago/locale/fi';
 import { firstLetter } from '../../helpers/string';
 import { getRandomNum } from '../../helpers/number';
 import ImageIcon from '@material-ui/icons/Image';
+import { MIN_IMAGE_WIDTH } from '../../constants/constants';
 import PropTypes from 'prop-types';
 import {
 	Card,
@@ -16,6 +17,7 @@ import {
 	Fade
 } from '@material-ui/core';
 import styles from './FeedItem.module.css';
+
 JavascriptTimeAgo.addLocale(fi);
 
 const FeedItem = ({ data }) => {
@@ -33,7 +35,7 @@ const FeedItem = ({ data }) => {
 			className={styles.root}
 			onClick={() => window.open(data.link, '_blank', 'noopener noreferrer')}>
 			<CardActionArea disableRipple>
-				{image.url && (
+				{image.url && image.width > MIN_IMAGE_WIDTH && (
 					<div className={styles.container}>
 						<Fade timeout={randNum} in={hasLoaded}>
 							<CardMedia
