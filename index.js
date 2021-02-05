@@ -5,13 +5,9 @@ const path = require('path');
 const mongoose = require('mongoose');
 const feedRoute = require('./routes/feedRoute');
 const devRoute = require('./routes/devRoute');
-const helmet = require('helmet');
-const rateLimit = require('./middleware/rateLimit/rateLimit');
 const dev = process.env.NODE_ENV === 'production' ? false : true;
 require('dotenv').config();
 
-app.use(rateLimit);
-app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
