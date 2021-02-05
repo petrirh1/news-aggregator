@@ -5,6 +5,15 @@ const TIME_TO_LIVE = require('../constants/ttl');
 const parseFeed = async (feed, src) => {
 	const url = parseImageUrl(feed);
 	const details = await getImageDetails(url);
+
+	if (!url) {
+		return {
+			...feed,
+			image: { url },
+			categories: parseCategories(feed, src)
+		};
+	}
+
 	const { width, height, wUnits } = details;
 
 	return {
