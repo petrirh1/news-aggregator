@@ -46,7 +46,7 @@ const CategoryTabs = props => {
 				scrollButtons={!matches && notHoverable ? 'off' : 'on'}
 				aria-label='uutiskategoriat'>
 				{categories.map((label, i) => (
-					<Tab key={i} label={label} style={{ minWidth: 100 }} />
+					<Tab disableFocusRipple key={i} label={label} style={{ minWidth: 100 }} />
 				))}
 			</Tabs>
 		</AppBar>
