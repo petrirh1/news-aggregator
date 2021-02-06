@@ -385,6 +385,14 @@ const feedSources = [
 			'https://cdn.vox-cdn.com/uploads/chorus_asset/file/7395351/android-chrome-192x192.0.png'
 	},
 	{
+		url: 'https://www.cnet.com/rss/android-update/',
+		source: 'CNET',
+		home: 'https://www.cnet.com/',
+		category: 'tekniikkaen',
+		favicon:
+			'https://cnet1.cbsistatic.com/fly/bundles/cnetcss/images/core/icon/apple-touch-icon-152.png'
+	},
+	{
 		url: 'https://www.theverge.com/reviews/rss/index.xml',
 		source: 'The Verge',
 		home: 'https://www.theverge.com/',
