@@ -8,15 +8,14 @@
 
 .masonry {
 	outline: none;
-	animation: fade-in 0.25s cubic-bezier(.53,.11,.83,.67) both;
+	animation: fade-in 0.5s cubic-bezier(.75,.01,.83,.67) both;
 }
 
- @keyframes fade-in {
+@keyframes fade-in {
 	0% {
-	  opacity: 0;
+		opacity: 0;
 	}
 	100% {
-	  opacity: 1;
+		opacity: 1;
 	}
-  }
-  
+}
