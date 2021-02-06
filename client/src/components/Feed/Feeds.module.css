@@ -4,7 +4,11 @@
 	align-items: center;
 	height: 200px;
 	margin-bottom: 71px;
-} 
+}
+
+.backdrop {
+	z-index: 100;
+}
 
 .masonry {
 	outline: none;
