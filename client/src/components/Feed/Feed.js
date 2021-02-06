@@ -24,7 +24,7 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 					/>
 				</div>
 			}>
-			<Backdrop className={styles.backdrop} open={isLoading}>
+			<Backdrop open={isLoading}>
 				<CircularProgress color='primary' size={26} thickness={4} />
 			</Backdrop>
 			{hasError && <Error />}
