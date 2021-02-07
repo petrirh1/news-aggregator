@@ -20,5 +20,5 @@ Run all available tests.
 
 ### Live demo
 
-App is up and running at [heroku.](https://uutisankka-dev.herokuapp.com/uusimmat)<br>
-*It might take a while to spin up, so please wait.*
+App is currently up and running at [heroku.](https://uutisankka-dev.herokuapp.com/uusimmat)<br>
+*Please note that it might take a while to spin up, so please wait.*
