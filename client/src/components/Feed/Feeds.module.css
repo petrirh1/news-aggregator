@@ -12,7 +12,7 @@
 
 .masonry {
 	outline: none;
-	animation: fade-in 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) 0.2s both;
+	animation: fade-in 0.25s cubic-bezier(0.470, 0.000, 0.745, 0.715) 0.3s both;
 }
 
 @keyframes fade-in {
