@@ -84,4 +84,4 @@ FeedItem.propTypes = {
 	data: PropTypes.object
 };
 
-export default React.memo(FeedItem);
+export default FeedItem;
