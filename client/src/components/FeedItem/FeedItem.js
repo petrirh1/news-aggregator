@@ -30,10 +30,7 @@ const FeedItem = ({ data }) => {
 	};
 
 	return (
-		<Card
-			elevation={1}
-			className={styles.root}
-			onClick={() => window.open(data.link, '_blank', 'noopener noreferrer')}>
+		<Card elevation={1} onClick={() => window.open(data.link, '_blank', 'noopener noreferrer')}>
 			<CardActionArea disableRipple>
 				{image.url && image.height >= MIN_IMAGE_WIDTH && (
 					<div className={styles.container}>
