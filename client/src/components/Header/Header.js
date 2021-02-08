@@ -40,7 +40,8 @@ const Header = props => {
 };
 
 HideOnScroll.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.object,
+	menuIsOpen: PropTypes.bool
 };
 
 export default Header;

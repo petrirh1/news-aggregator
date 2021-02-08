@@ -78,7 +78,8 @@ const SimpleMenu = ({ isDark, handleThemeChange, setIsOpen }) => {
 
 Menu.propTypes = {
 	isDark: PropTypes.bool,
-	handleThemeChange: PropTypes.func
+	handleThemeChange: PropTypes.func,
+	setIsOpen: PropTypes.func
 };
 
 export default SimpleMenu;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { AppBar, Tabs, Tab, useMediaQuery } from '@material-ui/core';
 export const categories = [
 	'uusimmat',
@@ -51,6 +52,12 @@ const CategoryTabs = props => {
 			</Tabs>
 		</AppBar>
 	);
+};
+
+CategoryTabs.propTypes = {
+	history: PropTypes.object,
+	params: PropTypes.object,
+	page: PropTypes.string
 };
 
 export default CategoryTabs;
