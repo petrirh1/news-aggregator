@@ -1,6 +1,6 @@
 ## News Aggregator
 
-News feed aggregator which aggregates news from various rss feeds. Mainly from finnish news sources.
+News feed aggregator which aggregates news from various rss feeds. Mainly from Finnish news sources.
 
 ### Available Scripts
 
