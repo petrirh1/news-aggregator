@@ -81,4 +81,4 @@ Menu.propTypes = {
 	handleThemeChange: PropTypes.func
 };
 
-export default React.memo(SimpleMenu);
+export default SimpleMenu;

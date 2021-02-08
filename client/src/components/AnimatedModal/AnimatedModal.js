@@ -69,4 +69,4 @@ const AnimatedModal = () => {
 	);
 };
 
-export default React.memo(AnimatedModal);
+export default AnimatedModal;

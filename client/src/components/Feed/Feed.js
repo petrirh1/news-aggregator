@@ -50,4 +50,4 @@ Feed.propTypes = {
 	isLoading: PropTypes.bool
 };
 
-export default React.memo(Feed);
+export default Feed;
