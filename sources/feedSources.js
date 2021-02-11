@@ -441,7 +441,7 @@ const feedSources = [
 	},
 	{
 		url: 'https://appleinsider.com/rss/news',
-		source: 'appleinsider',
+		source: 'AppleInsider',
 		home: 'https://appleinsider.com',
 		category: 'tekniikkaen',
 		favicon: 'https://photos5.appleinsider.com/v9/images/apple-touch-icon-144.png'
