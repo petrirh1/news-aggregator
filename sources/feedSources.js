@@ -505,6 +505,29 @@ const feedSources = [
 		favicon: 'https://cdn.newsledge.com/wp-content/uploads/2019/10/cropped-news-ledge-fav.jpg'
 	},
 	{
+		url: 'https://www.slashgear.com/feed/',
+		source: 'SlashGear',
+		home: 'https://www.slashgear.com/',
+		category: 'tekniikkaen',
+		favicon: '/assets/slashgear-favicon-192x192.png'
+	},
+	{
+		url: 'https://www.macworld.com/news/index.rss',
+		source: 'Macworld',
+		home: 'https://www.macworld.com/',
+		category: 'tekniikkaen',
+		favicon:
+			'https://csmb.staticworld.net/images/furniture/macworld/mw-apple-touch-icon-precomposed-144.png'
+	},
+	{
+		url: 'https://www.macworld.com/news/index.rss',
+		source: 'electrive',
+		home: 'https://www.macworld.com/',
+		category: 'tekniikkaen',
+		favicon:
+			'https://csmb.staticworld.net/images/furniture/macworld/mw-apple-touch-icon-precomposed-144.png'
+	},
+	{
 		url: 'https://aamuset.fi/rss.xml',
 		source: 'Aamuset',
 		home: 'https://aamuset.fi',
