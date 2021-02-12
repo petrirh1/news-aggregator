@@ -7,7 +7,7 @@ const defaultLimit = 30;
 exports.getOptions = (req, res, next) => {
 	const { page, limit } = req.query;
 
-	res.options = {
+	req.options = {
 		page: parseInt(page) || defaultPage,
 		limit: parseInt(limit) || defaultLimit,
 		select: '-__v -_id -__ttl -guid',
@@ -20,7 +20,7 @@ exports.getOptions = (req, res, next) => {
 };
 
 exports.getLatest = async (req, res) => {
-	const { options } = res;
+	const { options } = req;
 
 	try {
 		const feeds = await Feed.paginate({ categories: { $ne: 'tekniikkaen' } }, options);
@@ -47,7 +47,7 @@ exports.getSources = (req, res) => {
 };
 
 exports.getByCategory = async (req, res) => {
-	const { options } = res;
+	const { options } = req;
 	const { category } = req.params;
 
 	try {
