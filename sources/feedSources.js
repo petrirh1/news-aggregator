@@ -511,6 +511,14 @@ const feedSources = [
 		favicon: 'https://icdn2.digitaltrends.com/image/digitaltrends/dt-site-icon-144x144.png'
 	},
 	{
+		url: 'http://feeds.feedburner.com/Ithinkdiff',
+		source: 'iThinkDifferent',
+		home: 'https://www.ithinkdiff.com/',
+		category: 'tekniikkaen',
+		favicon:
+			'https://cdn.ithinkdiff.com/wp-content/uploads/2015/09/cropped-Screen-Shot-2015-09-24-at-3.40.28-a.m.-180x180.jpg'
+	},
+	{
 		url: 'https://www.androidpolice.com/feed/',
 		source: 'Android Police',
 		home: 'https://www.androidpolice.com',
