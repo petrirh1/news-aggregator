@@ -8,6 +8,7 @@ body {
 	display: flex;
 	justify-content: center;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	box-sizing: border-box;
 
 	padding-top: env(safe-area-inset-top);
@@ -19,7 +20,14 @@ body {
 
 .App {
 	max-width: 1000px;
+	padding: 10px;
 	width: 100vw;
+}
+
+@media (hover: none) {
+	.App {
+		padding: 0;
+	}
 }
 
 @media (hover: none) and (orientation: landscape) {
