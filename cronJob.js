@@ -71,5 +71,3 @@ const job = async () => {
 		}
 	});
 };
-
-job();
