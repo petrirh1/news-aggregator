@@ -385,6 +385,34 @@ const feedSources = [
 			'https://cdn.vox-cdn.com/uploads/chorus_asset/file/7395351/android-chrome-192x192.0.png'
 	},
 	{
+		url: 'https://www.techradar.com/rss/news/computing',
+		source: 'TechRadar',
+		home: 'https://www.techradar.com/',
+		category: 'tekniikkaen',
+		favicon: 'https://vanilla.futurecdn.net/techradar/246767/apple-touch-icon.png'
+	},
+	{
+		url: 'https://www.techradar.com/rss/news/audio',
+		source: 'TechRadar',
+		home: 'https://www.techradar.com/',
+		category: 'tekniikkaen',
+		favicon: 'https://vanilla.futurecdn.net/techradar/246767/apple-touch-icon.png'
+	},
+	{
+		url: 'https://www.techradar.com/rss/news/portable-devices',
+		source: 'TechRadar',
+		home: 'https://www.techradar.com/',
+		category: 'tekniikkaen',
+		favicon: 'https://vanilla.futurecdn.net/techradar/246767/apple-touch-icon.png'
+	},
+	{
+		url: 'https://www.techradar.com/rss/news/phone-and-communications',
+		source: 'TechRadar',
+		home: 'https://www.techradar.com/',
+		category: 'tekniikkaen',
+		favicon: 'https://vanilla.futurecdn.net/techradar/246767/apple-touch-icon.png'
+	},
+	{
 		url: 'https://www.cnet.com/rss/android-update/',
 		source: 'CNET',
 		home: 'https://www.cnet.com/',
