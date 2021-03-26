@@ -500,8 +500,7 @@ const feedSources = [
 		source: 'Engadget',
 		home: 'https://www.engadget.com',
 		category: 'tekniikkaen',
-		favicon:
-			'https://s.blogsmithmedia.com/www.engadget.com/assets-hc2382a6dcaa087f1ba75e975c839c33c/images/favicon-160x160.png?h=1638b0a8bbe7effa8f85c3ecabb63620'
+		favicon: 'https://s.yimg.com/kw/assets/favicon-160x160.png'
 	},
 	{
 		url: 'https://www.digitaltrends.com/feed/',
