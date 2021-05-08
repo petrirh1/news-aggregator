@@ -3,7 +3,6 @@ import ReactTimeAgo from 'react-time-ago';
 import JavascriptTimeAgo from 'javascript-time-ago';
 import fi from 'javascript-time-ago/locale/fi';
 import { firstLetter } from '../../helpers/string';
-import { getRandomNum } from '../../helpers/number';
 import ImageIcon from '@material-ui/icons/Image';
 import { MIN_IMAGE_WIDTH } from '../../constants/constants';
 import PropTypes from 'prop-types';
@@ -23,7 +22,6 @@ JavascriptTimeAgo.addLocale(fi);
 const FeedItem = ({ data }) => {
 	const { image, source, title, isoDate, favicon, link } = data;
 	const [hasLoaded, setHasLoaded] = useState(false);
-	const randNum = getRandomNum(400, 1000);
 
 	const handleImageLoad = () => {
 		setHasLoaded(true);
@@ -34,7 +32,7 @@ const FeedItem = ({ data }) => {
 			<CardActionArea disableRipple>
 				{image.url && image.width >= MIN_IMAGE_WIDTH && (
 					<div className={styles.container}>
-						<Fade timeout={randNum} in={hasLoaded}>
+						<Fade timeout={500} in={hasLoaded}>
 							<CardMedia
 								component='img'
 								className={styles.media}
