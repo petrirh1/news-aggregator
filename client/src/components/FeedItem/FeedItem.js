@@ -21,7 +21,7 @@ import styles from './FeedItem.module.css';
 JavascriptTimeAgo.addLocale(fi);
 
 const FeedItem = ({ data }) => {
-	const { image, source, title, isoDate, favicon } = data;
+	const { image, source, title, isoDate, favicon, link } = data;
 	const [hasLoaded, setHasLoaded] = useState(false);
 	const randNum = getRandomNum(400, 1000);
 
@@ -30,7 +30,7 @@ const FeedItem = ({ data }) => {
 	};
 
 	return (
-		<Card elevation={1} onClick={() => window.open(data.link, '_blank', 'noopener noreferrer')}>
+		<Card elevation={1} onClick={() => window.open(link, '_blank', 'noopener noreferrer')}>
 			<CardActionArea disableRipple>
 				{image.url && image.width >= MIN_IMAGE_WIDTH && (
 					<div className={styles.container}>
