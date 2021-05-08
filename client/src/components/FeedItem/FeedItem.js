@@ -32,7 +32,7 @@ const FeedItem = ({ data }) => {
 	return (
 		<Card elevation={1} onClick={() => window.open(data.link, '_blank', 'noopener noreferrer')}>
 			<CardActionArea disableRipple>
-				{image.url && image.height >= MIN_IMAGE_WIDTH && (
+				{image.url && image.width >= MIN_IMAGE_WIDTH && (
 					<div className={styles.container}>
 						<Fade timeout={randNum} in={hasLoaded}>
 							<CardMedia
