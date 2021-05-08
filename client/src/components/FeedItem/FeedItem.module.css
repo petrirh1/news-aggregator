@@ -1,11 +1,11 @@
 .container {
 	position: relative;
+	filter: grayscale(35%);
 }
 
 .media {
 	height: 180px;
 	overflow: hidden;
-	filter: grayscale(35%);
 	border-radius: 3px 3px 0 0;
 	position: relative;
 	z-index: 2;
