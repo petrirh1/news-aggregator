@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index",
+		"start": "index",
 		"start:dev": "nodemon index",
 		"test": "jest",
 		"stop": "taskkill -f -im node.exe",
