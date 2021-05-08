@@ -25,11 +25,12 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 				</div>
 			}>
 			<Backdrop className={styles.backdrop} open={isLoading}>
-				<CircularProgress color='primary' size={26} thickness={4} />
+				<CircularProgress color='primary' size={26} thickness={4} aria-label='progressbar' />
 			</Backdrop>
 			{hasError && <Error />}
 			{data?.length > 1 && (
 				<Masonic
+					role='list'
 					className={styles.masonry}
 					items={data}
 					columnGutter={18}
