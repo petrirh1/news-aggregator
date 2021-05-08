@@ -555,12 +555,11 @@ const feedSources = [
 			'https://csmb.staticworld.net/images/furniture/macworld/mw-apple-touch-icon-precomposed-144.png'
 	},
 	{
-		url: 'https://www.macworld.com/news/index.rss',
+		url: 'https://www.electrive.com/feed/',
 		source: 'electrive',
-		home: 'https://www.macworld.com/',
+		home: 'https://www.electrive.com/',
 		category: 'tekniikkaen',
-		favicon:
-			'https://csmb.staticworld.net/images/furniture/macworld/mw-apple-touch-icon-precomposed-144.png'
+		favicon: '/assets/electrive-favicon-192x192.png'
 	},
 	{
 		url: 'https://aamuset.fi/rss.xml',
