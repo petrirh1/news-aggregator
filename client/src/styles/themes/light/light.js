@@ -29,7 +29,7 @@ const lightTheme = createMuiTheme({
 		},
 		MuiButtonBase: {
 			root: {
-				color: grey[600] //card hover
+				color: grey[900] //card hover
 			}
 		},
 		MuiTouchRipple: {
