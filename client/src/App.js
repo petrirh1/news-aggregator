@@ -16,7 +16,7 @@ const App = () => {
 		const darkTheme = localStorage.getItem('isDark') === 'true' ? true : false;
 		setOptions({ isDark: darkTheme });
 
-		ReactGA.initialize(process.env.REACT_APP_GA_ID);
+		ReactGA.initialize({ trackingId: process.env.REACT_APP_GA_ID });
 		ReactGA.pageview(window.location.pathname + window.location.search);
 	}, []);
 
@@ -35,7 +35,7 @@ const App = () => {
 						<Route
 							exact
 							path='/:page?'
-							render={props => (
+							render={(props) => (
 								<Home isDark={options.isDark} handleThemeChange={handleThemeChange} {...props} />
 							)}
 						/>
