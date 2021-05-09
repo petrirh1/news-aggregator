@@ -10,7 +10,9 @@ const devRoute = require('./routes/devRoute');
 const dev = process.env.NODE_ENV === 'production' ? false : true;
 require('dotenv').config();
 
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: false,
+  }));
 app.use(limiter);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
