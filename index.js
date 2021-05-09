@@ -2,12 +2,16 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require('path');
+const limiter = require('./middleware/rate');
+const helmet = require('helmet');
 const mongoose = require('mongoose');
 const feedRoute = require('./routes/feedRoute');
 const devRoute = require('./routes/devRoute');
 const dev = process.env.NODE_ENV === 'production' ? false : true;
 require('dotenv').config();
 
+app.use(helmet());
+app.use(limiter);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -18,7 +22,7 @@ mongoose
 		useCreateIndex: true
 	})
 	.then(() => console.log('Connected to mongoDB...'))
-	.catch(err => {
+	.catch((err) => {
 		console.log(err);
 	});
 
