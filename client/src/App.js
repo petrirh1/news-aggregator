@@ -5,6 +5,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Home } from './components';
 import { lightTheme, darkTheme } from './styles';
+import ReactGA from 'react-ga';
 
 import styles from './App.module.css';
 
@@ -14,6 +15,9 @@ const App = () => {
 	useEffect(() => {
 		const darkTheme = localStorage.getItem('isDark') === 'true' ? true : false;
 		setOptions({ isDark: darkTheme });
+
+		ReactGA.initialize(process.env.REACT_APP_GA_ID);
+		ReactGA.pageview(window.location.pathname + window.location.search);
 	}, []);
 
 	const handleThemeChange = () => {
