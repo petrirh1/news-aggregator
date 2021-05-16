@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import styles from './Home.module.css';
 const title = document.title;
 
-const Home = props => {
+const Home = (props) => {
 	const { pathname } = props.history.location;
 	const { history } = props;
 
@@ -44,10 +44,9 @@ const Home = props => {
 
 			setNews({
 				data: data.docs,
-				nextPage: page < pages ? page + 1 : page
+				nextPage: page < pages ? page + 1 : page,
 			});
 		} catch (err) {
-			console.log(err);
 			setHasMore(false);
 			setHasError(true);
 		} finally {
@@ -68,7 +67,7 @@ const Home = props => {
 
 			setNews({
 				data: [...news.data, ...data.docs],
-				nextPage: page < pages ? page + 1 : page
+				nextPage: page < pages ? page + 1 : page,
 			});
 		} catch (err) {
 			setHasMore(false);
@@ -95,7 +94,7 @@ const Home = props => {
 
 Home.propTypes = {
 	pathname: PropTypes.string,
-	history: PropTypes.object
+	history: PropTypes.object,
 };
 
 export default Home;
