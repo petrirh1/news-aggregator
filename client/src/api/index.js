@@ -19,7 +19,6 @@ export const fetchData = async (url, page, limit) => {
 
 	try {
 		if (hasStorage() && cachedData && shouldUseCache(cachedData, page, url)) {
-			console.log('Hi!');
 			return JSON.parse(cachedData);
 		}
 
