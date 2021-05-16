@@ -18,7 +18,7 @@ export const fetchData = async (url, page, limit) => {
 	cancelToken = axios.CancelToken.source();
 
 	try {
-		if (hasStorage() && cachedData && shouldUseCache(cachedData, page)) {
+		if (hasStorage() && cachedData && shouldUseCache(cachedData, page, url)) {
 			console.log('Hi!');
 			return JSON.parse(cachedData);
 		}
