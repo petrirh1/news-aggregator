@@ -33,7 +33,7 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 					role='list'
 					className={styles.masonry}
 					items={data}
-					columnGutter={18}
+					columnGutter={25}
 					columnWidth={235}
 					overscanBy={2}
 					render={FeedItem}
@@ -48,7 +48,7 @@ Feed.propTypes = {
 	fetchMore: PropTypes.func,
 	hasMore: PropTypes.bool,
 	hasError: PropTypes.bool,
-	isLoading: PropTypes.bool
+	isLoading: PropTypes.bool,
 };
 
 export default Feed;
