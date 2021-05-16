@@ -6,69 +6,61 @@ const darkBGcolor = '#0A0A0A';
 const darkTheme = createMuiTheme({
 	palette: {
 		primary: {
-			main: blueGrey[50],
+			main: blueGrey[50]
 		},
 		secondary: {
-			main: blueGrey[300], //menu icon
+			main: blueGrey[300] //menu icon
 		},
 		background: {
 			default: darkBGcolor,
-			paper: '#222426', // menu bg
+			paper: '#222426' // menu bg
 		},
 		text: {
 			primary: '#F2F5F6',
-			secondary: blueGrey[300], // details, tabs
+			secondary: blueGrey[300] // details, tabs
 		},
-		divider: 'rgba(55, 71, 79, 0.5)',
+		divider: 'rgba(55, 71, 79, 0.5)'
 	},
 	overrides: {
 		...overrides,
 		MuiButtonBase: {
 			root: {
-				color: blueGrey[50], //card hover
-			},
+				color: blueGrey[50] //card hover
+			}
 		},
 		MuiTouchRipple: {
 			child: {
-				backgroundColor: '#768494',
-			},
+				backgroundColor: '#768494'
+			}
 		},
 		MuiTab: {
 			root: {
 				transition: 'color .3s ease',
 				'&:hover': {
 					color: blueGrey[50],
-					borderRadius: '3px 3px 0 0',
-				},
-			},
-		},
-		MuiTabs: {
-			root: {
-				backgroundColor: 'red',
-				// backdropFilter: 'blur(10px)',
-			},
+					borderRadius: '3px 3px 0 0'
+				}
+			}
 		},
 		MuiAppBar: {
 			colorDefault: {
-				// backgroundColor: '#0a0a0afc',
-				backgroundColor: '#0a0a0a8c',
-				backdropFilter: 'blur(10px)',
-			},
+				backgroundColor: darkBGcolor
+			}
 		},
 		MuiPaper: {
 			elevation8: {
 				boxShadow:
-					'0 1px 2px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.05), -20px 16px 62px rgba(0,0,0,0.15), 0 32px 130px rgba(0,0,0,0.8)',
-			},
+					'0 1px 2px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.05), -20px 16px 62px rgba(0,0,0,0.15), 0 32px 130px rgba(0,0,0,0.8)'
+			}
 		},
 		MuiLink: {
 			root: {
 				'&:hover': {
-					color: blueGrey[50],
-				},
-			},
-		},
-	},
+					color: blueGrey[50]
+				}
+			}
+		}
+	}
 });
 
 export default darkTheme;
