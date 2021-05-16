@@ -13,7 +13,7 @@ import {
 	CardContent,
 	Typography,
 	Avatar,
-	Fade
+	Fade,
 } from '@material-ui/core';
 import styles from './FeedItem.module.css';
 
@@ -32,7 +32,7 @@ const FeedItem = ({ data }) => {
 			<CardActionArea disableRipple>
 				{image.url && image.width >= MIN_IMAGE_WIDTH && (
 					<div className={styles.container}>
-						<Fade timeout={800} in={hasLoaded}>
+						<Fade timeout={500} in={hasLoaded}>
 							<CardMedia
 								component='img'
 								className={styles.media}
@@ -79,7 +79,7 @@ const FeedItem = ({ data }) => {
 };
 
 FeedItem.propTypes = {
-	data: PropTypes.object
+	data: PropTypes.object,
 };
 
 export default FeedItem;
