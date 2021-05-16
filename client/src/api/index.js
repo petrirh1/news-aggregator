@@ -4,8 +4,8 @@ import { hasStorage } from '../helpers/hasStorage';
 let cancelToken;
 
 export const fetchData = async (url, page, limit) => {
-	const cachedData = hasStorage() && sessionStorage.getItem(url);
 	url = url.replace('(', '').replace(')', '');
+	const cachedData = hasStorage() && sessionStorage.getItem(url);
 
 	/*
 	 * Cancel token is used to cancel ongoing fetch request,
@@ -19,6 +19,7 @@ export const fetchData = async (url, page, limit) => {
 
 	try {
 		if (hasStorage() && cachedData && shouldUseCache(cachedData, page)) {
+			console.log('Hi!');
 			return JSON.parse(cachedData);
 		}
 
