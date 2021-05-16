@@ -9,6 +9,7 @@
 	border-radius: 3px 3px 0 0;
 	position: relative;
 	z-index: 2;
+	object-position: center top;
 }
 
 .placeholder {
