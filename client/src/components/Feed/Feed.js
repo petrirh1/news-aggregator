@@ -33,7 +33,7 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 					role='list'
 					className={styles.masonry}
 					items={data}
-					columnGutter={25}
+					columnGutter={20}
 					columnWidth={235}
 					overscanBy={2}
 					render={FeedItem}
