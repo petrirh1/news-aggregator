@@ -26,7 +26,7 @@ export const fetchData = async (url, page, limit) => {
 			cancelToken: cancelToken.token,
 		});
 
-		if (hasStorage()) {
+		if (hasStorage() && data.docs.length > 0) {
 			storeInCache(url, data);
 		}
 
