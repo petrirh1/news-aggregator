@@ -12,8 +12,8 @@ exports.getOptions = (req, res, next) => {
 		limit: parseInt(limit) || defaultLimit,
 		select: '-__v -_id -__ttl -guid',
 		sort: {
-			isoDate: -1
-		}
+			isoDate: -1,
+		},
 	};
 
 	next();
@@ -24,12 +24,11 @@ exports.getLatest = async (req, res) => {
 
 	try {
 		const feeds = await Feed.paginate({ categories: { $ne: 'tekniikkaen' } }, options);
-
 		res.status(200).json(feeds);
 	} catch (err) {
 		console.log(err);
 		res.status(500).json({
-			message: err
+			message: err,
 		});
 	}
 };
@@ -41,7 +40,7 @@ exports.getSources = (req, res) => {
 	} catch (err) {
 		console.log(err);
 		res.status(500).json({
-			message: err
+			message: err,
 		});
 	}
 };
@@ -56,7 +55,22 @@ exports.getByCategory = async (req, res) => {
 	} catch (err) {
 		console.log(err);
 		res.status(500).json({
-			message: err
+			message: err,
+		});
+	}
+};
+
+exports.getByKeyword = async (req, res) => {
+	const { options } = req;
+	const { keyword } = req.params;
+
+	try {
+		const feeds = await Feed.paginate({ title: { $regex: `${keyword}`, $options: 'i' } }, options);
+		res.status(200).json(feeds);
+	} catch (err) {
+		console.log(err);
+		res.status(500).json({
+			message: err,
 		});
 	}
 };
