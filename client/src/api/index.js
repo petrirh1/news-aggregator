@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { shouldUseCache, storeInCache } from '../helpers/cache';
 import { hasStorage } from '../helpers/hasStorage';
+import { DEFAULT_ENDPOINT } from '../constants/constants';
 let cancelToken;
 
 export const fetchData = async (url, page, limit) => {
@@ -22,7 +23,7 @@ export const fetchData = async (url, page, limit) => {
 			return JSON.parse(cachedData);
 		}
 
-		const { data } = await axios.get(`/api/uutiset${url}?page=${page}&limit=${limit}`, {
+		const { data } = await axios.get(`${DEFAULT_ENDPOINT}${url}?page=${page}&limit=${limit}`, {
 			cancelToken: cancelToken.token,
 		});
 
@@ -38,7 +39,7 @@ export const fetchData = async (url, page, limit) => {
 
 export const fetchSources = async () => {
 	try {
-		const { data } = await axios.get('/api/uutiset/lahteet');
+		const { data } = await axios.get(`${DEFAULT_ENDPOINT}/lahteet`);
 		return data;
 	} catch (error) {
 		return error;
