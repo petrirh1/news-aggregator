@@ -7,4 +7,5 @@ export { default as Menu } from './Menu/Menu';
 export { default as Feed } from './Feed/Feed';
 export { default as FeedItem } from './FeedItem/FeedItem';
 export { default as Error } from './States/Error/Error';
+export { default as CookieBanner } from './CookieBanner/CookieBanner';
 export { default as Footer } from './Footer/Footer';
