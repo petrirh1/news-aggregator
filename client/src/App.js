@@ -11,12 +11,15 @@ import ReactGA from 'react-ga';
 import styles from './App.module.css';
 
 const App = () => {
-	const [options, setOptions] = useState({ isDark: false });
+	const [options, setOptions] = useState({ isDark: false, layout: 'grid' });
 
 	useEffect(() => {
 		if (hasStorage()) {
 			const darkTheme = localStorage.getItem('isDark') === 'true' ? true : false;
-			setOptions({ isDark: darkTheme });
+			const layout =
+				localStorage.getItem('layout') == null ? 'grid' : localStorage.getItem('layout');
+
+			setOptions({ isDark: darkTheme, layout });
 		}
 
 		ReactGA.initialize({ trackingId: process.env.REACT_APP_GA_ID });
@@ -31,6 +34,18 @@ const App = () => {
 		}
 	};
 
+	const handleLayoutChange = () => {
+		setOptions({ ...options, layout: options.layout === 'grid' ? 'list' : 'grid' });
+
+		if (hasStorage()) {
+			localStorage.setItem('layout', options.layout === 'grid' ? 'list' : 'grid');
+		}
+	};
+
+	useEffect(() => {
+		console.log('App: ', options.layout);
+	}, [options]);
+
 	return (
 		<MuiThemeProvider theme={options.isDark ? darkTheme : lightTheme}>
 			<CssBaseline />
@@ -42,7 +57,12 @@ const App = () => {
 							exact
 							path='/:page?'
 							render={(props) => (
-								<Home isDark={options.isDark} handleThemeChange={handleThemeChange} {...props} />
+								<Home
+									options={options}
+									handleThemeChange={handleThemeChange}
+									handleLayoutChange={handleLayoutChange}
+									{...props}
+								/>
 							)}
 						/>
 						<Route render={() => <Redirect to={{ pathname: '/' }} />} />

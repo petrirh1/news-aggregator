@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import ReactTimeAgo from 'react-time-ago';
 import JavascriptTimeAgo from 'javascript-time-ago';
 import fi from 'javascript-time-ago/locale/fi';
@@ -19,19 +19,33 @@ import styles from './FeedItem.module.css';
 
 JavascriptTimeAgo.addLocale(fi);
 
-const FeedItem = ({ data }) => {
+const FeedItem = ({ data, options }) => {
 	const { image, source, title, isoDate, favicon, link } = data;
+	const [maxHeight, setMaxHeight] = useState(null);
 	const [hasLoaded, setHasLoaded] = useState(false);
+	const contentEl = useRef(null);
 
 	const handleImageLoad = () => {
 		setHasLoaded(true);
 	};
 
+	const shouldLimitHeight = () => {
+		if (options.layout === 'list') {
+			setMaxHeight(contentEl.current?.offsetHeight);
+		} else {
+			setMaxHeight(null);
+		}
+	};
+
+	useEffect(() => {
+		shouldLimitHeight();
+	}, [options]);
+
 	return (
 		<Card elevation={1} onClick={() => window.open(link, '_blank', 'noopener noreferrer')}>
-			<CardActionArea disableRipple>
+			<CardActionArea className={options.layout === 'list' ? styles.list : null} disableRipple>
 				{image.url && image.width >= MIN_IMAGE_WIDTH && (
-					<div className={styles.container}>
+					<div className={styles.container} style={{ height: `${maxHeight}px` }}>
 						<Fade timeout={500} in={hasLoaded}>
 							<CardMedia
 								component='img'
@@ -47,7 +61,7 @@ const FeedItem = ({ data }) => {
 						</div>
 					</div>
 				)}
-				<CardContent>
+				<CardContent className={styles.content} ref={contentEl}>
 					<Typography
 						gutterBottom
 						variant='subtitle2'

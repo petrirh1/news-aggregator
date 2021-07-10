@@ -86,6 +86,7 @@ const Home = (props) => {
 				fetchMore={fetchMore}
 				hasMore={hasMore}
 				hasError={hasError}
+				{...props}
 			/>
 			<Footer />
 		</div>

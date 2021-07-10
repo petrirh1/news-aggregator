@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Masonry as Masonic } from 'masonic';
 import { CircularProgress, Backdrop } from '@material-ui/core';
@@ -6,7 +6,14 @@ import { FeedItem, Error } from '../../components';
 import PropTypes from 'prop-types';
 import styles from './Feeds.module.css';
 
-const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
+const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading, options }) => {
+	const columnGutter = options.layout === 'list' ? 10 : 20;
+	const columnWidth = options.layout === 'list' ? 500 : 260;
+	const FeedItemWithProps = useCallback(
+		(props) => <FeedItem {...props} options={options} />,
+		[options]
+	);
+
 	return (
 		<InfiniteScroll
 			dataLength={data.length}
@@ -33,10 +40,10 @@ const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading }) => {
 					role='list'
 					className={styles.masonry}
 					items={data}
-					columnGutter={20}
-					columnWidth={235}
+					columnGutter={columnGutter}
+					columnWidth={columnWidth}
 					overscanBy={2}
-					render={FeedItem}
+					render={FeedItemWithProps}
 				/>
 			)}
 		</InfiniteScroll>
