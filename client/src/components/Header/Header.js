@@ -4,7 +4,7 @@ import { AppBar, Toolbar, useScrollTrigger, Slide } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import styles from './Header.module.css';
 
-const HideOnScroll = props => {
+const HideOnScroll = (props) => {
 	const { children, menuIsOpen } = props;
 	const trigger = useScrollTrigger();
 
@@ -21,8 +21,8 @@ const HideOnScroll = props => {
 	);
 };
 
-const Header = props => {
-	const [menuIsOpen, setMenuIsOpen] = useState(false);
+const Header = (props) => {
+	const [menuIsOpen] = useState(false);
 
 	return (
 		<HideOnScroll menuIsOpen={menuIsOpen} {...props}>
@@ -30,7 +30,7 @@ const Header = props => {
 				<Toolbar className={styles.toolbar}>
 					<div className={styles.wrapper}>
 						<Logo width={21} variant={'h5'} mr={'12px'} />
-						<Menu {...props} setIsOpen={setMenuIsOpen} />
+						<Menu {...props} />
 					</div>
 				</Toolbar>
 				<CategoryTabs {...props} />
@@ -41,7 +41,7 @@ const Header = props => {
 
 HideOnScroll.propTypes = {
 	children: PropTypes.object,
-	menuIsOpen: PropTypes.bool
+	menuIsOpen: PropTypes.bool,
 };
 
 export default Header;

@@ -9,7 +9,7 @@
 	border-radius: 3px 3px 0 0;
 	position: relative;
 	z-index: 2;
-	object-position: center top;
+	object-position: center;
 }
 
 .placeholder {
@@ -25,6 +25,13 @@
 	margin: auto;
 	position: relative;
 	font-size: 0.8125rem !important;
+}
+
+.title {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
 }
 
 .wrapper {
@@ -47,3 +54,19 @@
 	font-weight: bold !important;
 	font-size: 0.875rem !important;
 } 
+
+.list {
+	display: flex !important;
+	flex-direction: row-reverse;
+	justify-content: space-between !important;
+}
+
+.list .media {
+	border-radius: 0;
+	width: 8em;
+	max-height: 100%;
+}
+
+.list .content {
+	margin-right: auto;
+}

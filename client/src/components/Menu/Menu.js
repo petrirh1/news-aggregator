@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
 	IconButton,
 	Menu,
@@ -6,23 +6,20 @@ import {
 	FormLabel,
 	FormGroup,
 	FormControlLabel,
-	Switch
+	Switch,
 } from '@material-ui/core';
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
+import ViewQuiltIcon from '@material-ui/icons/ViewQuilt';
 import PropTypes from 'prop-types';
 import style from './Menu.module.css';
 
-const SimpleMenu = ({ isDark, handleThemeChange, setIsOpen }) => {
+const SimpleMenu = ({ options, handleThemeChange, handleLayoutChange }) => {
 	const [anchorEl, setAnchorEl] = useState(null);
-	const [options, setOptions] = useState({
-		isDark: isDark
-	});
 
-	useEffect(() => {
-		setOptions({ isDark });
-	}, [isDark]);
-
-	const handleClick = event => {
+	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
 
@@ -32,8 +29,9 @@ const SimpleMenu = ({ isDark, handleThemeChange, setIsOpen }) => {
 
 	const handleChange = ({ target }) => {
 		if (target.id === 'theme-switcher') {
-			setOptions({ ...options, isDark: !options.isDark });
 			handleThemeChange();
+		} else {
+			handleLayoutChange();
 		}
 	};
 
@@ -48,8 +46,6 @@ const SimpleMenu = ({ isDark, handleThemeChange, setIsOpen }) => {
 				anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
 				transformOrigin={{ vertical: 'top', horizontal: 'center' }}
 				keepMounted
-				onEnter={() => setIsOpen(true)}
-				onExit={() => setIsOpen(false)}
 				open={Boolean(anchorEl)}
 				onClose={handleClose}>
 				<FormControl component='fieldset'>
@@ -71,15 +67,35 @@ const SimpleMenu = ({ isDark, handleThemeChange, setIsOpen }) => {
 						/>
 					</FormGroup>
 				</FormControl>
+				<FormLabel
+					style={{ margin: '1rem 0 0.8rem 0' }}
+					color='primary'
+					focused={true}
+					component='label'>
+					Asettelu
+				</FormLabel>
+				<ToggleButtonGroup
+					size={'small'}
+					value={options.layout}
+					exclusive
+					onChange={handleChange}
+					aria-label='layout'>
+					<ToggleButton value='grid' aria-label='grid layout'>
+						<ViewQuiltIcon />
+					</ToggleButton>
+					<ToggleButton value='list' aria-label='list layout'>
+						<CalendarViewDayIcon />
+					</ToggleButton>
+				</ToggleButtonGroup>
 			</Menu>
 		</div>
 	);
 };
 
 Menu.propTypes = {
-	isDark: PropTypes.bool,
+	options: PropTypes.object,
 	handleThemeChange: PropTypes.func,
-	setIsOpen: PropTypes.func
+	setIsOpen: PropTypes.func,
 };
 
 export default SimpleMenu;
