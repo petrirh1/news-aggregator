@@ -46,6 +46,11 @@ const lightTheme = createTheme({
 				},
 			},
 		},
+		MuiTypography: {
+			colorTextSecondary: {
+				color: '#6C767A',
+			},
+		},
 		MuiAppBar: {
 			colorDefault: {
 				backgroundColor: '#fff',

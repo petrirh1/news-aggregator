@@ -64,6 +64,11 @@ const darkTheme = createTheme({
 				},
 			},
 		},
+		MuiTypography: {
+			colorTextSecondary: {
+				color: '#889AA2',
+			},
+		},
 		MuiAppBar: {
 			colorDefault: {
 				backgroundColor: darkBGcolor,
