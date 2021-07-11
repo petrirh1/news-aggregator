@@ -56,6 +56,7 @@ Feed.propTypes = {
 	hasMore: PropTypes.bool,
 	hasError: PropTypes.bool,
 	isLoading: PropTypes.bool,
+	options: PropTypes.object,
 };
 
 export default Feed;

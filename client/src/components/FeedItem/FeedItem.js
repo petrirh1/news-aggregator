@@ -94,6 +94,7 @@ const FeedItem = ({ data, options }) => {
 
 FeedItem.propTypes = {
 	data: PropTypes.object,
+	options: PropTypes.object,
 };
 
 export default FeedItem;
