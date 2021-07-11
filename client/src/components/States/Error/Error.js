@@ -4,7 +4,7 @@ import styles from './Error.module.css';
 
 const Error = () => {
 	const handlePageRefresh = () => {
-		window.location.reload(false);
+		window.location.reload();
 	};
 
 	return (
