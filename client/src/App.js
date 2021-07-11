@@ -42,10 +42,6 @@ const App = () => {
 		}
 	};
 
-	useEffect(() => {
-		console.log('App: ', options.layout);
-	}, [options]);
-
 	return (
 		<MuiThemeProvider theme={options.isDark ? darkTheme : lightTheme}>
 			<CssBaseline />
