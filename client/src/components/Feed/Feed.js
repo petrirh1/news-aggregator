@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 import styles from './Feeds.module.css';
 
 const Feed = ({ data = [], fetchMore, hasMore, hasError, isLoading, options }) => {
-	const columnGutter = options.layout === 'list' ? 10 : 20;
-	const columnWidth = options.layout === 'list' ? 500 : 260;
+	const columnGutter = options.layout === 'list' ? 10 : 15;
+	const columnWidth = options.layout === 'list' ? 500 : 240;
 	const FeedItemWithProps = useCallback(
 		(props) => <FeedItem {...props} options={options} />,
 		[options]
