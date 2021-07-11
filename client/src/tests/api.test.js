@@ -1,4 +1,4 @@
-import axios from 'axios';
+const axios = require('axios');
 axios.defaults.adapter = require('axios/lib/adapters/http');
 const endpoint = 'http://localhost:5000/api/uutiset/';
 
