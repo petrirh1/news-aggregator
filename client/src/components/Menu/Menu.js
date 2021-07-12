@@ -27,13 +27,19 @@ const SimpleMenu = ({ options, handleThemeChange, handleLayoutChange }) => {
 		setAnchorEl(null);
 	};
 
-	const handleChange = ({ target }) => {
-		if (target.id === 'theme-switcher') {
+	const handleChange = (e, newVal) => {
+		if (e.target.id === 'theme-switcher') {
 			handleThemeChange();
-		} else {
+		} else if (newVal != null) {
 			handleLayoutChange();
 		}
 	};
+
+	// const handleAlignment = (event, newAlignment) => {
+	// 	if (newAlignment !== null) {
+	// 		setAlignment(newAlignment);
+	// 	}
+	// };
 
 	return (
 		<div className={style.root}>
