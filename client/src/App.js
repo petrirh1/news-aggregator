@@ -35,6 +35,7 @@ const App = () => {
 	};
 
 	const handleLayoutChange = () => {
+		window.scrollTo(0, 0);
 		setOptions({ ...options, layout: options.layout === 'grid' ? 'list' : 'grid' });
 
 		if (hasStorage()) {
