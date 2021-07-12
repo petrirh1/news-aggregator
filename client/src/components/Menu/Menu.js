@@ -35,12 +35,6 @@ const SimpleMenu = ({ options, handleThemeChange, handleLayoutChange }) => {
 		}
 	};
 
-	// const handleAlignment = (event, newAlignment) => {
-	// 	if (newAlignment !== null) {
-	// 		setAlignment(newAlignment);
-	// 	}
-	// };
-
 	return (
 		<div className={style.root}>
 			<IconButton aria-label='Asetukset' onClick={handleClick}>
