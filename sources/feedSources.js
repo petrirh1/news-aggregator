@@ -581,12 +581,6 @@ const feedSources = [
 		favicon: '/assets/ls-favicon-192x192.png',
 	},
 	{
-		url: 'https://wp.demokraatti.fi/feed/',
-		source: 'Demokraatti',
-		home: 'https://demokraatti.fi/',
-		favicon: '/assets/demokraatti-favicon-192x192.png',
-	},
-	{
 		url: 'https://www.ess.fi/feed/rss',
 		source: 'ESS',
 		home: 'https://www.ess.fi',
