@@ -17,8 +17,3 @@ Open `http://localhost:3000` to view it in the browser.
 ###### `npm test`
 
 Run all available tests.
-
-### Live demo
-
-App is currently up and running at [heroku.](https://uutisankka.herokuapp.com)<br>
-*Please note that it might take a while to spin up, so please wait.*
