@@ -32,6 +32,27 @@ const lightTheme = createTheme({
 				color: grey[900], //card hover
 			},
 		},
+		MuiToggleButton: {
+			root: {
+				color: '#9AA0A1',
+				borderColor: '#D6DBDF',
+				'&.Mui-selected': {
+					color: '#626667',
+					background: '#D9DCDD',
+					borderColor: '#B5BDC2',
+					'&.Mui-selected:hover': {
+						backgroundColor: '#D2D5D7',
+					},
+				},
+			},
+		},
+		MuiToggleButtonGroup: {
+			groupedHorizontal: {
+				'&:not(:first-child)': {
+					borderLeftColor: '#B5BDC2',
+				},
+			},
+		},
 		MuiTouchRipple: {
 			child: {
 				backgroundColor: grey[400],
