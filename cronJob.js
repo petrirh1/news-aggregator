@@ -10,10 +10,10 @@ mongoose
 	.connect(process.env.CONNECTION_STRING, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
-		useCreateIndex: true
+		useCreateIndex: true,
 	})
 	.then(() => job())
-	.catch(err => {
+	.catch((err) => {
 		console.log(err);
 	}, 240000);
 
@@ -26,31 +26,31 @@ const parser = new RSSparser({
 			['rss:image', 'image'],
 			['media:content', 'image'],
 			['media:thumbnail', 'image'],
-			['content:encoded', 'encodedContent']
-		]
-	}
+			['content:encoded', 'encodedContent'],
+		],
+	},
 });
 
 const job = async () => {
 	console.log('Running on schedule..');
 
-	feedSources.forEach(async source => {
+	feedSources.forEach(async (source) => {
 		try {
 			const feed = await parser.parseURL(source.url);
 			// const parsedFeed = feed.items.map(item => feedParser.parseFeed(item, source));
 			const parsedFeed = await Promise.all(
-				feed.items.map(async item => await feedParser.parseFeed(item, source))
+				feed.items.map(async (item) => await feedParser.parseFeed(item, source))
 			);
 
 			console.log('parsing feeds..');
 
 			parsedFeed
-				.filter(item => time.daysAgo(new Date(item.isoDate)))
-				.forEach(feed => {
+				.filter((item) => time.daysAgo(new Date(item.isoDate)))
+				.forEach((feed) => {
 					const newFeed = new Feed({
 						...feed,
 						source: source.source,
-						favicon: source.favicon
+						favicon: source.favicon,
 					});
 
 					Feed.findOne({ guid: newFeed.guid }, (err, feed) => {
@@ -68,6 +68,8 @@ const job = async () => {
 		} catch (err) {
 			if (err === 'Status code 404') return;
 			console.log(err);
+		} finally {
+			mongoose.connection.close();
 		}
 	});
 };
