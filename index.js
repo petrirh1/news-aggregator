@@ -10,9 +10,27 @@ const devRoute = require('./routes/devRoute');
 const dev = process.env.NODE_ENV === 'production' ? false : true;
 require('dotenv').config();
 
-app.use(helmet({
-    contentSecurityPolicy: false,
-  }));
+app.use(
+	helmet({
+		contentSecurityPolicy: {
+			directives: {
+				...helmet.contentSecurityPolicy.getDefaultDirectives(),
+				'img-src': ['*'],
+				'connect-src': [
+					"'self'",
+					"'sha256-eE1k/Cs1U0Li9/ihPPQ7jKIGDvR8fYw65VJw+txfifw='",
+					'https://www.google-analytics.com/analytics.js',
+					'www.google-analytics.com',
+				],
+				'script-src': [
+					"'self'",
+					"'sha256-eE1k/Cs1U0Li9/ihPPQ7jKIGDvR8fYw65VJw+txfifw='",
+					'https://www.google-analytics.com/analytics.js',
+				],
+			},
+		},
+	})
+);
 app.use(limiter);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -21,7 +39,7 @@ mongoose
 	.connect(process.env.CONNECTION_STRING, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
-		useCreateIndex: true
+		useCreateIndex: true,
 	})
 	.then(() => console.log('Connected to mongoDB...'))
 	.catch((err) => {
