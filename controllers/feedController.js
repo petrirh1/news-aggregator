@@ -65,7 +65,16 @@ exports.getByKeyword = async (req, res) => {
 	const { keyword } = req.params;
 
 	try {
-		const feeds = await Feed.paginate({ title: { $regex: `${keyword}`, $options: 'i' } }, options);
+		const feeds = await Feed.paginate(
+			{
+				$or: [
+					{ title: { $regex: `${keyword}`, $options: 'i' } },
+					{ categories: { $regex: `${keyword}`, $options: 'i' } },
+				],
+			},
+			options
+		);
+
 		res.status(200).json(feeds);
 	} catch (err) {
 		console.log(err);
