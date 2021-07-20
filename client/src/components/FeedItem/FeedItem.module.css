@@ -63,10 +63,16 @@
 
 .list .media {
 	border-radius: 0;
-	width: 8em;
+	width: 9em;
 	max-height: 100%;
 }
 
 .list .content {
 	margin-right: auto;
+}
+
+@media (max-width: 360px) {
+	.list .container {
+		display: none;
+	}
 }
