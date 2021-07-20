@@ -10,14 +10,6 @@ const devRoute = require('./routes/devRoute');
 const dev = process.env.NODE_ENV === 'production' ? false : true;
 require('dotenv').config();
 
-app.get('*', function (req, res, next) {
-	if (req.headers.host.slice(0, 3) != 'www' && !dev) {
-		res.redirect('http://www.' + req.headers.host + req.url, 301);
-	} else {
-		next();
-	}
-});
-
 app.use(
 	helmet({
 		contentSecurityPolicy: {
