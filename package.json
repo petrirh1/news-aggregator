@@ -21,7 +21,7 @@
     "express": "^4.17.1",
     "express-rate-limit": "^5.5.1",
     "helmet": "^4.6.0",
-    "jest": "^26.6.3",
+    "jest": "^26.6.0",
     "mongoose": "^5.13.13",
     "mongoose-paginate": "^5.0.3",
     "mongoose-ttl": "0.0.3",
