@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "get-website-favicon": "0.0.7",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.20"
   }
 }
